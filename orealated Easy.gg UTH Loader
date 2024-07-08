@@ -1,3 +1,8 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "[ Notice: ]",
+	Text = "If You See This And The Hub Hasn't Loaded For Like 4 Seconds The Hub is Currently Down"
+})
+
 --[[
    - Orealation: Use This if You Want Ultimate Trolling Hub to Load Faster -
    --// [Made By Orealated, Thx to All Supporters]
