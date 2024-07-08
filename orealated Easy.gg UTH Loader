@@ -2,7 +2,7 @@
    - Orealation: Use This if You Want Ultimate Trolling Hub to Load Faster -
    --// [Made By Orealated, Thx to All Supporters]
    --// Version: 1.6.4
-   --// Status: 🔴 || Unstable
+   --// Status: 🟢 || Stable
    --// Total Amount of Games Supported: 33
    --// Total Amount of Scripts: 179
    --// Note: This Hub Automatically Updates ✅
@@ -10,5 +10,5 @@
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1259391254911782922/b2jghd7jijo-obfuscated.lua?ex=668b8301&is=668a3181&hm=f5e14e05b5a5ceccd57455f549be05326de078c7fb04673e305b8fed7de30a38"))();
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1259782435281965086/fbmb7s89li-obfuscated.lua?ex=668cef52&is=668b9dd2&hm=4025ec902eb45d604f75ac3140ab52f17b3756c05a3013f4fa2697d43e534259&"))();
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down so Thats Why i Dont Recommend You Using This
