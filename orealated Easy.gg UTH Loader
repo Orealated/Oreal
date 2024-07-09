@@ -6,14 +6,14 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 --[[
    - Orealation: Use This if You Want Ultimate Trolling Hub to Load Faster -
    --// [Made By Orealated, Thx to All Supporters]
-   --// Version: 1.6.4
+   --// Version: 1.6.4.[F].2
    --// Status: 🟢 || Stable
    --// Total Amount of Games Supported: 33
-   --// Total Amount of Scripts: 179
+   --// Total Amount of Scripts: 178
    --// Note: This Hub Automatically Updates ✅
-   --// This Script Was MassObfuscated by Obscuralua, Shit Obfuscater, ByteProtect V1.8 And MoonSec V3 With Anti-Tamper, Constant Security And Maximum Security Enabled
+   --// This Script Was MassObfuscated by Obscuralua, ByteProtect V1.8, And MoonSec V3 With Anti-Tamper, LuaSeel V1.1Constant Security And Maximum Security Enabled
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1259782435281965086/fbmb7s89li-obfuscated.lua?ex=668cef52&is=668b9dd2&hm=4025ec902eb45d604f75ac3140ab52f17b3756c05a3013f4fa2697d43e534259&"))();
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1121046583014854766/1260076737241288754/Protected_6593361175391033.lua?ex=668e0169&is=668cafe9&hm=525572b6bdfb3a80d324d0a43bbcad3a72e2e2d08b49bedaf2479c43727f3222&"))();
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down so Thats Why i Dont Recommend You Using This
