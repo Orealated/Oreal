@@ -11,9 +11,9 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
    --// Total Amount of Games Supported: 33
    --// Total Amount of Scripts: 178
    --// Note: This Hub Automatically Updates ✅
-   --// This Script Was MassObfuscated by Obscuralua And MoonSec V3 With Anti-Tamper, Constant Security And Maximum Security Enabled
+   --// This Script Was MassObfuscated by FxGFuscator, Obscuralua And MoonSec V3 With Anti-Tamper, Constant Security And Maximum Security Enabled
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1121046583014854766/1260167035866976307/Protected_3485076776107676.lua?ex=668e5582&is=668d0402&hm=28dba789866f6806a7716054b26d95b415bfcdf7e59c9b510e991249868053d8&"))();
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1257298888755384463/1260208306496999526/FxG_3-moKrk1Y4GEVSsnVrcAm9z1Vu.lua?ex=668e7bf1&is=668d2a71&hm=af4785bd2f5d27c23145a75beb38eeff8486a9077f6c2a29974bbfdb8a0ca6b4&"))()
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down so Thats Why i Dont Recommend You Using This
