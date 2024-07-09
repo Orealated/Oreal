@@ -11,7 +11,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
    --// Total Amount of Games Supported: 33
    --// Total Amount of Scripts: 178
    --// Note: This Hub Automatically Updates ✅
-   --// This Script Was MassObfuscated by Obscuralua, ByteProtect V1.8, And MoonSec V3 With Anti-Tamper, LuaSeel V1.1Constant Security And Maximum Security Enabled
+   --// This Script Was MassObfuscated by Obscuralua, ByteProtect V1.8, LuaSeel V1.1 And MoonSec V3 With Anti-Tamper, Constant Security And Maximum Security Enabled
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
