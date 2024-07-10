@@ -29,8 +29,7 @@ loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1257298888755384
 else
     local bombasitcsideeye =
         [[getgenv().ActivateTheUltimateTrolly = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20UTH%20Loader"))();
-    ]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20UTH%20Loader"))();]]
     setclipboard(bombasitcsideeye)
     game:GetService("StarterGui"):SetCore(
         "SendNotification",
