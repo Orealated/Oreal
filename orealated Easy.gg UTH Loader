@@ -23,7 +23,7 @@ game:GetService("StarterGui"):SetCore(
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1260551567224999946/927sltlskj-obfuscated.lua?ex=668fbba1&is=668e6a21&hm=80730dea65ce8623b211fa75bf06c49638d73a61435ef82ce585081cc553b7ba&"))();
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1260563456135004181/5atv1ooytma-obfuscated.lua?ex=668fc6b4&is=668e7534&hm=e7912fe67fce2071dc67f340138787e9321a661e4569908018d0a827d32ff978&"))();
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down
 
 else
