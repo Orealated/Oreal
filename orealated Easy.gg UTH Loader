@@ -15,15 +15,15 @@ game:GetService("StarterGui"):SetCore(
    - Orealation: QP is Cool Like You! -
    --// [Made By Orealated, Thx to All Supporters]
    --// Version: 1.6.4.[F].2
-   --// Status: 🔴 || Unstable
+   --// Status: 🟢 || Stable
    --// Total Amount of Games Supported: 33
    --// Total Amount of Scripts: 178
    --// Note: This Hub Automatically Updates ✅
-   --// This File Was obfuscated by Obscuralua 
+   --// This File Was obfuscated by MoonSec V3 With Maximum Security, Anti-Tamper And Constant Security
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1256781929861091329/1260563456135004181/5atv1ooytma-obfuscated.lua?ex=668fc6b4&is=668e7534&hm=e7912fe67fce2071dc67f340138787e9321a661e4569908018d0a827d32ff978&"))();
+loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1121046583014854766/1260932860798570577/Protected_7554600682347754.lua?ex=66911ebd&is=668fcd3d&hm=018662d3b309ab4675232e1fcda7d0fe78f387028cc931d472628ff3613aab82&", true))();
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down
 
 else
