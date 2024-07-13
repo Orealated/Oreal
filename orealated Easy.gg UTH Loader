@@ -2,20 +2,11 @@
 
 if getgenv().ActivateTheUltimateTrolly then
 
-game:GetService("StarterGui"):SetCore(
-    "SendNotification",
-    {
-        Title = "[ Notice: ]",
-        Text = "If You See This And The Hub Hasn't Loaded For Like 4 Seconds The Hub is Currently Down"
-    }
-)
-
-
 --[[
    - Orealation: QP is Cool Like You! -
    --// [Made By Orealated, Thx to All Supporters]
    --// Version: 1.6.4.[F].2
-   --// Status: 🔴 || Unstable
+   --// Status: 🟢 || Stable
    --// Total Amount of Games Supported: 33
    --// Total Amount of Scripts: 178
    --// Note: This Hub Automatically Updates ✅
@@ -23,7 +14,7 @@ game:GetService("StarterGui"):SetCore(
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://cdn.discordapp.com/attachments/1121046583014854766/1260932860798570577/Protected_7554600682347754.lua?ex=66911ebd&is=668fcd3d&hm=018662d3b309ab4675232e1fcda7d0fe78f387028cc931d472628ff3613aab82&", true))();
+loadstring(game:HttpGet("https://github.com/user-attachments/files/16200893/Protected_6239606714207227.txt", true))();
 --// This Loadstring Will Change Time-to-Time Everytime The Script is Down
 
 else
