@@ -15,7 +15,7 @@ if getgenv().ActivateTheUltimateTrolly then
 ]]
 --// Loadstring:
 loadstring(game:HttpGet("https://github.com/user-attachments/files/16200893/Protected_6239606714207227.txt", true))();
---// This Loadstring Will Change Time-to-Time Everytime The Script is Down
+--// Once again, please do not use this loadstring. Use the current loadstring.
 
 else
     local bombasitcsideeye =
