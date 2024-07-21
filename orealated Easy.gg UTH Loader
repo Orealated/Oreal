@@ -4,18 +4,18 @@ if getgenv().ActivateTheUltimateTrolly then
 
 --[[
    - Orealation: QP is Cool Like You! -
-   --// [Made By Orealated, Thx to All Supporters]
+   --// [Made by Orealated, Thanks to All Supporters]
    --// Version: V2
    --// Status: 🟢 || Stable
-   --// Total Amount of Games Supported: 33
-   --// Total Amount of Scripts: 206
+   --// Total Number of Games Supported: 33
+   --// Total Number of Scripts: 206
    --// Note: This Hub Automatically Updates ✅
-   --// This File Was obfuscated by MoonSec V3 With Maximum Security, Anti-Tamper, Constant Security And Joker Obfuscater V0.10.0 Hands Up Skids!
-   --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary Right?
+   --// This File Was Obfuscated by MoonSec V3 with Maximum Security, Anti-Tamper, Constant Security, And Joker Obfuscater V0.10.0 Hands up, Skids!
+   --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
 ]]
 --// Loadstring:
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/SecretStash%20%3ASkull%3A%20V999", true))();
---// Once again, Please do Not Use This Loadstring. Use The Current Loadstring.
+--// Once again, please do not use this loadstring. Use the current loadstring.
 
 else
     local bombasitcsideeye =
