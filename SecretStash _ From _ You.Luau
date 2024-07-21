@@ -1,3 +1,3 @@
-loadstring(game:HttpGet("https://github.com/user-attachments/files/16323000/Protected_4296243558724323.txt", true))();
+loadstring(game:HttpGet("https://github.com/user-attachments/files/16323355/Protected_4177521623121764.txt", true))();
 
---// This Name Fucking Sucks Why Did I Pick This
+--// Note: Do Not Copy The MoonSec V3 Obfuscated Code Because it Will Not Work Even if You Execute Clipboard.
