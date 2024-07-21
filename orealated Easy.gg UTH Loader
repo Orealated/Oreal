@@ -14,7 +14,7 @@ if getgenv().ActivateTheUltimateTrolly then
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/SecretStash%20%3ASkull%3A%20V999", true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/SecretStash%20_%20From%20_%20You.Luau", true))();
 --// Once again, please do not use this loadstring. Use the current loadstring.
 
 else
