@@ -14,7 +14,7 @@ if getgenv().ActivateTheUltimateTrolly then
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://github.com/user-attachments/files/16324397/Protected_5315268264356385.txt", true))();
+loadstring(game:HttpGet("https://github.com/user-attachments/files/16369161/Protected_1625533462501910.txt", true))();
 --// Once Again, Please do Not Use This Loadstring. Use The Current Loadstring.
 
 else
