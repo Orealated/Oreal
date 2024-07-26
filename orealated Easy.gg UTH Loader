@@ -8,13 +8,13 @@ if getgenv().ActivateTheUltimateTrolly then
    --// Version: V2.1
    --// Status: 🟢 || Stable
    --// Total Number of Games Supported: 33
-   --// Total Number of Scripts: 206
+   --// Total Number of Scripts: 209
    --// Note: This Hub Automatically Updates ✅
-   --// This File Was Obfuscated by MoonSec V3 with Maximum Security, Anti-Tamper, Constant Security And Joker Obfuscater V0.10.0
+   --// This File Was Obfuscated by MoonSec V3 with Maximum Security, Anti-Tamper, Constant Security And Boronide Obfuscater
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
 ]]
 --// Loadstring:
-loadstring(game:HttpGet("https://github.com/user-attachments/files/16369161/Protected_1625533462501910.txt", true))();
+loadstring(game:HttpGet("https://github.com/user-attachments/files/16389043/Protected_9356240621419564.txt", true))();
 --// Once Again, Please do Not Use This Loadstring. Use The Current Loadstring.
 
 else
