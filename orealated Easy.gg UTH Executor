@@ -19,7 +19,7 @@ local function check()
             "SendNotification",
             {
                 Title = "[ UTH Executor Already Executed ]",
-                Text = "Ultimate Trolling Hub Has Already Been Executed",
+                Text = "Ultimate Trolling Executor Has Already Been Executed",
                 Button1 = "Execute Again",
                 Button2 = "Don't Execute",
                 Callback = bind
