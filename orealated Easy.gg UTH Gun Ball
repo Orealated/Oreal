@@ -1,0 +1,31 @@
+_G.Itzexecuted = _G.Itzexecuted or false
+
+local function check()
+    if not _G.Itzexecuted then
+        loadstring(game:HttpGet("https://github.com/user-attachments/files/16479425/output-ZJ6pWPi.txt", true))()
+        _G.Itzexecuted = true
+    else
+        local bind = Instance.new("BindableFunction")
+        bind.OnInvoke = function(buttonClicked)
+            if buttonClicked == "Execute Again" then
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16479425/output-ZJ6pWPi.txt", true))(
+
+                )
+                _G.Itzexecuted = true
+            end
+        end
+
+        game:GetService("StarterGui"):SetCore(
+            "SendNotification",
+            {
+                Title = "[ UTH Tower of Jump Script ]",
+                Text = "UTH Tower of Jump Script Has Already Been Executed",
+                Button1 = "Execute Again",
+                Button2 = "Don't Execute",
+                Callback = bind
+            }
+        )
+    end
+end
+
+check()
