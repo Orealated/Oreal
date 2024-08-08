@@ -2,13 +2,13 @@ _G.Itzexecuted = _G.Itzexecuted or false
 
 local function check()
     if not _G.Itzexecuted then
-        loadstring(game:HttpGet("https://github.com/user-attachments/files/16476994/output-n0NqtD7.txt", true))()
+        loadstring(game:HttpGet("https://github.com/user-attachments/files/16547903/output-gTPbuVa.txt", true))()
         _G.Itzexecuted = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16476994/output-n0NqtD7.txt", true))(
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16547903/output-gTPbuVa.txt", true))(
 
                 )
                 _G.Itzexecuted = true
