@@ -1,1 +1,5 @@
+--// what u doing here this is a very old version of this script here's the new one:
+getgenv().ActivateTheUltimateTrolly = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20UTH%20Loader", true))();
+
 loadstring(game:HttpGet("https://pastefy.app/oKlCqFiL/raw"))();
