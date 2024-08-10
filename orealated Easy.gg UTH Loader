@@ -5,17 +5,48 @@ if getgenv().ActivateTheUltimateTrolly then
 --[[
    - Orealation: QP is Cool Like You! -
    --// [Made by Orealated, Thanks to All Supporters]
-   --// Version: V2.1
+   --// Version: V2.3
    --// Status: 🟢 || Stable
    --// Total Number of Games Supported: 33
-   --// Total Number of Scripts: 209
+   --// Total Number of Normal Scripts: 213
+   --// Total Number of Built-in Scripts: 5
    --// Note: This Hub Automatically Updates ✅
-   --// This File Was Obfuscated by MoonSec V3 with Maximum Security, Anti-Tamper, Constant Security And Boronide Obfuscater
+   --// This File Was Obfuscated With Boronide Obfuscater And MoonSec V3 With Maximum Security, Anti-Tamper And Constant Security.
    --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
 ]]
---// Loadstring:
-loadstring(game:HttpGet("https://github.com/user-attachments/files/16389043/Protected_9356240621419564.txt", true))();
---// Once Again, Please do Not Use This Loadstring. Use The Current Loadstring.
+--// Code Block to Execute The Script:
+_G.Itzexecuted = _G.Itzexecuted or false
+
+local function check()
+    if not _G.Itzexecuted then
+        loadstring(game:HttpGet("https://github.com/user-attachments/files/16569726/output-f5Xk5NK.txt", true))()
+        _G.Itzexecuted = true
+    else
+        local bind = Instance.new("BindableFunction")
+        bind.OnInvoke = function(buttonClicked)
+            if buttonClicked == "Execute Again" then
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16569726/output-f5Xk5NK.txt", true))(
+
+                )
+                _G.Itzexecuted = true
+            end
+        end
+
+        game:GetService("StarterGui"):SetCore(
+            "SendNotification",
+            {
+                Title = "[ UTH Already Executed ]",
+                Text = "Ultimate Trolling Hub Has Already Been Executed",
+                Button1 = "Execute Again",
+                Button2 = "Don't Execute",
+                Callback = bind
+            }
+        )
+    end
+end
+
+check()
+--// Once Again, Please do Not Use This Code Block. Use The Current Loadstring.
 
 else
     local bombasitcsideeye =
