@@ -57,7 +57,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/
         "SendNotification",
         {
             Title = "[ New Loadstring Copied ]",
-            Text = ":] Please use the new loadstring to continue using my Hub :]",
+            Text = ":] Please Use The New Loadstring to Continue Using my Hub :]",
 Duration = 20
         }
     )
