@@ -12,7 +12,7 @@ if getgenv().ActivateTheUltimateTrolly then
    --// Total Number of Built-in Scripts: 5
    --// Note: This Hub Automatically Updates ✅
    --// This File Was Obfuscated With Boronide Obfuscater And MoonSec V3 With Maximum Security, Anti-Tamper And Constant Security.
-   --// https://youtu.be/6vUGYf46-HU?si=BZqOowvoUDsfyYKW Scary, right?
+   --// Free to Sked Code Block Because Simple.
 ]]
 --// Code Block to Execute The Script:
 _G.Itzexecuted = _G.Itzexecuted or false
