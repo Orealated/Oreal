@@ -16,8 +16,8 @@ local function check()
         game:GetService("StarterGui"):SetCore(
             "SendNotification",
             {
-                Title = "[ UTH Color Block Race Script Already Executed ]",
-                Text = "UTH Color Block Race Script Has Already Been Executed",
+                Title = "[ UTH Gun Ball Script Already Executed ]",
+                Text = "UTH Gun Ball Script Has Already Been Executed",
                 Button1 = "Execute Again",
                 Button2 = "Don't Execute",
                 Callback = bind
