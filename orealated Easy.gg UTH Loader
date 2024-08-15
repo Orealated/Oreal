@@ -15,20 +15,18 @@ if getgenv().ActivateTheUltimateTrolly then
    --// Free to Sked Code Block Because Simple.
 ]]
 --// Code Block to Execute The Script:
-_G.Itzexecuted = _G.Itzexecuted or false
+_G["Ultimate Trolling Hub Loader"] = _G["Ultimate Trolling Hub Loader"] or false
 
 local function check()
-    if not _G.Itzexecuted then
+    if not _G["Ultimate Trolling Hub Loader"] then
         loadstring(game:HttpGet("https://github.com/user-attachments/files/16623923/UTH-Loader.txt", true))()
-        _G.Itzexecuted = true
+        _G["Ultimate Trolling Hub Loader"] = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16623923/UTH-Loader.txt", true))(
-
-                )
-                _G.Itzexecuted = true
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16623923/UTH-Loader.txt", true))()
+                _G["Ultimate Trolling Hub Loader"] = true
             end
         end
 
@@ -46,6 +44,7 @@ local function check()
 end
 
 check()
+
 --// Once Again, Please do Not Use This Code Block. Use The Current Loadstring.
 
 else
@@ -58,7 +57,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/
         {
             Title = "[ New Loadstring Copied ]",
             Text = ":] Please Use The New Loadstring to Continue Using my Hub :]",
-Duration = 20
+            Duration = 20
         }
     )
 end
@@ -69,7 +68,7 @@ if not getgenv().ActivateTheUltimateTrolly then
         {
             Title = "[ Set Script to true ]",
             Text = "Set Script to True to Make The Script Work 😡",
-Duration = 20
+            Duration = 20
         }
     )
 end
