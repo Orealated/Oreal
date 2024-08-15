@@ -1,25 +1,23 @@
-_G.Itzexecuted = _G.Itzexecuted or false
+_G.SkibidiGunBalles = _G.SkibidiGunBalles or false
 
 local function check()
-    if not _G.Itzexecuted then
-        loadstring(game:HttpGet("https://github.com/user-attachments/files/16599456/output-y988eQq.txt", true))()
-        _G.Itzexecuted = true
+    if not _G.SkibidiGunBalles then
+        loadstring(game:HttpGet("https://github.com/user-attachments/files/16599473/output-y988eQq.txt", true))()
+        _G.SkibidiGunBalles = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16599456/output-y988eQq.txt", true))(
-
-                )
-                _G.Itzexecuted = true
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16599473/output-y988eQq.txt", true))()
+                _G.SkibidiGunBalles = true
             end
         end
 
         game:GetService("StarterGui"):SetCore(
             "SendNotification",
             {
-                Title = "[ UTH Gun Ball Script Already Executed ]",
-                Text = "UTH Gun Ball Script Has Already Been Executed",
+                Title = "[ UTH Color Block Race Script Already Executed ]",
+                Text = "UTH Color Block Race Script Has Already Been Executed",
                 Button1 = "Execute Again",
                 Button2 = "Don't Execute",
                 Callback = bind
