@@ -1,17 +1,15 @@
-_G.Itzexecuted = _G.Itzexecuted or false
+_G["ik_man_I'm_goinina_fall_gimme_mea_money_eyyyy"] = _G["ik_man_I'm_goinina_fall_gimme_mea_money_eyyyy"] or false
 
 local function check()
-    if not _G.Itzexecuted then
+    if not _G["ik_man_I'm_goinina_fall_gimme_mea_money_eyyyy"] then
         loadstring(game:HttpGet("https://github.com/user-attachments/files/16599467/output-y988eQq.txt", true))()
-        _G.Itzexecuted = true
+        _G["ik_man_I'm_goinina_fall_gimme_mea_money_eyyyy"] = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16599467/output-y988eQq.txt", true))(
-
-                )
-                _G.Itzexecuted = true
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16599467/output-y988eQq.txt", true))()
+                _G["ik_man_I'm_goinina_fall_gimme_mea_money_eyyyy"] = true
             end
         end
 
