@@ -2,13 +2,13 @@ _G.SkibidiGunBalles = _G.SkibidiGunBalles or false
 
 local function check()
     if not _G.SkibidiGunBalles then
-        loadstring(game:HttpGet("https://github.com/user-attachments/files/16624280/output-jt0giVW.txt", true))()
+        loadstring(game:HttpGet("https://github.com/user-attachments/files/16636014/output-jt0giVW.txt", true))()
         _G.SkibidiGunBalles = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16624280/output-jt0giVW.txt", true))()
+                loadstring(game:HttpGet("https://github.com/user-attachments/files/16636014/output-jt0giVW.txt", true))()
                 _G.SkibidiGunBalles = true
             end
         end
