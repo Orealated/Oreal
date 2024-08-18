@@ -47,19 +47,6 @@ check()
 
 --// Once Again, Please do Not Use This Code Block. Use The Current Loadstring.
 
-else
-    local bombasitcsideeye =
-        [[getgenv().ActivateTheUltimateTrolly = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20UTH%20Loader", true))();]]
-    setclipboard(bombasitcsideeye)
-    game:GetService("StarterGui"):SetCore(
-        "SendNotification",
-        {
-            Title = "[ New Loadstring Copied ]",
-            Text = ":] Please Use The New Loadstring to Continue Using my Hub :]",
-            Duration = 20
-        }
-    )
 end
 
 if not getgenv().ActivateTheUltimateTrolly then
