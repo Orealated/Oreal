@@ -1,51 +1,26 @@
---// Notice: Please do Not Use This File. Please Use The Loadstring.
-
 if getgenv().ActivateTheUltimateTrolly then
 
---[[
-   - Orealation: QP is Cool Like You! -
-   --// [Made by Orealated, Thanks to All Supporters]
-   --// Version: V2.3
-   --// Status: 🟢 || Stable
-   --// Total Number of Games Supported: 33
-   --// Total Number of Normal Scripts: 213
-   --// Total Number of Built-in Scripts: 5
-   --// Note: This Hub Automatically Updates ✅
-   --// This File Was Obfuscated With Boronide Obfuscater And MoonSec V3 With Maximum Security, Anti-Tamper And Constant Security.
-   --// Free to Sked Code Block Because Simple.
-]]
---// Code Block to Execute The Script:
-_G["Ultimate Trolling Hub Loader"] = _G["Ultimate Trolling Hub Loader"] or false
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "[ New Loadstring Copied ]",
+	Text = "Please Use The New Loadstring Copied in Your Clipboard",
+	Duration = math.huge
+})
 
-local function check()
-    if not _G["Ultimate Trolling Hub Loader"] then
-        loadstring(game:HttpGet("https://github.com/user-attachments/files/16623923/UTH-Loader.txt", true))()
-        _G["Ultimate Trolling Hub Loader"] = true
-    else
-        local bind = Instance.new("BindableFunction")
-        bind.OnInvoke = function(buttonClicked)
-            if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16623923/UTH-Loader.txt", true))()
-                _G["Ultimate Trolling Hub Loader"] = true
-            end
-        end
+local script = [[
+getgenv().ActivateTheUltimateTrolly = true
+local a, b, c, d, e = loadstring, request or http_request or (http and http.request) or (syn and syn.request), assert, tostring, "https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20Ultimate%20Trolling%20Hub%20Loader"
+c(a and b, "[ Executor not Supported ]")
+a(game:HttpGet(e, true))();
 
-        game:GetService("StarterGui"):SetCore(
-            "SendNotification",
-            {
-                Title = "[ UTH Already Executed ]",
-                Text = "Ultimate Trolling Hub Has Already Been Executed",
-                Button1 = "Execute Again",
-                Button2 = "Don't Execute",
-                Callback = bind
-            }
-        )
-    end
-end
+--// If Your Executor Isn't Supported Then That Means
+Some of The Scripts Inside The Hub Will Not Work
+For Your Executor
 
-check()
+--// Use This if it Isnt Working:
+getgenv().ActivateTheUltimateTrolly = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/orealated%20Easy.gg%20Ultimate%20Trolling%20Hub%20Loader", true))();]]
 
---// Once Again, Please do Not Use This Code Block. Use The Current Loadstring.
+setclipboard(script)
 
 else
     local bombasitcsideeye =
@@ -57,17 +32,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/
         {
             Title = "[ New Loadstring Copied ]",
             Text = ":] Please Use The New Loadstring to Continue Using my Hub :]",
-            Duration = 20
-        }
-    )
-end
-
-if not getgenv().ActivateTheUltimateTrolly then
-    game:GetService("StarterGui"):SetCore(
-        "SendNotification",
-        {
-            Title = "[ Set Script to true ]",
-            Text = "Set Script to True to Make The Script Work 😡",
             Duration = 20
         }
     )
