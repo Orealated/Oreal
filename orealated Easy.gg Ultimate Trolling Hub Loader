@@ -19,13 +19,13 @@ _G["Ultimate Trolling Hub Loader"] = _G["Ultimate Trolling Hub Loader"] or false
 
 local function check()
     if not _G["Ultimate Trolling Hub Loader"] then
-        loadstring(game:HttpGet("https://github.com/user-attachments/files/16647667/UTH-Loader.txt", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/output-BoronoideUltimate.txt", true))()
         _G["Ultimate Trolling Hub Loader"] = true
     else
         local bind = Instance.new("BindableFunction")
         bind.OnInvoke = function(buttonClicked)
             if buttonClicked == "Execute Again" then
-                loadstring(game:HttpGet("https://github.com/user-attachments/files/16647667/UTH-Loader.txt", true))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Orealated/Oreal/main/output-BoronoideUltimate.txt", true))()
                 _G["Ultimate Trolling Hub Loader"] = true
             end
         end
