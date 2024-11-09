@@ -3,7 +3,7 @@ if getgenv().ActivateTheUltimateTrolly then
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "[ New Loadstring Copied ]",
-	Text = "Please Use The New Loadstring Copied in Your Clipboard",
+	Text = "Please Use The New Loadstring Copied in Your Clipboard And Make Sure To Read It First",
 	Duration = math.huge
 })
 
