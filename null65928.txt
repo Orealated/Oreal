@@ -1,5 +1,4 @@
--- This File Was Deobfuscated In Null
--- discord.gg/M9Tm9RT7ta
+-- This File Was Deobfuscated | From Orealated
 
 local players = game:GetService("Players")
 local runService = game:GetService("RunService")
