@@ -1,0 +1,1008 @@
+-- This File Was Deobfuscated In Null
+-- discord.gg/M9Tm9RT7ta
+
+local players = game:GetService("Players")
+local runService = game:GetService("RunService")
+local userInputService = game:GetService("UserInputService")
+local virtualInputManager = game:GetService("VirtualInputManager")
+
+if not game:IsLoaded() then
+  game.Loaded:Wait()
+end
+
+local v1 = {
+  Enabled = true,
+  ClassName = "Universal Silent Aim",
+  ToggleKey = "RightAlt",
+  TeamCheck = true,
+  VisibleCheck = false,
+  Wallbang = false,
+  BulletTracers = false,
+  BulletTracerColor = Color3.fromRGB(255, 0, 0),
+  TargetPart = "HumanoidRootPart",
+  SilentAimMethod = "Mouse.Hit/Target",
+  FOVRadius = 140,
+  FOVVisible = true,
+  ShowSilentAimTarget = false,
+  MouseHitPrediction = true,
+  MouseHitPredictionAmount = 0.45,
+  HitChance = 100,
+  HitboxEnabled = false,
+  HitboxHeadSize = 3,
+  TriggerbotEnabled = false,
+  TriggerbotPart = "Head",
+  TriggerbotDelay = 0.02,
+  HighlightESP = false,
+  HighlightColor = Color3.fromRGB(255, 0, 0),
+  TracersESP = false,
+  TracersColor = Color3.fromRGB(255, 255, 255),
+  NameESP = false,
+  NameColor = Color3.fromRGB(255, 255, 0),
+  SpeedEnabled = false,
+  WalkSpeed = 16,
+  JumpEnabled = false,
+  JumpPower = 50,
+  NoclipEnabled = false,
+  InfiniteJumpEnabled = false,
+  TeleportTarget = "",
+}
+
+getgenv().SilentAimSettings = v1
+local currentCamera = workspace.CurrentCamera
+local localPlayer = players.LocalPlayer
+local getMouse = localPlayer:GetMouse()
+local getPlayers = players.GetPlayers
+local worldToScreenPoint = currentCamera.WorldToScreenPoint
+local worldToViewportPoint = currentCamera.WorldToViewportPoint
+local getPartsObscuringTarget = currentCamera.GetPartsObscuringTarget
+local findFirstChild = game.FindFirstChild
+local getMouseLocation = userInputService.GetMouseLocation
+local walkSpeed = 16
+local jumpPower = 50
+local v2 = 0
+local v3 = { Tracers = {}, Names = {} }
+
+players.PlayerRemoving:Connect(function(player)
+  if v3.Tracers[player] then
+    pcall(function() v3.Tracers[player]:Remove() end)
+    v3.Tracers[player] = nil
+  end
+
+  if v3.Names[player] then
+    pcall(function() v3.Names[player]:Remove() end)
+    v3.Names[player] = nil
+  end
+end)
+
+local square = Drawing.new("Square")
+square.Visible = false
+square.ZIndex = 999
+square.Color = Color3.fromRGB(54, 57, 241)
+square.Thickness = 2
+square.Size = Vector2.new(14, 14)
+square.Filled = true
+
+local circle = Drawing.new("Circle")
+circle.Thickness = 1
+circle.NumSides = 100
+circle.Radius = v1.FOVRadius
+circle.Filled = false
+circle.Visible = false
+circle.ZIndex = 999
+circle.Transparency = 1
+circle.Color = Color3.fromRGB(54, 57, 241)
+
+local v4 = {
+  FindPartOnRayWithIgnoreList = {
+    ArgCountRequired = 3,
+    Args = { "Instance", "Ray", "table", "boolean", "boolean" },
+  },
+  FindPartOnRayWithWhitelist = {
+    ArgCountRequired = 3,
+    Args = { "Instance", "Ray", "table", "boolean" },
+  },
+  FindPartOnRay = {
+    ArgCountRequired = 2,
+    Args = { "Instance", "Ray", "Instance", "boolean", "boolean" },
+  },
+  Raycast = {
+    ArgCountRequired = 3,
+    Args = { "Instance", "Vector3", "Vector3", "RaycastParams" },
+  },
+}
+
+function CalculateChance(p1)
+  local v5 = math.floor(p1)
+  return math.floor(Random.new().NextNumber(Random.new(), 0, 1) * 100) / 100 <= v5 / 100
+end
+
+local function f1(p2)
+  local v6, v7 = worldToScreenPoint(currentCamera, p2)
+  return Vector2.new(v6.X, v6.Y), v7
+end
+
+local function f2(p3, p4)
+  return (p4 - p3).Unit * 1000
+end
+
+local function f3(worldPosition, worldPosition2)
+  if not v1.BulletTracers then
+    return
+  end
+
+  if tick() - v2 < 0.08 then
+    return
+  end
+
+  v2 = tick()
+  local attachment = Instance.new("Attachment")
+  local attachment2 = Instance.new("Attachment")
+  attachment.WorldPosition = worldPosition
+  attachment2.WorldPosition = worldPosition2
+  attachment.Parent = workspace.Terrain
+  attachment2.Parent = workspace.Terrain
+
+  local beam = Instance.new("Beam")
+  beam.Attachment0 = attachment
+  beam.Attachment1 = attachment2
+  beam.Color = ColorSequence.new(v1.BulletTracerColor)
+  beam.Width0 = 0.5
+  beam.Width1 = 0.5
+  beam.Texture = "rbxassetid://446111271"
+  beam.TextureSpeed = 2
+  beam.TextureLength = 1
+  beam.LightEmission = 1
+  beam.LightInfluence = 0
+  beam.FaceCamera = true
+  beam.Parent = workspace.Terrain
+
+  task.delay(2.5, function()
+    beam:Destroy()
+    attachment:Destroy()
+    attachment2:Destroy()
+  end)
+end
+
+local function f4(p5, p6)
+  local count = 0
+
+  if #p5 < p6.ArgCountRequired then
+    return false
+  end
+
+  for key, value in next, p5, nil do
+    if typeof(value) == p6.Args[key] then
+      count = count + 1
+    end
+  end
+
+  return count >= p6.ArgCountRequired
+end
+
+local function f5()
+  if userInputService.MouseBehavior == Enum.MouseBehavior.LockCenter then
+    return currentCamera.ViewportSize / 2
+  end
+
+  return getMouseLocation(userInputService)
+end
+
+local f6
+
+local function f7()
+  local fovRadius = v1.FOVRadius
+  local v8 = f5()
+  local v9, v10 = getPlayers(players)
+  local head
+
+  for key2, value2 in next, v9, v10 do
+    if value2 == localPlayer then
+    elseif v1.TeamCheck and value2.Team == localPlayer.Team then
+    else
+      local character = value2.Character
+
+      if not character then
+      elseif v1.VisibleCheck and not f6(value2) then
+      else
+        local v11 = findFirstChild(character, "HumanoidRootPart")
+        local v12 = findFirstChild(character, "Humanoid")
+
+        if not v11 or not v12 or v12.Health <= 0 then
+        else
+          local v13, v14 = f1(v11.Position)
+
+          if not v14 then
+          else
+            local magnitude = (v8 - v13).Magnitude
+
+            if magnitude <= fovRadius then
+              if v1.TargetPart == "Random" then
+                head = character.Head
+              else
+                head = findFirstChild(character, v1.TargetPart) or v11
+              end
+
+              fovRadius = magnitude
+            end
+          end
+        end
+      end
+    end
+  end
+
+  return head
+end
+
+function f6(p7)
+  if v1.Wallbang then
+    return true
+  else
+    local character2 = p7.Character
+    local character3 = localPlayer.Character
+
+    if not (character2 and character3) then
+      return false
+    else
+      local v15 = findFirstChild(
+        character2, v1.TargetPart ~= "Random" and v1.TargetPart or "HumanoidRootPart"
+      ) or findFirstChild(character2, "HumanoidRootPart")
+
+      if not v15 then
+        return false
+      end
+
+      return #getPartsObscuringTarget(currentCamera, { v15.Position, character3, character2 }, {
+        character3, character2,
+      }) == 0
+    end
+  end
+end
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua"))()
+local themeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/ThemeManager.lua"))()
+local saveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/SaveManager.lua"))()
+
+local window = library:CreateWindow({
+  Title = "W-WaR1Q | made by bashar",
+  Center = true,
+  AutoShow = true,
+  TabPadding = 10,
+  MenuFadeTime = 0.2,
+  Size = UDim2.new(0, 862, 0, 700),
+})
+
+local v16 = {
+  Main = window:AddTab("Main Settings"),
+  ESP = window:AddTab("ESP"),
+  ["UI Settings"] = window:AddTab("UI Settings"),
+}
+
+local silentAimConfig = v16.Main:AddLeftGroupbox("Silent Aim Config")
+
+silentAimConfig:AddToggle("aim_Enabled", { Text = "Enable Silent Aim", Default = v1.Enabled }):AddKeyPicker("aim_KeyPicker", {
+  Default = v1.ToggleKey,
+  SyncToggleState = true,
+  Mode = "Toggle",
+  Text = "Silent Aim",
+  NoUI = false,
+})
+
+Toggles.aim_Enabled:OnChanged(function() v1.Enabled = Toggles.aim_Enabled.Value end)
+
+silentAimConfig:AddToggle("TeamCheck", { Text = "Team Check", Default = v1.TeamCheck }):OnChanged(function()
+  v1.TeamCheck = Toggles.TeamCheck.Value
+end)
+
+silentAimConfig:AddToggle("VisibleCheck", { Text = "Visible Check", Default = v1.VisibleCheck }):OnChanged(function()
+  v1.VisibleCheck = Toggles.VisibleCheck.Value
+end)
+
+silentAimConfig:AddToggle("Wallbang", {
+  Text = "Wall Penetration (Wallbang)",
+  Default = v1.Wallbang,
+}):OnChanged(function()
+  v1.Wallbang = Toggles.Wallbang.Value
+end)
+
+silentAimConfig:AddToggle("BulletTracers", {
+  Text = "Enable Bullet Tracers",
+  Default = v1.BulletTracers,
+}):AddColorPicker("BulletTracerColor", {
+  Default = v1.BulletTracerColor,
+  Title = "Tracer Color",
+})
+
+Toggles.BulletTracers:OnChanged(function() v1.BulletTracers = Toggles.BulletTracers.Value end)
+
+Options.BulletTracerColor:OnChanged(function()
+  v1.BulletTracerColor = Options.BulletTracerColor.Value
+end)
+
+silentAimConfig:AddDropdown("TargetPart", {
+  Values = { "Head", "HumanoidRootPart", "Random" },
+  Default = 2,
+  Multi = false,
+  Text = "Target Part",
+}):OnChanged(function()
+  v1.TargetPart = Options.TargetPart.Value
+end)
+
+silentAimConfig:AddDropdown("Method", {
+  Values = {
+    "Raycast", "FindPartOnRay", "FindPartOnRayWithWhitelist", "FindPartOnRayWithIgnoreList",
+    "Mouse.Hit/Target",
+  },
+  Default = 5,
+  Multi = false,
+  Text = "Silent Aim Method",
+}):OnChanged(function()
+  v1.SilentAimMethod = Options.Method.Value
+end)
+
+silentAimConfig:AddSlider("HitChance", {
+  Text = "Hit Chance",
+  Default = v1.HitChance,
+  Min = 0,
+  Max = 100,
+  Rounding = 0,
+  Compact = false,
+}):OnChanged(function()
+  v1.HitChance = Options.HitChance.Value
+end)
+
+local hitboxExpander = v16.Main:AddLeftGroupbox("Hitbox Expander")
+
+hitboxExpander:AddToggle("HitboxEnabled", { Text = "Enable Hitbox", Default = v1.HitboxEnabled }):OnChanged(function()
+  v1.HitboxEnabled = Toggles.HitboxEnabled.Value
+end)
+
+hitboxExpander:AddSlider("HitboxSize", {
+  Text = "Head Size Amount",
+  Default = v1.HitboxHeadSize,
+  Min = 1,
+  Max = 15,
+  Rounding = 1,
+  Compact = false,
+}):OnChanged(function()
+  v1.HitboxHeadSize = Options.HitboxSize.Value
+end)
+
+local triggerbot = v16.Main:AddRightGroupbox("Triggerbot")
+
+triggerbot:AddToggle("TriggerEnabled", {
+  Text = "Enable Triggerbot",
+  Default = v1.TriggerbotEnabled,
+}):OnChanged(function()
+  v1.TriggerbotEnabled = Toggles.TriggerEnabled.Value
+end)
+
+triggerbot:AddDropdown("TriggerPart", {
+  Values = { "Head", "HumanoidRootPart", "Any" },
+  Default = 1,
+  Multi = false,
+  Text = "Target Part",
+}):OnChanged(function()
+  v1.TriggerbotPart = Options.TriggerPart.Value
+end)
+
+triggerbot:AddSlider("TriggerDelay", {
+  Text = "Trigger Delay (s)",
+  Default = v1.TriggerbotDelay,
+  Min = 0,
+  Max = 0.5,
+  Rounding = 2,
+  Compact = false,
+}):OnChanged(function()
+  v1.TriggerbotDelay = Options.TriggerDelay.Value
+end)
+
+local fovVisuals = v16.Main:AddRightGroupbox("FOV & Visuals")
+
+fovVisuals:AddToggle("FOVVisible", { Text = "Show FOV Circle", Default = v1.FOVVisible }):AddColorPicker("FOVColor", {
+  Default = Color3.fromRGB(54, 57, 241),
+  Title = "FOV Color",
+})
+
+Toggles.FOVVisible:OnChanged(function()
+  v1.FOVVisible = Toggles.FOVVisible.Value
+  circle.Visible = Toggles.FOVVisible.Value
+end)
+
+Options.FOVColor:OnChanged(function() circle.Color = Options.FOVColor.Value end)
+
+fovVisuals:AddSlider("FOVRadius", {
+  Text = "FOV Radius",
+  Default = v1.FOVRadius,
+  Min = 0,
+  Max = 500,
+  Rounding = 0,
+  Compact = false,
+}):OnChanged(function()
+  v1.FOVRadius = Options.FOVRadius.Value
+  circle.Radius = Options.FOVRadius.Value
+end)
+
+fovVisuals:AddToggle("ShowTarget", {
+  Text = "Show Target Indicator",
+  Default = v1.ShowSilentAimTarget,
+}):OnChanged(function()
+  v1.ShowSilentAimTarget = Toggles.ShowTarget.Value
+end)
+
+local prediction = v16.Main:AddRightGroupbox("Prediction")
+
+prediction:AddToggle("Prediction", {
+  Text = "Enable Prediction",
+  Default = v1.MouseHitPrediction,
+}):OnChanged(function()
+  v1.MouseHitPrediction = Toggles.Prediction.Value
+end)
+
+prediction:AddSlider("PredAmount", {
+  Text = "Prediction Amount",
+  Default = v1.MouseHitPredictionAmount,
+  Min = 0.01,
+  Max = 1,
+  Rounding = 3,
+  Compact = false,
+}):OnChanged(function()
+  v1.MouseHitPredictionAmount = Options.PredAmount.Value
+end)
+
+local visualESPFeatures = v16.ESP:AddLeftGroupbox("Visual ESP Features")
+
+visualESPFeatures:AddToggle("HighlightESP", {
+  Text = "Enable Highlight ESP",
+  Default = v1.HighlightESP,
+}):AddColorPicker("HighlightColor", {
+  Default = v1.HighlightColor,
+  Title = "Highlight Color",
+})
+
+Toggles.HighlightESP:OnChanged(function() v1.HighlightESP = Toggles.HighlightESP.Value end)
+Options.HighlightColor:OnChanged(function() v1.HighlightColor = Options.HighlightColor.Value end)
+
+visualESPFeatures:AddToggle("TracersESP", { Text = "Enable Tracers", Default = v1.TracersESP }):AddColorPicker("TracersColor", {
+  Default = v1.TracersColor,
+  Title = "Tracers Color",
+})
+
+Toggles.TracersESP:OnChanged(function() v1.TracersESP = Toggles.TracersESP.Value end)
+Options.TracersColor:OnChanged(function() v1.TracersColor = Options.TracersColor.Value end)
+
+visualESPFeatures:AddToggle("NameESP", { Text = "Enable Name ESP", Default = v1.NameESP }):AddColorPicker("NameColor", {
+  Default = v1.NameColor,
+  Title = "Name Color",
+})
+
+Toggles.NameESP:OnChanged(function() v1.NameESP = Toggles.NameESP.Value end)
+Options.NameColor:OnChanged(function() v1.NameColor = Options.NameColor.Value end)
+
+local movements = v16.ESP:AddRightGroupbox("Movements")
+
+movements:AddToggle("SpeedEnabled", { Text = "Enable WalkSpeed", Default = v1.SpeedEnabled }):OnChanged(function()
+  v1.SpeedEnabled = Toggles.SpeedEnabled.Value
+
+  if not Toggles.SpeedEnabled.Value then
+    local character4 = localPlayer.Character
+    local humanoid = character4 and character4:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+      humanoid.WalkSpeed = walkSpeed
+    end
+  end
+end)
+
+movements:AddSlider("WalkSpeedSlider", {
+  Text = "Speed Amount",
+  Default = 16,
+  Min = 16,
+  Max = 5000,
+  Rounding = 0,
+  Compact = false,
+}):OnChanged(function()
+  v1.WalkSpeed = Options.WalkSpeedSlider.Value
+end)
+
+movements:AddToggle("JumpEnabled", { Text = "Enable JumpPower", Default = v1.JumpEnabled }):OnChanged(function()
+  v1.JumpEnabled = Toggles.JumpEnabled.Value
+  if not Toggles.JumpEnabled.Value then
+    local character5 = localPlayer.Character
+    local humanoid2 = character5 and character5:FindFirstChildOfClass("Humanoid")
+
+    if humanoid2 then
+      humanoid2.JumpPower = jumpPower
+    end
+  end
+end)
+
+movements:AddSlider("JumpPowerSlider", {
+  Text = "Jump Power Amount",
+  Default = 50,
+  Min = 50,
+  Max = 10000,
+  Rounding = 0,
+  Compact = false,
+}):OnChanged(function()
+  v1.JumpPower = Options.JumpPowerSlider.Value
+end)
+
+movements:AddToggle("NoclipEnabled", { Text = "Enable Noclip", Default = v1.NoclipEnabled }):OnChanged(function()
+  v1.NoclipEnabled = Toggles.NoclipEnabled.Value
+end)
+
+movements:AddToggle("InfiniteJumpEnabled", {
+  Text = "Enable Infinite Jump",
+  Default = v1.InfiniteJumpEnabled,
+}):OnChanged(function()
+  v1.InfiniteJumpEnabled = Toggles.InfiniteJumpEnabled.Value
+end)
+
+local function f8()
+  local v17 = {}
+  local v18, v19 = getPlayers(players)
+
+  for key3, value3 in next, v18, v19 do
+    if value3 ~= localPlayer then
+      table.insert(v17, value3.Name)
+    end
+  end
+
+  if #v17 == 0 then
+    table.insert(v17, "None")
+  end
+
+  return v17
+end
+
+local addDropdown = movements:AddDropdown("TeleportTarget", {
+  Values = f8(),
+  Default = 1,
+  Multi = false,
+  Text = "Select Player",
+})
+
+addDropdown:OnChanged(function() v1.TeleportTarget = Options.TeleportTarget.Value end)
+
+movements:AddButton("Teleport", function()
+  local findFirstChild2 = players:FindFirstChild(v1.TeleportTarget)
+
+  if findFirstChild2 and findFirstChild2.Character
+    and findFirstChild2.Character:FindFirstChild("HumanoidRootPart") then
+    if localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart") then
+      localPlayer.Character.HumanoidRootPart.CFrame = findFirstChild2.Character.HumanoidRootPart.CFrame
+    end
+  end
+end)
+
+players.PlayerAdded:Connect(function() addDropdown:SetValues(f8()) end)
+players.PlayerRemoving:Connect(function() addDropdown:SetValues(f8()) end)
+
+v16["UI Settings"]:AddLeftGroupbox("Menu Keybind"):AddLabel("Toggle Menu Key"):AddKeyPicker("MenuToggleKey", {
+  Default = "RightShift",
+  NoUI = true,
+  Text = "Toggle Menu",
+})
+
+library.ToggleKeybind = Options.MenuToggleKey
+themeManager:SetLibrary(library)
+
+saveManager:SetLibrary(library)
+saveManager:IgnoreThemeSettings()
+saveManager:SetIgnoreIndexes({ "aim_KeyPicker", "MenuToggleKey" })
+
+themeManager:SetFolder("UniversalSilentAim")
+
+saveManager:SetFolder("UniversalSilentAim/" .. tostring(game.PlaceId))
+saveManager:BuildConfigSection(v16["UI Settings"])
+
+themeManager:ApplyToTab(v16["UI Settings"])
+
+local function f9(p8)
+  local waitForChild = p8:WaitForChild("Humanoid", 5)
+
+  if waitForChild then
+    walkSpeed = waitForChild.WalkSpeed
+    jumpPower = waitForChild.JumpPower
+  end
+end
+
+if localPlayer.Character then
+  f9(localPlayer.Character)
+end
+
+localPlayer.CharacterAdded:Connect(f9)
+
+userInputService.JumpRequest:Connect(function()
+  if v1.InfiniteJumpEnabled then
+    local character6 = localPlayer.Character
+    local humanoid3 = character6 and character6:FindFirstChildOfClass("Humanoid")
+
+    if humanoid3 then
+      humanoid3:ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+  end
+end)
+
+runService.Stepped:Connect(function()
+  local character7 = localPlayer.Character
+
+  if character7 then
+    local humanoid4 = character7:FindFirstChildOfClass("Humanoid")
+
+    if humanoid4 then
+      if v1.SpeedEnabled then
+        humanoid4.WalkSpeed = v1.WalkSpeed
+      end
+
+      if v1.JumpEnabled then
+        humanoid4.UseJumpPower = true
+        humanoid4.JumpPower = v1.JumpPower
+      end
+    end
+
+    if v1.NoclipEnabled then
+      local v20, v21 = character7:GetChildren()
+
+      for key4, value4 in next, v20, v21 do
+        if value4:IsA("BasePart") then
+          value4.CanCollide = false
+        end
+      end
+    end
+  end
+end)
+
+task.spawn(function()
+  local v22 = false
+
+  while task.wait() do
+    if v1.TriggerbotEnabled then
+      local vector = userInputService.MouseBehavior == Enum.MouseBehavior.LockCenter and Vector2.new(
+        currentCamera.ViewportSize.X / 2, currentCamera.ViewportSize.Y / 2
+      ) or getMouseLocation(userInputService)
+
+      local viewportPointToRay = currentCamera:ViewportPointToRay(vector.X, vector.Y)
+
+      local raycastParams = RaycastParams.new()
+      raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+      raycastParams.FilterDescendantsInstances = { localPlayer.Character, currentCamera }
+
+      local raycast = workspace:Raycast(
+        viewportPointToRay.Origin, viewportPointToRay.Direction * 1000, raycastParams
+      )
+
+      if raycast and raycast.Instance then
+        local instance = raycast.Instance
+        local model = instance:FindFirstAncestorOfClass("Model")
+
+        if model and model:FindFirstChildOfClass("Humanoid") then
+          local getPlayerFromCharacter = players:GetPlayerFromCharacter(model)
+
+          if getPlayerFromCharacter and getPlayerFromCharacter ~= localPlayer then
+            if not (v1.TeamCheck and getPlayerFromCharacter.Team == localPlayer.Team) then
+              local v23 = false
+
+              if v1.TriggerbotPart == "Any" then
+                v23 = true
+              elseif instance.Name == v1.TriggerbotPart then
+                v23 = true
+              end
+
+              if v23 and not v22 then
+                if v1.TriggerbotDelay > 0 then
+                  task.wait(v1.TriggerbotDelay)
+                end
+
+                virtualInputManager:SendMouseButtonEvent(vector.X, vector.Y, 0, true, game, 0)
+
+                local tool = localPlayer.Character
+                  and localPlayer.Character:FindFirstChildOfClass("Tool")
+
+                if tool then
+                  pcall(function() tool:Activate() end)
+                end
+
+                task.wait(0.05)
+                virtualInputManager:SendMouseButtonEvent(vector.X, vector.Y, 0, false, game, 0)
+                v22 = false
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end)
+
+runService.RenderStepped:Connect(function()
+  if v1.Enabled and v1.ShowSilentAimTarget then
+    local v24 = f7()
+
+    if v24 then
+      local v25, visible = worldToViewportPoint(currentCamera, v24.Position)
+      square.Visible = visible
+      square.Position = Vector2.new(v25.X, v25.Y)
+    else
+      square.Visible = false
+    end
+  else
+    square.Visible = false
+  end
+
+  if v1.FOVVisible then
+    circle.Visible = true
+    circle.Position = f5()
+  else
+    circle.Visible = false
+  end
+
+  local v26, v27 = getPlayers(players)
+
+  for key5, value5 in next, v26, v27 do
+    if value5 == localPlayer then
+    else
+      local character8 = value5.Character
+      local v28 = character8 and findFirstChild(character8, "Humanoid")
+      local v29 = character8 and v28 and v28.Health > 0
+
+      if v1.HitboxEnabled and v29 and character8:FindFirstChild("Head") then
+        pcall(function()
+          local head2 = character8.Head
+          local decal = head2:FindFirstChildOfClass("Decal")
+
+          head2.Size = Vector3.new(v1.HitboxHeadSize, v1.HitboxHeadSize, v1.HitboxHeadSize)
+          head2.Transparency = 0
+          head2.CanCollide = false
+          head2.Massless = true
+
+          local specialMesh = head2:FindFirstChildOfClass("SpecialMesh")
+
+          if not specialMesh then
+            specialMesh = Instance.new("SpecialMesh", head2)
+          end
+
+          specialMesh.MeshType = Enum.MeshType.Head
+          local v30 = 1.25 / v1.HitboxHeadSize
+          specialMesh.Scale = Vector3.new(v30, v30, v30)
+
+          if decal then
+            decal.Transparency = 0
+
+            if decal.Parent ~= head2 then
+              decal.Parent = head2
+            end
+          end
+        end)
+      end
+
+      if character8 then
+        local wHighlight = character8:FindFirstChild("W_Highlight")
+
+        if v1.HighlightESP and v29 then
+          if not wHighlight then
+            wHighlight = Instance.new("Highlight")
+            wHighlight.Name = "W_Highlight"
+            wHighlight.Parent = character8
+          end
+
+          wHighlight.Enabled = true
+          wHighlight.FillColor = v1.HighlightColor
+          wHighlight.OutlineColor = v1.HighlightColor
+        elseif wHighlight then
+          wHighlight.Enabled = false
+        end
+      end
+
+      if v3.Names[value5] then
+        local v31 = v3.Names[value5]
+
+        if v1.NameESP and v29 and character8:FindFirstChild("Head") then
+          local v32, v33 = worldToViewportPoint(
+            currentCamera, character8.Head.Position + Vector3.new(0, 1.5, 0)
+          )
+
+          if v33 then
+            v31.Position = Vector2.new(v32.X, v32.Y)
+            v31.Color = v1.NameColor
+            v31.Text = value5.Name
+            v31.Visible = true
+          else
+            v31.Visible = false
+          end
+        else
+          v31.Visible = false
+        end
+      elseif v29 and character8:FindFirstChild("Head") then
+        local text = Drawing.new("Text")
+        text.Size = 18
+        text.Center = true
+        text.Outline = true
+        text.Visible = false
+
+        v3.Names[value5] = text
+      end
+
+      if v3.Tracers[value5] then
+        local v34 = v3.Tracers[value5]
+
+        if v1.TracersESP and v29 and character8:FindFirstChild("HumanoidRootPart") then
+          local v35, v36 = worldToViewportPoint(
+            currentCamera, character8.HumanoidRootPart.Position
+          )
+
+          if v36 then
+            v34.From = Vector2.new(
+              currentCamera.ViewportSize.X / 2, currentCamera.ViewportSize.Y
+            )
+
+            v34.To = Vector2.new(v35.X, v35.Y)
+            v34.Color = v1.TracersColor
+            v34.Visible = true
+          else
+            v34.Visible = false
+          end
+        else
+          v34.Visible = false
+        end
+      elseif v29 and character8:FindFirstChild("HumanoidRootPart") then
+        local line = Drawing.new("Line")
+        line.Thickness = 1.5
+        line.Visible = false
+
+        v3.Tracers[value5] = line
+      end
+    end
+  end
+end)
+
+local v37
+
+v37 = hookmetamethod(game, "__namecall", newcclosure(function(...)
+  local v38 = getnamecallmethod()
+  local v39 = { ... }
+  local v40 = v39[1]
+
+  if v1.Enabled and v40 == workspace and not checkcaller() and CalculateChance(v1.HitChance) then
+    if v38 == "FindPartOnRayWithIgnoreList" and v1.SilentAimMethod == v38 then
+      if f4(v39, v4.FindPartOnRayWithIgnoreList) then
+        local v41 = f7()
+
+        if v41 then
+          if v1.Wallbang and v39[3] then
+            table.insert(v39[3], workspace)
+          end
+
+          local v42 = f2(v39[2].Origin, v41.Position)
+          v39[2] = Ray.new(v39[2].Origin, v42)
+          f3(v39[2].Origin, v41.Position)
+          return v37(unpack(v39))
+        end
+      end
+
+      return v37(...)
+    elseif v38 == "FindPartOnRayWithWhitelist" and v1.SilentAimMethod == v38 then
+      if f4(v39, v4.FindPartOnRayWithWhitelist) then
+        local v43 = f7()
+
+        if v43 then
+          local v44 = f2(v39[2].Origin, v43.Position)
+          v39[2] = Ray.new(v39[2].Origin, v44)
+          f3(v39[2].Origin, v43.Position)
+          return v37(unpack(v39))
+        end
+      end
+
+      return v37(...)
+    else
+      if (v38 == "FindPartOnRay" or v38 == "findPartOnRay")
+        and v1.SilentAimMethod:lower() == v38:lower() then
+        if f4(v39, v4.FindPartOnRay) then
+          local v45 = f7()
+
+          if v45 then
+            local v46 = f2(v39[2].Origin, v45.Position)
+            v39[2] = Ray.new(v39[2].Origin, v46)
+            f3(v39[2].Origin, v45.Position)
+            return v37(unpack(v39))
+          end
+        end
+
+        return v37(...)
+      end
+
+      if v38 == "Raycast" and v1.SilentAimMethod == v38 then
+        if f4(v39, v4.Raycast) then
+          local v47 = f7()
+
+          if v47 then
+            if v1.Wallbang and v39[4] then
+              v39[4].FilterType = Enum.RaycastFilterType.Include
+              v39[4].FilterDescendantsInstances = { v47.Parent }
+            end
+
+            v39[3] = f2(v39[2], v47.Position)
+            f3(v39[2], v47.Position)
+            return v37(unpack(v39))
+          end
+        end
+
+        return v37(...)
+      end
+
+      return v37(...)
+    end
+  else
+    return v37(...)
+  end
+end))
+
+local v48
+
+v48 = hookmetamethod(game, "__index", newcclosure(function(p9, p10)
+  if p9 == getMouse and (p10 == "Hit" or p10 == "Target") and not checkcaller() then
+    if v1.Enabled and v1.SilentAimMethod == "Mouse.Hit/Target" then
+      local v49 = f7()
+
+      if v49 then
+        if p10 == "Target" then
+          return v49
+        elseif p10 == "Hit" then
+          return v1.MouseHitPrediction
+              and v49.CFrame + v49.Velocity * v1.MouseHitPredictionAmount
+            or v49.CFrame
+        end
+      end
+    end
+
+    return v48(p9, p10)
+  end
+
+  return v48(p9, p10)
+end))
+
+for key6, value6 in pairs(workspace:GetDescendants()) do
+  local v50 = value6
+
+  if v50:IsA("Humanoid") then
+    v50.HealthChanged:Connect(function()
+      local parent = v50.Parent
+
+      if parent and parent ~= localPlayer.Character then
+        local humanoidRootPart = parent:FindFirstChild("HumanoidRootPart")
+          or parent:FindFirstChild("Head")
+
+        if humanoidRootPart then
+          local character9 = localPlayer.Character
+
+          if character9 and character9:FindFirstChildOfClass("Tool") then
+            f3(character9:FindFirstChild("Head") and character9.Head.Position
+              or currentCamera.CFrame.Position, humanoidRootPart.Position)
+          end
+        end
+      end
+    end)
+  end
+end
+
+workspace.DescendantAdded:Connect(function(descendant)
+  if descendant:IsA("Humanoid") then
+    descendant.HealthChanged:Connect(function()
+      local parent2 = descendant.Parent
+
+      if parent2 and parent2 ~= localPlayer.Character then
+        local humanoidRootPart2 = parent2:FindFirstChild("HumanoidRootPart")
+          or parent2:FindFirstChild("Head")
+
+        if humanoidRootPart2 then
+          local character10 = localPlayer.Character
+
+          if character10 and character10:FindFirstChildOfClass("Tool") then
+            f3(character10:FindFirstChild("Head") and character10.Head.Position
+              or currentCamera.CFrame.Position, humanoidRootPart2.Position)
+          end
+        end
+      end
+    end)
+  end
+end)
