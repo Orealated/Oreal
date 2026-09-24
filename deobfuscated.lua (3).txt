@@ -1,4 +1,4 @@
--- This file was generated at discord.gg/syncrypt
+-- Deonfuscated by Orealated
 
 local v1 = unpack or table.unpack
 pcall(function()
