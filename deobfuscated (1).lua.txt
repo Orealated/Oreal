@@ -1,0 +1,5457 @@
+-- This file was generated at discord.gg/syncrypt
+
+local t1 = {}
+local t2 = {
+	value1 = nil
+}
+if game:GetService("CoreGui"):FindFirstChild("WindUI") then
+    game:GetService("CoreGui").WindUI:Destroy()
+end
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local v4 = LocalPlayer
+if LocalPlayer then
+    t1.value3 = LocalPlayer:FindFirstChild("PlayerGui")
+    t1.value1 = t1.value3
+
+    if t1.value3 then
+        t1.value1 = LocalPlayer.PlayerGui:FindFirstChild("WindUI")
+    end
+
+    v4 = t1.value1
+end
+if v4 then
+    LocalPlayer.PlayerGui.WindUI:Destroy()
+end
+function t1.value1()
+    return require("./src/Init")
+end
+local ok, result = pcall(t1.value1)
+
+t1.value2 = result
+if ok then
+    t2.value1 = t1.value2
+else
+    t2.value1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/main.lua"))()
+end
+local value1 = t2.value1
+local uDim = UDim.new(1, 0)
+local new = ColorSequence.new
+local color3 = Color3.fromHex("#30FF6A")
+local _Color3 = Color3
+t1.value2 = value1.CreateWindow
+local v12 = new(color3, _Color3.fromHex("#e7ff2f"))
+local t3 = {
+	Title = "Open Cat-King hub UI",
+	CornerRadius = uDim,
+	StrokeThickness = 3,
+	Enabled = true,
+	Draggable = true,
+	OnlyMobile = false,
+	Color = v12
+}
+local t4 = {
+	Height = 44,
+	ButtonsType = "Mac"
+}
+t1.value2 = t1.value2(value1, {
+	Title = "Cat-King-HUB      ",
+	Folder = "Cat-King-HUB",
+	IconSize = 44,
+	NewElements = true,
+	HideSearchBar = false,
+	Transparent = true,
+	TransparencyValue = 0.6,
+	Acrylic = true,
+	OpenButton = t3,
+	Topbar = t4,
+	User = {
+		Enabled = true
+	}
+})
+t2.value2 = t1.value2
+t1.value2 = t2.value2
+local Tag = t1.value2.Tag
+local color3_2 = Color3.fromHex("#1c1c1c")
+
+Tag(t1.value2, {
+	Title = "v2.5",
+	Color = color3_2
+})
+t1.value2 = t2.value2
+local Tag2 = t1.value2.Tag
+local color3_3 = Color3.fromHex("#1c1c1c")
+
+t2.value3 = Tag2(t1.value2, {
+	Title = "Loading...",
+	Color = color3_3
+})
+function t1.value3(p1)
+    local s1 = ""
+    local v115 = os.clock() * 0.75
+
+    for i = 1, #p1 do
+        s1 ..= "<font color=\"#" .. Color3.fromHSV((i / #p1 + v115) % 1, 1, 1):ToHex() .. "\">" .. string.sub(p1, i, i) .. "</font>"
+    end
+
+    return s1
+end
+t2.value4 = t1.value3
+task.spawn(function()
+    while true do
+        local num = tonumber(os.date("%H"))
+        local v118 = num < 12 and "Good Morning"
+
+        if not v118 then
+            v118 = not (num < 18) and "Good Evening" or "Good Afternoon"
+        end
+
+        local v119 = t2.value4(v118)
+        local v120 = os.date("%X")
+
+        pcall(function()
+            t2.value3:SetTitle(v119 .. "  " .. v120)
+        end)
+        task.wait(0.1)
+    end
+end)
+t1.value2 = t2.value1
+local color3_4 = Color3.fromHex("#FFFFFF")
+local color3_5 = Color3.fromHex("#FFFFFF")
+local color3_6 = Color3.fromHex("#E5E5E5")
+local color3_7 = Color3.fromHex("#000000")
+local color3_8 = Color3.fromHex("#666666")
+local color3_9 = Color3.fromHex("#FFFFFF")
+local color3_10 = Color3.fromHex("#000000")
+local color3_11 = Color3.fromHex("#FFFFFF")
+local color3_12 = Color3.fromHex("#000000")
+local color3_13 = Color3.fromHex("#000000")
+local color3_14 = Color3.fromHex("#666666")
+local color3_15 = Color3.fromHex("#000000")
+local color3_16 = Color3.fromHex("#F5F5F7")
+local color3_17 = Color3.fromHex("#000000")
+local color3_18 = Color3.fromHex("#000000")
+local color3_19 = Color3.fromHex("#FFFFFF")
+local _Color3_2 = Color3
+local AddTheme = t1.value2.AddTheme
+local v37 = _Color3_2.fromHex("#000000")
+local color3_20 = Color3.fromHex("#333333")
+local color3_21 = Color3.fromHex("#000000")
+local color3_22 = Color3.fromHex("#FFFFFF")
+local color3_23 = Color3.fromHex("#000000")
+local color3_24 = Color3.fromHex("#000000")
+local color3_25 = Color3.fromHex("#000000")
+local color3_26 = Color3.fromHex("#FFFFFF")
+local color3_27 = Color3.fromHex("#000000")
+local color3_28 = Color3.fromHex("#000000")
+local color3_29 = Color3.fromHex("#000000")
+
+AddTheme(t1.value2, {
+	Name = "WhiteFrostedGlass",
+	Accent = color3_4,
+	Dialog = color3_5,
+	Outline = color3_6,
+	Text = color3_7,
+	Placeholder = color3_8,
+	Button = color3_9,
+	Icon = color3_10,
+	WindowBackground = color3_11,
+	TopbarButtonIcon = color3_12,
+	TopbarTitle = color3_13,
+	TopbarAuthor = color3_14,
+	TopbarIcon = color3_15,
+	TabBackground = color3_16,
+	TabTitle = color3_17,
+	TabIcon = color3_18,
+	ElementBackground = color3_19,
+	ElementTitle = v37,
+	ElementDesc = color3_20,
+	ElementIcon = color3_21,
+	DialogBackground = color3_22,
+	DialogBackgroundTransparency = 0.05,
+	DialogTitle = color3_23,
+	DialogContent = color3_24,
+	DialogIcon = color3_25,
+	PopupBackground = color3_26,
+	PopupBackgroundTransparency = 0.05,
+	PopupTitle = color3_27,
+	PopupContent = color3_28,
+	PopupIcon = color3_29
+})
+t2.value1:SetTheme("WhiteFrostedGlass")
+t2.value1:ToggleAcrylic(true)
+t2.value1.Transparent = true
+t2.value1.TransparencyValue = 0.6
+local color3_30 = Color3.fromHex("#7775F2")
+
+Color3.fromHex("#ECA201")
+
+local color3_31 = Color3.fromHex("#10C550")
+local color3_32 = Color3.fromHex("#83889E")
+local color3_33 = Color3.fromHex("#257AF7")
+local color3_34 = Color3.fromHex("#EF4F1D")
+local v53 = t2.value2:Tab({
+	Title = "About Cat-King",
+	Icon = "solar:info-square-bold",
+	IconColor = color3_32,
+	IconShape = "Square"
+})
+v53:Paragraph({
+	Title = "What is Cat-King?",
+	Desc = [[Cat King is just an ordinary person living in a country somewhere on Earth.
+I love Roblox, and in my spare time I focus on researching and creating scripts.
+
+All scripts I release are free to use, and anyone is welcome to use them.
+The reason ads are included is not for profit, but because maintaining, updating,
+and testing scripts requires a significant amount of time and effort.
+In reality, ad revenue is very limited.
+
+If you would like to support me, you can also do so by purchasing a key,
+which helps me continue improving and updating the scripts.
+
+My original intention is to allow more players to use safe and reliable scripts for free.
+While there are many no-key scripts available online, a large number of them carry risks
+such as steal Roblox account or steal Robux.
+Even though my scripts may not be as powerful as some others,
+I will continue to improve and make them better.
+
+"Free is the most expensive."
+
+Thank you for your understanding and support.
+Have fun, enjoy your game, and wish you happiness every day!]]
+})
+v53:Image({
+	Image = "https://i.pinimg.com/736x/ca/68/6e/ca686e9577d7c2c3801e551ccdaa138f.jpg",
+	AspectRatio = "1:1",
+	Radius = 9
+})
+v53:Space()
+v53:Select()
+local v54 = t2.value2:Section({
+	Title = "Universal"
+})
+local v55 = t2.value2:Section({
+	Title = "Script"
+})
+local v56 = t2.value2:Section({
+	Title = "Other"
+})
+local v57 = t2.value2:Section({
+	Title = "Music"
+})
+t1.value2 = v54:Tab({
+	Title = "Players",
+	Icon = "solar:user-bold",
+	IconColor = color3_32,
+	IconShape = "Square"
+})
+t1.value2.Section(t1.value2, {
+	Title = "Movement"
+})
+t2.value5 = false
+t2.value6 = 16
+t2.value7 = false
+t2.value8 = 50
+t2.value9 = false
+t2.value10 = 50
+t2.value11 = nil
+t2.value12 = game:GetService("UserInputService")
+t2.value13 = game:GetService("RunService")
+t2.value14 = false
+t2.value13.Stepped:Connect(function()
+    if t2.value14 then
+        local Character = game:GetService("Players").LocalPlayer.Character
+
+        if Character then
+            for _, child in pairs(Character:GetChildren()) do
+                if child:IsA("BasePart") and child.CanCollide then
+                    child.CanCollide = false
+                end
+            end
+        end
+    end
+end)
+t2.value15 = false
+t2.value12.JumpRequest:Connect(function()
+    if t2.value15 then
+        local Character = game:GetService("Players").LocalPlayer.Character
+
+        if Character then
+            local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+            if Humanoid then
+                Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            end
+        end
+    end
+end)
+
+function t2.value16()
+    if t2.value11 then
+        t2.value11:Disconnect()
+    end
+
+    local Character = game:GetService("Players").LocalPlayer.Character
+
+    if Character then
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+        if HumanoidRootPart then
+            local GetChildren = HumanoidRootPart.GetChildren
+
+            for _, v in pairs(GetChildren(HumanoidRootPart)) do
+                if v:IsA("BodyGyro") or v:IsA("BodyVelocity") then
+                    v:Destroy()
+                end
+            end
+        end
+
+        local Humanoid = Character:FindFirstChild("Humanoid")
+
+        if Humanoid then
+            Humanoid.PlatformStand = false
+        end
+    end
+end
+function t2.value17()
+    t2.value16()
+
+    local Character = game:GetService("Players").LocalPlayer.Character
+
+    if not Character then
+        return
+    end
+
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+    local Humanoid = Character:FindFirstChild("Humanoid")
+
+    if not HumanoidRootPart or not Humanoid then
+        return
+    end
+
+    local BodyGyro = Instance.new("BodyGyro", HumanoidRootPart)
+
+    BodyGyro.MaxTorque = Vector3.new(9000000000, 9000000000, 9000000000)
+    BodyGyro.P = 90000
+
+    local BodyVelocity = Instance.new("BodyVelocity", HumanoidRootPart)
+
+    BodyVelocity.MaxForce = Vector3.new(9000000000, 9000000000, 9000000000)
+    BodyVelocity.Velocity = Vector3.new(0, 0, 0)
+    Humanoid.PlatformStand = true
+    t2.value13.RenderStepped:Connect(function()
+        if not t2.value9 then
+            return
+        end
+
+        BodyGyro.CFrame = workspace.CurrentCamera.CFrame
+
+        local CurrentCameraCFrame = workspace.CurrentCamera.CFrame
+        local vector3 = Vector3.new(0, 0, 0)
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.W) then
+            vector3 += CurrentCameraCFrame.LookVector
+        end
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.S) then
+            vector3 -= CurrentCameraCFrame.LookVector
+        end
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.A) then
+            vector3 -= CurrentCameraCFrame.RightVector
+        end
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.D) then
+            vector3 += CurrentCameraCFrame.RightVector
+        end
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.Space) then
+            vector3 += Vector3.new(0, 1, 0)
+        end
+
+        if t2.value12:IsKeyDown(Enum.KeyCode.LeftShift) then
+            vector3 -= Vector3.new(0, 1, 0)
+        end
+
+        BodyVelocity.Velocity = vector3 * t2.value10
+    end)
+end
+t2.value13.Heartbeat:Connect(function()
+    local Character = game:GetService("Players").LocalPlayer.Character
+
+    if Character then
+        local Humanoid = Character:FindFirstChild("Humanoid")
+
+        if Humanoid then
+            if t2.value5 and Humanoid.WalkSpeed ~= t2.value6 then
+                Humanoid.WalkSpeed = t2.value6
+            end
+
+            if t2.value7 then
+                if not Humanoid.UseJumpPower then
+                    Humanoid.UseJumpPower = true
+                end
+
+                if Humanoid.JumpPower ~= t2.value8 then
+                    Humanoid.JumpPower = t2.value8
+                end
+            end
+        end
+    end
+end)
+t1.value2.Toggle(t1.value2, {
+	Title = "Speed",
+	Desc = "Enable speed modification",
+	Callback = function(p2)
+    t2.value5 = p2
+
+    if not p2 then
+        local Character = game:GetService("Players").LocalPlayer.Character
+
+        if Character and Character:FindFirstChild("Humanoid") then
+            Character.Humanoid.WalkSpeed = 16
+        end
+    end
+end
+})
+local Slider = t1.value2.Slider
+local t5 = {
+	Min = 16,
+	Max = 200,
+	Default = 16
+}
+Slider(t1.value2, {
+	Title = "Speed Value",
+	Step = 1,
+	Value = t5,
+	Callback = function(p3)
+    t2.value6 = p3
+end
+})
+t1.value2:Space()
+t1.value2.Toggle(t1.value2, {
+	Title = "Jump Power",
+	Desc = "Enable jump power modification",
+	Callback = function(p4)
+    t2.value7 = p4
+
+    if not p4 then
+        local Character = game:GetService("Players").LocalPlayer.Character
+
+        if Character and Character:FindFirstChild("Humanoid") then
+            Character.Humanoid.JumpPower = 50
+        end
+    end
+end
+})
+local Slider2 = t1.value2.Slider
+local t6 = {
+	Min = 50,
+	Max = 500,
+	Default = 50
+}
+Slider2(t1.value2, {
+	Title = "Jump Power Value",
+	Step = 1,
+	Value = t6,
+	Callback = function(p5)
+    t2.value8 = p5
+end
+})
+t1.value2:Space()
+t1.value2.Toggle(t1.value2, {
+	Title = "Fly",
+	Desc = "Enable flying mode",
+	Callback = function(p6)
+    t2.value9 = p6
+
+    if p6 then
+        t2.value17()
+
+        return
+    end
+
+    t2.value16()
+end
+})
+local t7 = {
+	Min = 10,
+	Max = 200,
+	Default = 50
+}
+t1.value2.Slider(t1.value2, {
+	Title = "Fly Speed",
+	Step = 1,
+	Value = t7,
+	Callback = function(p7)
+    t2.value10 = p7
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Noclip",
+	Desc = "Walk through walls",
+	Callback = function(p8)
+    t2.value14 = p8
+
+    if not p8 then
+        local Character = game:GetService("Players").LocalPlayer.Character
+
+        if Character then
+            for _, child in pairs(Character:GetChildren()) do
+                if child:IsA("BasePart") then
+                    child.CanCollide = true
+                end
+            end
+        end
+    end
+end
+})
+t1.value2:Toggle({
+	Title = "Infinite Jump",
+	Desc = "Jump endlessly",
+	Callback = function(p9)
+    t2.value15 = p9
+end
+})
+t2.value18 = nil
+t1.value2 = v54.Tab
+t1.value2 = t1.value2(v54, {
+	Title = "Visual",
+	Icon = "solar:eye-bold",
+	IconColor = color3_32,
+	IconShape = "Square"
+})
+t2.value19 = nil
+t2.value20 = false
+t2.value21 = {}
+t2.value22 = game:GetService("Players")
+t2.value23 = t2.value22.LocalPlayer
+t2.value24 = game:GetService("RunService")
+t2.value25 = Color3.fromRGB(255, 0, 0)
+t2.value26 = false
+t2.value27 = nil
+local function v63(p10)
+    if not p10 then
+        return
+    end
+
+    if p10:FindFirstChild("ESPHighlight") then
+        return
+    end
+
+    local Highlight = Instance.new("Highlight")
+
+    Highlight.Name = "ESPHighlight"
+    Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    Highlight.FillColor = t2.value25
+    Highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+    Highlight.FillTransparency = 0.5
+    Highlight.Parent = p10
+end
+function t2.value28(p11)
+    t2.value20 = p11
+    if p11 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            if player ~= t2.value23 then
+                v63(player.Character)
+                t2.value21[player.UserId] = player.CharacterAdded:Connect(function(character)
+                    if t2.value20 then
+                        task.wait(0.1)
+                        v63(character)
+                    end
+                end)
+            end
+        end
+
+        t2.value21.PlayerAdded = t2.value22.PlayerAdded:Connect(function(player)
+            t2.value21[player.UserId] = player.CharacterAdded:Connect(function(character)
+                if t2.value20 then
+                    task.wait(0.1)
+                    v63(character)
+                end
+            end)
+        end)
+
+        return
+    end
+    for v189, v190 in pairs(t2.value22:GetPlayers()) do
+
+        local Character = v190.Character
+
+        if Character then
+            local ESPHighlight = Character:FindFirstChild("ESPHighlight")
+
+            if ESPHighlight then
+                ESPHighlight:Destroy()
+            end
+        end
+    end
+    for _, v in pairs(t2.value21) do
+        if typeof(v) == "RBXScriptConnection" then
+            v:Disconnect()
+        end
+    end
+end
+function t2.value29(p12)
+    t2.value25 = p12
+
+    if not t2.value26 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            if player.Character then
+                local ESPHighlight = player.Character:FindFirstChild("ESPHighlight")
+
+                if ESPHighlight then
+                    ESPHighlight.FillColor = t2.value25
+                end
+            end
+        end
+    end
+end
+function t2.value30(p13)
+    if t2.value27 then
+        t2.value27:Disconnect()
+    end
+
+    if p13 then
+        t2.value24.RenderStepped:Connect(function()
+            local v346 = tick() % 5 / 5
+            local color3_35 = Color3.fromHSV(v346, 1, 1)
+
+            for _, player in pairs(t2.value22:GetPlayers()) do
+                if player.Character then
+                    local ESPHighlight = player.Character:FindFirstChild("ESPHighlight")
+
+                    if ESPHighlight then
+                        ESPHighlight.FillColor = color3_35
+                    end
+                end
+            end
+        end)
+
+        return
+    end
+
+    t2.value29(t2.value25)
+end
+t2.value31 = false
+t2.value32 = {}
+function t2.value33(p14, p15)
+    if not p14 then
+        return
+    end
+
+    if p14:FindFirstChild("ESPNameTag") then
+        return
+    end
+
+    local Head = p14:WaitForChild("Head", 1)
+
+    if not Head then
+        return
+    end
+
+    local BillboardGui = Instance.new("BillboardGui")
+
+    BillboardGui.Name = "ESPNameTag"
+    BillboardGui.Adornee = Head
+    BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+    BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.Parent = p14
+
+    local TextLabel = Instance.new("TextLabel")
+
+    TextLabel.Name = "NameLabel"
+    TextLabel.Parent = BillboardGui
+    TextLabel.Size = UDim2.new(1, 0, 1, 0)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.Text = p15.DisplayName .. "\n(@" .. p15.Name .. ")"
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    TextLabel.TextSize = 14
+    TextLabel.FontFace = Font.fromEnum(Enum.Font.GothamBold)
+end
+t2.value34 = nil
+function t2.value34(p16)
+    local v170 = p16
+
+    if p16 then
+        v170 = p16:FindFirstChild("ESPNameTag")
+    end
+
+    if v170 then
+        p16.ESPNameTag:Destroy()
+    end
+end
+function t2.value35(p17)
+    t2.value31 = p17
+    if p17 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            local v204 = player
+
+            if v204 ~= t2.value23 then
+                t2.value33(v204.Character, v204)
+                t2.value32[v204.UserId] = v204.CharacterAdded:Connect(function(character)
+                    if t2.value31 then
+                        task.wait(0.1)
+                        t2.value33(character, v204)
+                    end
+                end)
+            end
+        end
+
+        t2.value32.PlayerAdded = t2.value22.PlayerAdded:Connect(function(player)
+            t2.value32[player.UserId] = player.CharacterAdded:Connect(function(character)
+                if t2.value31 then
+                    task.wait(0.1)
+                    t2.value33(character, player)
+                end
+            end)
+        end)
+
+        return
+    end
+    for v207, v208 in pairs(t2.value22:GetPlayers()) do
+
+        t2.value34(v208.Character)
+    end
+    for _, v in pairs(t2.value32) do
+        if typeof(v) == "RBXScriptConnection" then
+            v:Disconnect()
+        end
+    end
+end
+t2.value36 = false
+t2.value37 = {}
+t2.value18 = {}
+function t2.value38(p18)
+    if not p18 then
+        return
+    end
+
+    if p18:FindFirstChild("ESPHealthTag") then
+        return
+    end
+
+    local Head = p18:WaitForChild("Head", 1)
+    local v164 = not Head
+    local Humanoid = p18:FindFirstChildOfClass("Humanoid")
+
+    if not v164 then
+        v164 = not Humanoid
+    end
+
+    if v164 then
+        return
+    end
+
+    local BillboardGui = Instance.new("BillboardGui")
+
+    BillboardGui.Name = "ESPHealthTag"
+    BillboardGui.Adornee = Head
+    BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+    BillboardGui.StudsOffset = Vector3.new(0, 1.5, 0)
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.Parent = p18
+
+    local TextLabel = Instance.new("TextLabel")
+
+    TextLabel.Name = "HealthLabel"
+    TextLabel.Parent = BillboardGui
+    TextLabel.Size = UDim2.new(1, 0, 1, 0)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    TextLabel.TextSize = 12
+    TextLabel.FontFace = Font.fromEnum(Enum.Font.GothamBold)
+
+    local function v168()
+        if not Humanoid then
+            return
+        end
+
+        local v342 = math.floor(Humanoid.Health)
+        local v343 = math.floor(Humanoid.MaxHealth)
+
+        TextLabel.Text = "[ " .. v342 .. " / " .. v343 .. " ]"
+        TextLabel.TextColor3 = Color3.fromHSV(math.clamp(v342 / v343, 0, 1) * 0.33, 1, 1)
+    end
+
+    v168()
+    t2.value18[p18] = Humanoid.HealthChanged:Connect(v168)
+end
+function t2.value39(p19)
+    local v161 = p19
+
+    if p19 then
+        v161 = p19:FindFirstChild("ESPHealthTag")
+    end
+
+    if v161 then
+        p19.ESPHealthTag:Destroy()
+    end
+
+    if t2.value18[p19] then
+        t2.value18[p19]:Disconnect()
+        t2.value18[p19] = nil
+    end
+end
+local function v64(p20)
+    t2.value36 = p20
+    if p20 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            if player ~= t2.value23 then
+                t2.value38(player.Character)
+                t2.value37[player.UserId] = player.CharacterAdded:Connect(function(character)
+                    if t2.value36 then
+                        task.wait(0.1)
+                        t2.value38(character)
+                    end
+                end)
+            end
+        end
+
+        t2.value37.PlayerAdded = t2.value22.PlayerAdded:Connect(function(player)
+            t2.value37[player.UserId] = player.CharacterAdded:Connect(function(character)
+                if t2.value36 then
+                    task.wait(0.1)
+                    t2.value38(character)
+                end
+            end)
+        end)
+
+        return
+    end
+    for v216, v217 in pairs(t2.value22:GetPlayers()) do
+
+        t2.value39(v217.Character)
+    end
+    for _, v in pairs(t2.value37) do
+        if typeof(v) == "RBXScriptConnection" then
+            v:Disconnect()
+        end
+    end
+end
+t2.value40 = false
+t2.value19 = {}
+function t2.value41(p21)
+    if not p21 then
+        return
+    end
+
+    if t2.value22:GetPlayerFromCharacter(p21) == t2.value23 then
+        return
+    end
+
+    if p21:FindFirstChild("ESPDistanceTag") then
+        return
+    end
+
+    task.spawn(function()
+        local Head = p21:WaitForChild("Head", 5)
+        local v352 = not Head
+        local HumanoidRootPart = p21:WaitForChild("HumanoidRootPart", 5)
+        if not v352 then
+            v352 = not HumanoidRootPart
+
+            if not v352 then
+                v352 = not p21.Parent
+            end
+        end
+        if v352 then
+            return
+        end
+        local BillboardGui = Instance.new("BillboardGui")
+        BillboardGui.Name = "ESPDistanceTag"
+        BillboardGui.Adornee = Head
+        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+        BillboardGui.StudsOffset = Vector3.new(0, 0.5, 0)
+        BillboardGui.AlwaysOnTop = true
+        BillboardGui.Parent = p21
+        local TextLabel = Instance.new("TextLabel")
+        TextLabel.Name = "DistanceLabel"
+        TextLabel.Parent = BillboardGui
+        TextLabel.Size = UDim2.new(1, 0, 1, 0)
+        TextLabel.BackgroundTransparency = 1
+        TextLabel.TextStrokeTransparency = 0
+        TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.TextSize = 12
+        TextLabel.FontFace = Font.fromEnum(Enum.Font.GothamBold)
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.Text = "..."
+        local connection
+        connection = t2.value24.RenderStepped:Connect(function()
+            local v719 = not p21
+
+            if not v719 then
+                v719 = not p21.Parent
+
+                if not v719 then
+                    v719 = not HumanoidRootPart
+
+                    if not v719 then
+                        v719 = not HumanoidRootPart.Parent
+                    end
+                end
+            end
+
+            if v719 then
+                if connection then
+                    connection:Disconnect()
+                end
+
+                if BillboardGui then
+                    BillboardGui:Destroy()
+                end
+
+                return
+            end
+
+            if os.clock() - 0 < 0.1 then
+                return
+            end
+
+            local CurrentCamera = workspace.CurrentCamera
+
+            if CurrentCamera then
+                TextLabel.Text = math.floor((CurrentCamera.CFrame.Position - HumanoidRootPart.Position).Magnitude) .. "m"
+            end
+        end)
+        t2.value19[p21] = connection
+    end)
+end
+function t2.value42(p22)
+    local v172 = p22
+
+    if p22 then
+        v172 = p22:FindFirstChild("ESPDistanceTag")
+    end
+
+    if v172 then
+        p22.ESPDistanceTag:Destroy()
+    end
+
+    if t2.value19[p22] then
+        t2.value19[p22]:Disconnect()
+        t2.value19[p22] = nil
+    end
+end
+local function v65(p23)
+    t2.value40 = p23
+    if p23 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            if player ~= t2.value23 then
+                t2.value41(player.Character)
+                t2.value19[player.UserId] = player.CharacterAdded:Connect(function(character)
+                    if t2.value40 then
+                        task.wait(0.1)
+                        t2.value41(character)
+                    end
+                end)
+            end
+        end
+
+        t2.value19.PlayerAdded = t2.value22.PlayerAdded:Connect(function(player)
+            t2.value19[player.UserId] = player.CharacterAdded:Connect(function(character)
+                if t2.value40 then
+                    task.wait(0.1)
+                    t2.value41(character)
+                end
+            end)
+        end)
+
+        return
+    end
+    for v225, v226 in pairs(t2.value22:GetPlayers()) do
+
+        t2.value42(v226.Character)
+    end
+    for _, v in pairs(t2.value19) do
+        if typeof(v) == "RBXScriptConnection" then
+            v:Disconnect()
+        end
+    end
+end
+t2.value43 = false
+t2.value44 = {}
+function t2.value45(p24)
+    if not p24 then
+        return
+    end
+
+    if p24:FindFirstChild("ESPTracer") then
+        return
+    end
+
+    local HumanoidRootPart = p24:WaitForChild("HumanoidRootPart", 1)
+
+    if not HumanoidRootPart then
+        return
+    end
+
+    local LocalPlayer2 = t2.value22.LocalPlayer
+
+    if not LocalPlayer2.Character then
+        return
+    end
+
+    local HumanoidRootPart2 = LocalPlayer2.Character:WaitForChild("HumanoidRootPart", 1)
+
+    if not HumanoidRootPart2 then
+        return
+    end
+
+    local Attachment = Instance.new("Attachment", HumanoidRootPart2)
+    local Attachment2 = Instance.new("Attachment", HumanoidRootPart)
+
+    Attachment2.Name = "ESPTracerAttachment"
+
+    local Beam = Instance.new("Beam")
+
+    Beam.Name = "ESPTracer"
+    Beam.Attachment0 = Attachment
+    Beam.Attachment1 = Attachment2
+    Beam.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255))
+    Beam.FaceCamera = true
+    Beam.Width0 = 0.1
+    Beam.Width1 = 0.1
+    Beam.Parent = p24
+    Beam.Destroying:Connect(function()
+        Attachment:Destroy()
+    end)
+end
+function t2.value46(p25)
+    if p25 then
+        local ESPTracer = p25:FindFirstChild("ESPTracer")
+
+        if ESPTracer then
+            ESPTracer:Destroy()
+        end
+
+        local ESPTracerAttachment = p25:FindFirstChild("ESPTracerAttachment", true)
+
+        if ESPTracerAttachment then
+            ESPTracerAttachment:Destroy()
+        end
+    end
+end
+function t2.value47(p26)
+    t2.value43 = p26
+    if p26 then
+        for _, player in pairs(t2.value22:GetPlayers()) do
+            if player ~= t2.value23 then
+                t2.value45(player.Character)
+                t2.value44[player.UserId] = player.CharacterAdded:Connect(function(character)
+                    if t2.value43 then
+                        task.wait(0.1)
+                        t2.value45(character)
+                    end
+                end)
+            end
+        end
+
+        t2.value44.PlayerAdded = t2.value22.PlayerAdded:Connect(function(player)
+            t2.value44[player.UserId] = player.CharacterAdded:Connect(function(character)
+                if t2.value43 then
+                    task.wait(0.1)
+                    t2.value45(character)
+                end
+            end)
+        end)
+
+        return
+    end
+    for v234, v235 in pairs(t2.value22:GetPlayers()) do
+
+        t2.value46(v235.Character)
+    end
+    for _, v in pairs(t2.value44) do
+        if typeof(v) == "RBXScriptConnection" then
+            v:Disconnect()
+        end
+    end
+end
+t1.value2.Toggle(t1.value2, {
+	Title = "ESP",
+	Desc = "HighLight Players",
+	Callback = function(p27)
+    t2.value28(p27)
+end
+})
+local color3_36 = Color3.fromRGB(255, 0, 0)
+
+t1.value2.Colorpicker(t1.value2, {
+	Title = "ESP Color",
+	Default = color3_36,
+	Callback = function(p28)
+    t2.value29(p28)
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Rainbow ESP",
+	Desc = "Cycle ESP Colors",
+	Callback = function(p29)
+    t2.value30(p29)
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Name Tags",
+	Desc = "Show Player Names",
+	Callback = function(p30)
+    t2.value35(p30)
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Health",
+	Desc = "Show Player Health",
+	Callback = function(p31)
+    v64(p31)
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Distance",
+	Desc = "Show Distance",
+	Callback = function(p32)
+    v65(p32)
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Tracers",
+	Desc = "Show Tracers",
+	Callback = function(p33)
+    t2.value47(p33)
+end
+})
+t2.value48 = game:GetService("Lighting")
+t2.value49 = false
+t2.value50 = nil
+t2.value51 = {}
+local function v67(p34)
+    t2.value49 = p34
+
+    if p34 then
+        if not t2.value51.Brightness then
+            local value48Brightness = t2.value48.Brightness
+            local ClockTime = t2.value48.ClockTime
+            local FogEnd = t2.value48.FogEnd
+            local GlobalShadows = t2.value48.GlobalShadows
+            local value48Ambient = t2.value48.Ambient
+            local OutdoorAmbient = t2.value48.OutdoorAmbient
+
+            t2.value51 = {
+				Brightness = value48Brightness,
+				ClockTime = ClockTime,
+				FogEnd = FogEnd,
+				GlobalShadows = GlobalShadows,
+				Ambient = value48Ambient,
+				OutdoorAmbient = OutdoorAmbient
+			}
+        end
+
+        local function v252()
+            t2.value48.Brightness = 2
+            t2.value48.ClockTime = 14
+            t2.value48.FogEnd = 100000
+            t2.value48.GlobalShadows = false
+            t2.value48.Ambient = Color3.new(1, 1, 1)
+            t2.value48.OutdoorAmbient = Color3.new(1, 1, 1)
+        end
+
+        v252()
+        t2.value50 = t2.value24.RenderStepped:Connect(v252)
+
+        return
+    end
+
+    if t2.value50 then
+        t2.value50:Disconnect()
+    end
+
+    if t2.value51.Brightness then
+        t2.value48.Brightness = t2.value51.Brightness
+        t2.value48.ClockTime = t2.value51.ClockTime
+        t2.value48.FogEnd = t2.value51.FogEnd
+        t2.value48.GlobalShadows = t2.value51.GlobalShadows
+        t2.value48.Ambient = t2.value51.Ambient
+        t2.value48.OutdoorAmbient = t2.value51.OutdoorAmbient
+    end
+end
+t1.value2.Toggle(t1.value2, {
+	Title = "Full Bright",
+	Desc = "Max Brightness",
+	Callback = function(p35)
+    v67(p35)
+end
+})
+t1.value2 = v54:Tab({
+	Title = "FE",
+	Icon = "solar:cursor-square-bold",
+	IconColor = color3_33,
+	IconShape = "Square"
+})
+t2.value52 = nil
+function t2.value53()
+    local t8 = {
+		value1 = {},
+		value2 = game:GetService("Players"),
+		value3 = game:GetService("UserInputService"),
+		value4 = game:GetService("RunService")
+	}
+
+    game:GetService("StarterGui")
+    t8.value5 = game:GetService("Workspace")
+    t8.value6 = game:GetService("CoreGui")
+    t8.value7 = game:GetService("Lighting")
+    game:GetService("TweenService")
+    t8.value8 = t8.value2.LocalPlayer
+
+    local Character = t8.value8.Character
+
+    if not Character then
+        Character = t8.value8.CharacterAdded:Wait()
+    end
+
+    t8.value9 = Character
+    t8.value10 = t8.value9:WaitForChild("Humanoid")
+    t8.value11 = t8.value9:WaitForChild("HumanoidRootPart")
+    t8.value12 = t8.value8:GetMouse()
+    t8.value13 = t8.value5.CurrentCamera
+    t8.value14 = t8.value5.Gravity
+    t8.value15 = {}
+    t8.value16 = Enum.KeyCode.End
+    t8.value17 = Enum.KeyCode.PageDown
+    t8.value18 = Enum.KeyCode.PageUp
+    t8.value19 = Enum.KeyCode.Delete
+    t8.value20 = false
+    t8.value21 = "flight"
+    t8.value22 = false
+
+    local F = Enum.KeyCode.F
+    local G = Enum.KeyCode.G
+
+    t8.value23 = {
+		flight = F,
+		grab = G,
+		telekinesis = nil,
+		slowtime = nil,
+		superjump = nil,
+		microscopica = nil,
+		superfuerza = nil,
+		walkspeed = nil,
+		invulnerabilidad = nil,
+		xray = nil
+	}
+    t8.value24 = {
+		{
+			id = 87088218490918,
+			name = "AGARRE 1"
+		},
+		{
+			id = 75687243220112,
+			name = "AGARRE 2"
+		}
+	}
+    t8.value25 = 1
+    t8.value26 = false
+    t8.value27 = nil
+    t8.value28 = false
+    t8.value29 = nil
+    t8.value30 = {}
+    t8.value31 = false
+    t8.value32 = false
+    t8.value33 = {}
+    t8.value34 = 200
+    t8.value35 = 500
+    t8.value36 = 200
+    t8.value37 = {}
+    t8.value38 = 15
+    t8.value39 = 5
+    t8.value40 = 100
+    t8.value41 = 2
+    t8.value42 = 5
+    t8.value43 = 5
+    t8.value44 = 2
+    t8.value45 = 20
+    t8.value46 = 1
+    t8.value47 = 50
+    t8.value48 = 10
+    t8.value49 = 500
+    t8.value50 = 10
+    t8.value51 = false
+    t8.value52 = nil
+    t8.value53 = false
+    t8.value54 = nil
+    t8.value55 = 16
+    t8.value56 = 16
+    t8.value57 = 1000
+    t8.value58 = 50
+    t8.value59 = nil
+    t8.value60 = 8
+    t8.value61 = false
+    t8.value62 = false
+    t8.value63 = 50
+    t8.value64 = false
+    t8.value65 = 50
+    t8.value66 = 500
+    t8.value67 = 70
+    t8.value68 = 10
+    t8.value69 = {
+		forward = 0,
+		backward = 0,
+		left = 0,
+		right = 0,
+		up = 0,
+		down = 0
+	}
+    t8.value70 = Vector3.new(0, 0, 0)
+    t8.value71 = nil
+    t8.value72 = 0
+    t8.value73 = {}
+    t8.value74 = nil
+    t8.value75 = nil
+    t8.value76 = tick()
+    t8.value77 = 0.5
+    t8.value78 = false
+    t8.value79 = nil
+    t8.value80 = {}
+    t8.value81 = {}
+    t8.value82 = {}
+    t8.value83 = false
+    t8.value84 = nil
+    t8.value85 = false
+    t8.value86 = nil
+    t8.value87 = {}
+    t8.value88 = {}
+    t8.value89 = 0.8
+    t8.value90 = 0.9
+    t8.value91 = {}
+    t8.value92 = 0.5
+    t8.value93 = 0
+    t8.value94 = {}
+    t8.value95 = false
+    t8.value96 = 70
+    t8.value97 = 120
+    t8.value98 = false
+    t8.value99 = 5
+    t8.value100 = {}
+    t8.value101 = Color3.fromRGB(255, 255, 0)
+    t8.value102 = false
+    t8.value103 = {}
+    t8.value104 = false
+    t8.value105 = {}
+    t8.value106 = {}
+    t8.value107 = false
+    t8.value108 = nil
+    Color3.fromRGB(255, 140, 0)
+    t8.value109 = nil
+    t8.value110 = 0
+    t8.value111 = 0.1
+    t8.value112 = false
+    t8.value113 = false
+
+    local _ = Enum.KeyCode.Asterisk
+    local _ = Enum.KeyCode.KeypadMultiply
+    local _ = Enum.KeyCode.F5
+
+    t8.value114 = {
+		{
+			name = "VUELO",
+			icon = "🛸",
+			ability = "flight"
+		},
+		{
+			name = "AGARRE",
+			icon = "✋",
+			ability = "grab"
+		},
+		{
+			name = "TELEKINESIS",
+			icon = "📡",
+			ability = "telekinesis"
+		},
+		{
+			name = "LENTITUD",
+			icon = "⏱\239\184\143",
+			ability = "slowtime"
+		},
+		{
+			name = "S. SALTO",
+			icon = "⬆\239\184\143",
+			ability = "superjump"
+		},
+		{
+			name = "VELOCIDAD",
+			icon = "💨",
+			ability = "walkspeed"
+		},
+		{
+			name = "VISIÓN MICROSCÓPICA",
+			icon = "🔬",
+			ability = "microscopica"
+		},
+		{
+			name = "SUPER FUERZA",
+			icon = "💪",
+			ability = "superfuerza"
+		},
+		{
+			name = "INVULNERABILIDAD",
+			icon = "🛡\239\184\143",
+			ability = "invulnerabilidad"
+		},
+		{
+			name = "VISIÓN X-RAY",
+			icon = "👁\239\184\143",
+			ability = "xray"
+		}
+	}
+    t8.value115 = {
+		{
+			name = "ESP",
+			icon = "👀",
+			option = "esp"
+		},
+		{
+			name = "ANTI-SIT",
+			icon = "🚫",
+			option = "antisit"
+		},
+		{
+			name = "NPC SPY",
+			icon = "🕵\239\184\143",
+			option = "npcspy"
+		},
+		{
+			name = "SISTEMA CÁMARA",
+			icon = "📷",
+			option = "camera"
+		},
+		{
+			name = "REINICIAR PERSONAJE",
+			icon = "♻\239\184\143",
+			option = "respawn"
+		},
+		{
+			name = "DESTRUIR SCRIPT",
+			icon = "❌",
+			option = "deletescript"
+		}
+	}
+    t8.value116 = nil
+    t8.value117 = {}
+    t8.value118 = {}
+    t8.value119 = nil
+
+    function t8.value120(_, _, _)
+    end
+    function t8.value121(p39, p40)
+        local connection = p39:Connect(p40)
+
+        table.insert(t8.value15, connection)
+
+        return connection
+    end
+
+    local function v261(p41)
+        if not p41 then
+            return "SIN ASIGNAR"
+        end
+
+        local p41Name = p41.Name
+
+        return ({
+			RightAlt = "AltGr",
+			LeftAlt = "Alt",
+			LeftControl = "Ctrl",
+			RightControl = "Ctrl",
+			LeftShift = "Shift",
+			RightShift = "Shift",
+			KeypadPlus = "+",
+			KeypadMinus = "-",
+			KeypadMultiply = "*",
+			KeypadDivide = "/",
+			Return = "Enter",
+			KeypadEnter = "Enter",
+			BackSpace = "Atrás",
+			Delete = "Supr",
+			Insert = "Ins",
+			Home = "Inicio",
+			End = "Fin",
+			PageUp = "AvPág",
+			PageDown = "RepPág",
+			Asterisk = "*",
+			F5 = "F5"
+		})[p41Name] or p41Name
+    end
+
+    function t8.value1.respawnCharacter()
+        if t8.value9 and t8.value10 then
+            t8.value10.Health = 0
+            t8.value120("REINICIO", "Personaje reiniciado", "rbxassetid://1381009")
+            task.wait(3)
+
+            local Character2 = t8.value8.Character
+
+            if not Character2 then
+                Character2 = t8.value8.CharacterAdded:Wait()
+            end
+
+            t8.value9 = Character2
+            t8.value10 = t8.value9:WaitForChild("Humanoid")
+            t8.value11 = t8.value9:WaitForChild("HumanoidRootPart")
+
+            if t8.value53 then
+                t8.value10.WalkSpeed = t8.value55
+            else
+                t8.value10.WalkSpeed = t8.value60
+            end
+
+            t8.value120("SUPER GIRL V2", "Personaje reiniciado exitosamente", "rbxassetid://1381009")
+        end
+    end
+
+    local function v262()
+        if t8.value59 then
+            t8.value59:Disconnect()
+        end
+
+        t8.value59 = t8.value4.Heartbeat:Connect(function()
+            local value9 = t8.value9
+
+            if value9 then
+                value9 = t8.value10
+
+                if value9 then
+                    value9 = t8.value10.Health > 0
+                end
+            end
+
+            if value9 and (not t8.value53 and not t8.value61) then
+                t8.value10.WalkSpeed = t8.value60
+            end
+        end)
+
+        if not t8.value61 then
+            t8.value10.WalkSpeed = t8.value60
+        end
+    end
+
+    function t8.value122(p42)
+        for _, v in ipairs(p42:GetPlayingAnimationTracks()) do
+            v:Stop(0)
+        end
+    end
+
+    local function v263(p43, p44, p45)
+        local value26 = t8.value26
+
+        if value26 then
+            value26 = #t8.value33 > 0
+        end
+
+        if value26 then
+            return
+        end
+
+        if t8.value74 then
+            t8.value74:Stop(0.1)
+            t8.value74 = nil
+        end
+
+        for _, v in ipairs(t8.value10:GetPlayingAnimationTracks()) do
+            v:Stop()
+        end
+
+        local Animation = Instance.new("Animation")
+
+        Animation.AnimationId = "rbxassetid://" .. tostring(p43)
+        t8.value74 = t8.value10:LoadAnimation(Animation)
+        t8.value74:Play()
+        t8.value74.TimePosition = p44
+        t8.value74:AdjustSpeed(p45)
+    end
+    local function v264()
+        if t8.value26 and t8.value27 then
+            t8.value27:Stop(0.1)
+            t8.value26 = false
+            t8.value27 = nil
+        end
+
+        t8.value122(t8.value10)
+
+        local Animate = t8.value9:FindFirstChild("Animate")
+
+        if Animate then
+            Animate.Disabled = true
+        end
+
+        local Animation = Instance.new("Animation")
+
+        Animation.AnimationId = "rbxassetid://" .. tostring(t8.value24[t8.value25].id)
+        t8.value27 = t8.value10:LoadAnimation(Animation)
+        t8.value27:Play()
+        t8.value27:AdjustSpeed(0)
+        t8.value26 = true
+    end
+    local function v265()
+        if t8.value26 and #t8.value33 > 0 then
+            return
+        end
+
+        if t8.value74 then
+            t8.value74:Stop(0.1)
+        end
+
+        for _, v in ipairs(t8.value10:GetPlayingAnimationTracks()) do
+            v:Stop()
+        end
+    end
+    local function v266(p46)
+        if not p46 or p46.Locked then
+            return nil
+        end
+
+        local Model = p46:FindFirstAncestorOfClass("Model")
+
+        if Model then
+            local player = t8.value2:GetPlayerFromCharacter(Model)
+
+            if player and player ~= t8.value8 then
+                local HumanoidRootPart = Model:FindFirstChild("HumanoidRootPart")
+
+                if HumanoidRootPart then
+                    return HumanoidRootPart
+                end
+            end
+
+            if Model:FindFirstChildOfClass("Humanoid") and not t8.value2:GetPlayerFromCharacter(Model) then
+                local HumanoidRootPart = Model:FindFirstChild("HumanoidRootPart")
+
+                if HumanoidRootPart then
+                    return HumanoidRootPart
+                end
+            end
+
+            if Model:FindFirstAncestor(t8.value8.Name) == t8.value9 then
+                return nil
+            end
+
+            local PrimaryPart = Model.PrimaryPart
+
+            if PrimaryPart then
+                PrimaryPart = Model.PrimaryPart:IsA("BasePart")
+            end
+
+            if PrimaryPart then
+                p46 = Model.PrimaryPart
+            end
+        end
+
+        if p46.AssemblyRootPart then
+            p46 = p46.AssemblyRootPart
+        end
+
+        if p46:IsA("BasePart") and p46.Parent then
+            if p46:FindFirstAncestor(t8.value8.Name) == t8.value9 then
+                return nil
+            end
+
+            return p46
+        end
+
+        return nil
+    end
+    local function v267(p47)
+        if #t8.value33 > 0 then
+            return false
+        end
+        local v399 = p47.AssemblyRootPart or p47
+        local Anchored = v399.Anchored
+        local CanCollide = v399.CanCollide
+        v399.Anchored = false
+        v399.CanCollide = true
+        local v402 = false
+        local Humanoid
+        local p47Parent = p47.Parent
+        if p47Parent:IsA("Model") then
+            Humanoid = p47Parent:FindFirstChildOfClass("Humanoid")
+
+            if Humanoid then
+                v402 = true
+                Humanoid.PlatformStand = true
+            end
+        end
+        local p47Position = p47.Position
+        local t9 = {
+			part = p47,
+			root = v399,
+			lastPosition = p47Position,
+			isCharacter = v402,
+			humanoid = Humanoid,
+			originalAnchored = Anchored,
+			originalCanCollide = CanCollide
+		}
+        table.insert(t8.value33, t9)
+        v264()
+
+        return true
+    end
+    local function v268()
+        if t8.value26 and t8.value27 then
+            t8.value27:Stop(0.1)
+            t8.value26 = false
+        end
+
+        local Animate = t8.value9:FindFirstChild("Animate")
+
+        if Animate then
+            Animate.Disabled = false
+        end
+
+        for _, v in pairs(t8.value33) do
+            local part = v.part
+
+            if part then
+                part = v.part.Parent
+            end
+
+            if part then
+                local v411 = v.part.AssemblyRootPart or v.part
+
+                if not v411.Anchored then
+                    v411.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    v411.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                end
+
+                if v.humanoid then
+                    v.humanoid.PlatformStand = false
+                end
+            end
+        end
+
+        t8.value33 = {}
+    end
+
+    function t8.value1.throwPartGrab(p48)
+        if not p48 or not p48.part then
+            return
+        end
+
+        local part = p48.part
+        local v419 = p48.root or (part.AssemblyRootPart or part)
+        local LookVector = t8.value13.CFrame.LookVector
+
+        v419.Anchored = false
+        v419.CanCollide = true
+
+        if p48.humanoid then
+            p48.humanoid.PlatformStand = false
+        end
+
+        local AssemblyMass = v419.AssemblyMass
+
+        v419:ApplyImpulse(LookVector * t8.value35 * (AssemblyMass or 1))
+    end
+    function t8.value1.directGrab()
+        if #t8.value33 > 0 then
+            v268()
+
+            return
+        end
+
+        local value12Target = t8.value12.Target
+        local v423 = value12Target
+
+        if value12Target then
+            v423 = t8.value11
+
+            if v423 then
+                v423 = (value12Target.Position - t8.value11.Position).Magnitude
+            end
+        end
+
+        if not v423 then
+            v423 = 1e999
+        end
+
+        local v424 = v266(value12Target)
+
+        if v424 and v423 <= t8.value34 then
+            v267(v424)
+        end
+    end
+    function t8.value1.startTelekinesis(p49)
+        local value32 = t8.value32
+        if value32 then
+            value32 = #t8.value37 >= t8.value42
+        end
+        if value32 then
+            return false
+        end
+        for _, v in pairs(t8.value37) do
+            if p49 == v.part then
+                return false
+            end
+        end
+        local v429 = p49.AssemblyRootPart or p49
+        local Anchored = v429.Anchored
+        local CanCollide = v429.CanCollide
+        v429.Anchored = false
+        v429.CanCollide = true
+        local v432 = false
+        local Humanoid
+        local p49Parent = p49.Parent
+        if p49Parent:IsA("Model") then
+            Humanoid = p49Parent:FindFirstChildOfClass("Humanoid")
+
+            if Humanoid then
+                v432 = true
+                Humanoid.PlatformStand = true
+            end
+        end
+        local p49Position = p49.Position
+        local t10 = {
+			part = p49,
+			root = v429,
+			lastPosition = p49Position,
+			isCharacter = v432,
+			humanoid = Humanoid,
+			originalAnchored = Anchored,
+			originalCanCollide = CanCollide
+		}
+        table.insert(t8.value37, t10)
+        t8.value31 = true
+
+        return true
+    end
+    function t8.value1.stopTelekinesis()
+        for _, v in pairs(t8.value37) do
+            local part = v.part
+
+            if part then
+                part = v.part.Parent
+            end
+
+            if part then
+                local v440 = v.part.AssemblyRootPart or v.part
+
+                if not v440.Anchored then
+                    v440.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    v440.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                end
+
+                if v.humanoid then
+                    v.humanoid.PlatformStand = false
+                end
+            end
+        end
+
+        t8.value37 = {}
+        t8.value31 = false
+        t8.value32 = false
+    end
+    function t8.value1.throwPartTele(p50)
+        if not p50 or not p50.part then
+            return
+        end
+
+        local part = p50.part
+        local v443 = p50.root or (part.AssemblyRootPart or part)
+        local LookVector = t8.value13.CFrame.LookVector
+
+        v443.Anchored = false
+        v443.CanCollide = true
+
+        if p50.humanoid then
+            p50.humanoid.PlatformStand = false
+        end
+
+        local AssemblyMass = v443.AssemblyMass
+
+        v443:ApplyImpulse(LookVector * t8.value35 * (AssemblyMass or 1))
+    end
+    function t8.value1.throwAllPartsTele()
+        if #t8.value37 == 0 then
+            return
+        end
+
+        for _, v in pairs(t8.value37) do
+            throwPartTele(v)
+        end
+
+        t8.value37 = {}
+        t8.value31 = false
+        t8.value32 = false
+    end
+    function t8.value1.directTelekinesis()
+        if #t8.value37 > 0 and not t8.value32 then
+            t8.value1.stopTelekinesis()
+
+            return
+        end
+
+        local value12Target = t8.value12.Target
+        local v449 = value12Target
+
+        if value12Target then
+            v449 = t8.value11
+
+            if v449 then
+                v449 = (value12Target.Position - t8.value11.Position).Magnitude
+            end
+        end
+
+        if not v449 then
+            v449 = 1e999
+        end
+
+        local v450 = v266(value12Target)
+
+        if v450 and v449 <= t8.value34 then
+            t8.value1.startTelekinesis(v450)
+        end
+    end
+    function t8.value1.toggleMultiTelekinesis()
+        if #t8.value37 == 0 and not t8.value32 then
+            return
+        end
+
+        t8.value32 = not t8.value32
+
+        if updateSpeedLabels then
+            updateSpeedLabels()
+        end
+    end
+
+    t8.value121(t8.value4.Heartbeat, function(_)
+        if #t8.value33 > 0 then
+            local Character3 = t8.value8.Character
+            local v453 = Character3 and Character3:FindFirstChild("HumanoidRootPart")
+
+            if not v453 then
+                v268()
+
+                return
+            end
+
+            for k, v in pairs(t8.value33) do
+                local v456 = k
+                local part = v.part
+
+                if not part or not part.Parent then
+                    table.remove(t8.value33, v456)
+
+                    if #t8.value33 == 0 then
+                        if t8.value26 and t8.value27 then
+                            t8.value27:Stop(0.1)
+                            t8.value26 = false
+                        end
+
+                        local Animate = t8.value9:FindFirstChild("Animate")
+
+                        if Animate then
+                            Animate.Disabled = false
+                        end
+                    end
+
+                    return
+                end
+
+                if not v.root then
+                    if not part.AssemblyRootPart then
+                    end
+                end
+
+                local v459 = v453.Position + Vector3.new(0, v453.Size.Y / 2 + 5, 0)
+                local value36 = t8.value36
+
+                if not not part then
+                    local v461 = part.AssemblyRootPart or part
+                    local v462 = (v459 - v461.Position) * 15
+
+                    if value36 < v462.Magnitude then
+                        v462 = v462.Unit * value36
+                    end
+
+                    v461.AssemblyLinearVelocity = v462
+                    v461.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                end
+
+                if (part.Position - v.lastPosition).Magnitude > 100 then
+                    table.remove(t8.value33, v456)
+
+                    if #t8.value33 == 0 then
+                        if t8.value26 and t8.value27 then
+                            t8.value27:Stop(0.1)
+                            t8.value26 = false
+                        end
+
+                        local Animate = t8.value9:FindFirstChild("Animate")
+
+                        if Animate then
+                            Animate.Disabled = false
+                        end
+                    end
+
+                    return
+                end
+
+                v.lastPosition = part.Position
+            end
+
+            if not t8.value26 then
+                v264()
+            end
+        end
+
+        if #t8.value37 > 0 then
+            local Character4 = t8.value8.Character
+            local v465 = Character4 and Character4:FindFirstChild("HumanoidRootPart")
+
+            if not v465 then
+                stopTelekinesis()
+
+                return
+            end
+
+            for k, v in pairs(t8.value37) do
+                local v468 = k
+                local part = v.part
+
+                if not part or not part.Parent then
+                    table.remove(t8.value37, v468)
+
+                    if #t8.value37 == 0 then
+                        t8.value31 = false
+                    end
+
+                    return
+                end
+
+                if not v.root then
+                    if not part.AssemblyRootPart then
+                    end
+                end
+
+                if t8.value32 then
+                    local vector3 = Vector3.new(math.sin(tick() * 2 + v468) * t8.value43, v468 * 2, math.cos(tick() * 2 + v468) * t8.value43)
+                    local v471 = v465.Position + vector3
+
+                    if not not part then
+                        local v472 = part.AssemblyRootPart or part
+                        local v473 = (v471 - v472.Position) * 15
+
+                        if v473.Magnitude > 30 then
+                            v473 = v473.Unit * 30
+                        end
+
+                        v472.AssemblyLinearVelocity = v473
+                        v472.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                    end
+                else
+                    local LookVector = t8.value13.CFrame.LookVector
+                    local v475 = v465.Position + LookVector * t8.value38
+
+                    if not not part then
+                        local v476 = part.AssemblyRootPart or part
+                        local v477 = (v475 - v476.Position) * 15
+
+                        if v477.Magnitude > 30 then
+                            v477 = v477.Unit * 30
+                        end
+
+                        v476.AssemblyLinearVelocity = v477
+                        v476.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                    end
+                end
+
+                if (part.Position - v.lastPosition).Magnitude > 100 then
+                    table.remove(t8.value37, v468)
+
+                    if #t8.value37 == 0 then
+                        t8.value31 = false
+                    end
+
+                    return
+                end
+
+                v.lastPosition = part.Position
+            end
+        end
+    end)
+
+    local function v269(p52, p53)
+        local v480 = not p52
+
+        if not v480 then
+            v480 = not p52.Parent
+        end
+
+        if v480 then
+            return
+        end
+
+        local Humanoid = p52.Parent:FindFirstChildOfClass("Humanoid")
+
+        if Humanoid then
+            Humanoid:TakeDamage(Humanoid.Health * 0.3 * p53)
+
+            return
+        end
+
+        if p52:IsA("BasePart") and not p52.Anchored then
+            local v482 = p52.AssemblyRootPart or p52
+
+            v482:ApplyImpulse(v482.Position - t8.value11.Position * p53 * 100)
+        end
+    end
+
+    function t8.value1.toggleSuperFuerza()
+        t8.value98 = not t8.value98
+
+        if t8.value98 then
+            for _, v in pairs(t8.value100) do
+                if v then
+                    v:Disconnect()
+                end
+            end
+
+            t8.value100 = {}
+
+            local HumanoidRootPart = t8.value9:WaitForChild("HumanoidRootPart")
+
+            for _, descendant in ipairs(t8.value9:GetDescendants()) do
+                if descendant:IsA("BasePart") then
+                    local connection = descendant.Touched:Connect(function(part)
+                        if not t8.value98 then
+                            return
+                        end
+
+                        if part.Parent == t8.value9 then
+                            return
+                        end
+
+                        if HumanoidRootPart.AssemblyLinearVelocity.Magnitude > 10 then
+                            v269(part, t8.value99)
+                        end
+                    end)
+
+                    table.insert(t8.value100, connection)
+                end
+            end
+
+            return
+        end
+
+        for _, v in pairs(t8.value100) do
+            if v then
+                v:Disconnect()
+            end
+        end
+
+        t8.value100 = {}
+    end
+    function t8.value1.adjustSuperFuerza(p54)
+        t8.value99 = math.clamp(t8.value99 + p54, 1, 20)
+    end
+    function t8.value1.toggleMicroscopica()
+        t8.value95 = not t8.value95
+
+        if t8.value95 then
+            t8.value96 = t8.value13.FieldOfView
+            t8.value13.FieldOfView = t8.value97
+
+            return
+        end
+
+        t8.value13.FieldOfView = t8.value96
+    end
+    function t8.value1.startWalkSpeedLoop()
+        if t8.value54 then
+            t8.value54:Disconnect()
+        end
+
+        t8.value54 = t8.value4.Heartbeat:Connect(function()
+            local value9 = t8.value9
+
+            if value9 then
+                value9 = t8.value10
+
+                if value9 then
+                    value9 = t8.value10.Health > 0
+                end
+            end
+
+            if value9 then
+                t8.value10.WalkSpeed = t8.value55
+            end
+        end)
+        t8.value10.WalkSpeed = t8.value55
+        t8.value53 = true
+
+        if t8.value59 then
+            t8.value59:Disconnect()
+            t8.value59 = nil
+        end
+    end
+    function t8.value1.stopWalkSpeedLoop()
+        if t8.value54 then
+            t8.value54:Disconnect()
+            t8.value54 = nil
+        end
+
+        t8.value10.WalkSpeed = 16
+        t8.value53 = false
+        v262()
+    end
+    function t8.value1.toggleWalkSpeedLoop()
+        if t8.value53 then
+            t8.value1.stopWalkSpeedLoop()
+        else
+            t8.value1.startWalkSpeedLoop()
+        end
+
+        if updateSpeedLabels then
+            updateSpeedLabels()
+        end
+    end
+    function t8.value1.adjustWalkSpeed(p55)
+        t8.value55 = math.clamp(t8.value55 + p55, t8.value56, t8.value57)
+
+        if t8.value53 then
+            t8.value10.WalkSpeed = t8.value55
+        end
+
+        if updateSpeedLabels then
+            updateSpeedLabels()
+        end
+    end
+    function t8.value1.toggleSuperJump()
+        t8.value51 = not t8.value51
+
+        if t8.value51 then
+            if t8.value52 then
+                t8.value52:Disconnect()
+            end
+
+            t8.value52 = t8.value121(t8.value4.Heartbeat, function()
+                local value51 = t8.value51
+
+                if value51 then
+                    value51 = t8.value9 and t8.value10
+                end
+
+                if value51 then
+                    t8.value10.UseJumpPower = true
+                    t8.value10.JumpPower = t8.value47
+
+                    if t8.value10:GetState() == Enum.HumanoidStateType.Jumping then
+                        local HumanoidRootPart = t8.value9:FindFirstChild("HumanoidRootPart")
+
+                        if HumanoidRootPart then
+                            HumanoidRootPart:ApplyImpulse(Vector3.new(0, t8.value47 * 2, 0))
+                        end
+                    end
+                end
+            end)
+
+            return
+        end
+
+        if t8.value52 then
+            t8.value52:Disconnect()
+        end
+
+        t8.value10.JumpPower = 50
+        t8.value10.UseJumpPower = true
+    end
+    function t8.value1.playFlightFastAnimation()
+        if #t8.value33 > 0 and t8.value26 then
+            return
+        end
+
+        if t8.value75 then
+            t8.value75:Stop(0.1)
+            t8.value75 = nil
+        end
+
+        local Animation = Instance.new("Animation")
+
+        Animation.AnimationId = "rbxassetid://120303626369803"
+        t8.value75 = t8.value10:LoadAnimation(Animation)
+        t8.value75:Play()
+        t8.value75:AdjustSpeed(1.5)
+    end
+    function t8.value1.stopFlightFastAnimation()
+        if t8.value75 then
+            t8.value75:Stop(0.1)
+        end
+    end
+    function t8.value1.startFlying()
+        if t8.value62 then
+            return
+        end
+
+        t8.value62 = true
+        t8.value14 = t8.value5.Gravity
+        t8.value5.Gravity = 15
+        t8.value10.PlatformStand = true
+
+        if #t8.value33 == 0 then
+            v263(102620389167016, 4, 1)
+        end
+
+        local BodyGyro = Instance.new("BodyGyro", t8.value11)
+
+        BodyGyro.Name = "FlyGyro"
+        BodyGyro.P = 90000
+        BodyGyro.MaxTorque = Vector3.new(9000000000, 9000000000, 9000000000)
+        BodyGyro.CFrame = t8.value11.CFrame
+
+        local BodyVelocity = Instance.new("BodyVelocity", t8.value11)
+
+        BodyVelocity.Name = "FlyVelocity"
+        BodyVelocity.MaxForce = Vector3.new(9000000000, 9000000000, 9000000000)
+        BodyVelocity.Velocity = Vector3.new(0, 0, 0)
+        t8.value70 = Vector3.new(0, 0, 0)
+
+        local timestamp = tick()
+
+        t8.value76 = tick()
+
+        local v497 = t8.value121(t8.value4.RenderStepped, function(_)
+            local v734 = not t8.value9
+
+            if not v734 then
+                v734 = not t8.value11 or not t8.value10
+            end
+
+            if v734 then
+                return
+            end
+
+            local CurrentCamera = t8.value5.CurrentCamera
+            local timestamp2 = tick()
+            local _ = timestamp2 - timestamp
+            local v738 = t8.value69.forward - t8.value69.backward
+            local v739 = t8.value69.right - t8.value69.left
+            local vector3 = Vector3.new(0, 0, 0)
+
+            if v738 ~= 0 then
+                vector3 += CurrentCamera.CFrame.LookVector * v738
+            end
+
+            if v739 ~= 0 then
+                vector3 += CurrentCamera.CFrame.RightVector * v739
+            end
+
+            if vector3.Magnitude > 0 then
+                vector3 = vector3.Unit
+            end
+
+            local n1 = 0
+
+            if t8.value69.up > 0 then
+                n1 = 1
+            elseif t8.value69.down > 0 then
+                n1 = -1
+            end
+
+            local vector3_2 = Vector3.new(0, 0, 0)
+
+            if vector3.Magnitude > 0 then
+                vector3_2 += vector3 * t8.value63
+            end
+
+            if n1 ~= 0 then
+                vector3_2 += Vector3.new(0, n1 * t8.value63 * 0.6, 0)
+            end
+
+            if vector3_2.Magnitude > 0.1 then
+                t8.value76 = timestamp2
+                t8.value70 = t8.value70:Lerp(vector3_2, 0.15)
+
+                local v743 = if not (v738 > 0) then if not (v738 < 0) then CurrentCamera.CFrame else CurrentCamera.CFrame * CFrame.Angles(0.5235987755982988, 0, (math.rad(t8.value72 * 0.5))) else CurrentCamera.CFrame * CFrame.Angles(0, 0, (math.rad(t8.value72 * 0.5)))
+
+                if t8.value71 then
+                    t8.value71 = t8.value71:Lerp(v743, 0.25)
+                else
+                    t8.value71 = v743
+                end
+
+                BodyGyro.CFrame = t8.value71
+            else
+                t8.value70 = t8.value70:Lerp(Vector3.new(0, 0, 0), 0.3)
+
+                if timestamp2 - t8.value76 > t8.value77 and t8.value63 > t8.value65 then
+                    t8.value63 = t8.value65
+                    t8.value64 = false
+                    t8.value1.stopFlightFastAnimation()
+
+                    if updateSpeedLabels then
+                        updateSpeedLabels()
+                    end
+                end
+            end
+
+            BodyVelocity.Velocity = t8.value70
+        end)
+
+        table.insert(t8.value73, v497)
+
+        local connection = t8.value3.InputBegan:Connect(function(input, gameProcessed)
+            if gameProcessed then
+                return
+            end
+
+            if input.UserInputType == Enum.UserInputType.Keyboard then
+                local KeyCode = input.KeyCode
+
+                if KeyCode == Enum.KeyCode.W then
+                    t8.value69.forward = 1
+
+                    if #t8.value33 == 0 then
+                        v263(121652468298380, 15, 0)
+
+                        return
+                    end
+                elseif KeyCode == Enum.KeyCode.S then
+                    t8.value69.backward = 1
+
+                    if #t8.value33 == 0 then
+                        v263(94942486115057, 4, 1)
+
+                        return
+                    end
+                else
+                    if KeyCode == Enum.KeyCode.A then
+                        t8.value69.left = 1
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.D then
+                        t8.value69.right = 1
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.LeftAlt then
+                        t8.value69.up = 1
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.RightAlt then
+                        t8.value69.down = 1
+                    end
+                end
+            end
+        end)
+
+        table.insert(t8.value73, connection)
+
+        local connection2 = t8.value3.InputEnded:Connect(function(input, _)
+            if input.UserInputType == Enum.UserInputType.Keyboard then
+                local KeyCode = input.KeyCode
+
+                if KeyCode == Enum.KeyCode.W then
+                    t8.value69.forward = 0
+
+                    if #t8.value33 == 0 then
+                        v263(94942486115057, 4, 1)
+
+                        return
+                    end
+                elseif KeyCode == Enum.KeyCode.S then
+                    t8.value69.backward = 0
+
+                    if #t8.value33 == 0 then
+                        v263(94942486115057, 4, 1)
+
+                        return
+                    end
+                else
+                    if KeyCode == Enum.KeyCode.A then
+                        t8.value69.left = 0
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.D then
+                        t8.value69.right = 0
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.LeftAlt then
+                        t8.value69.up = 0
+
+                        return
+                    end
+
+                    if KeyCode == Enum.KeyCode.RightAlt then
+                        t8.value69.down = 0
+                    end
+                end
+            end
+        end)
+
+        table.insert(t8.value73, connection2)
+    end
+    function t8.value1.stopFlying()
+        if not t8.value62 then
+            return
+        end
+
+        t8.value62 = false
+        t8.value64 = false
+
+        for _, v in ipairs(t8.value73) do
+            if v.Connected then
+                v:Disconnect()
+            end
+        end
+
+        t8.value69 = {
+			forward = 0,
+			backward = 0,
+			left = 0,
+			right = 0,
+			up = 0,
+			down = 0
+		}
+        t8.value5.Gravity = t8.value14
+        t8.value10.PlatformStand = false
+
+        if #t8.value33 == 0 then
+            v265()
+
+            local Animate = t8.value9:FindFirstChild("Animate")
+
+            if Animate then
+                Animate.Disabled = false
+            end
+        end
+
+        t8.value1.stopFlightFastAnimation()
+
+        if t8.value11:FindFirstChild("FlyGyro") then
+            t8.value11.FlyGyro:Destroy()
+        end
+
+        if t8.value11:FindFirstChild("FlyVelocity") then
+            t8.value11.FlyVelocity:Destroy()
+        end
+    end
+    function t8.value123(p58)
+        local t11 = {}
+
+        if p58 ~= t8.value9 then
+            local new2 = Instance.new
+            local v506 = p58:IsA("BasePart") and p58
+
+            if not v506 then
+                v506 = p58:FindFirstChild("HumanoidRootPart") or p58
+            end
+
+            local v507 = new2("BlurEffect", v506)
+
+            v507.Size = 8
+            t11.blur = v507
+
+            local new3 = Instance.new
+            local v509 = p58:IsA("BasePart") and p58
+
+            if not v509 then
+                v509 = p58:FindFirstChild("HumanoidRootPart") or p58
+            end
+
+            local v510 = new3("ColorCorrectionEffect", v509)
+
+            v510.TintColor = Color3.fromRGB(0, 51, 160)
+            v510.Brightness = 0.1
+            v510.Contrast = 0.15
+            v510.Saturation = -0.2
+            t11.colorCorrection = v510
+
+            local Highlight = Instance.new("Highlight", p58)
+
+            Highlight.FillColor = Color3.fromRGB(200, 0, 0)
+            Highlight.OutlineColor = Color3.fromRGB(255, 255, 0)
+            Highlight.FillTransparency = 0.7
+            Highlight.OutlineTransparency = 0.3
+            t11.highlight = Highlight
+        end
+
+        t11.target = p58
+
+        return t11
+    end
+    function t8.value124()
+        if not t8.value78 then
+            return
+        end
+        for v515, v516 in ipairs(t8.value2:GetPlayers()) do
+
+            if v516 ~= t8.value8 and v516.Character then
+                local Character5 = v516.Character
+                local HumanoidRootPart = Character5:FindFirstChild("HumanoidRootPart")
+
+                if HumanoidRootPart and not t8.value80[Character5] then
+                    if (HumanoidRootPart.Position - t8.value11.Position).Magnitude < 150 then
+                        t8.value80[Character5] = t8.value123(Character5)
+
+                        local Humanoid = Character5:FindFirstChildOfClass("Humanoid")
+
+                        if Humanoid and not t8.value81[Character5] then
+                            local value81 = t8.value81
+                            local WalkSpeed = Humanoid.WalkSpeed
+                            local JumpPower = Humanoid.JumpPower
+
+                            value81[Character5] = {
+								walkSpeed = WalkSpeed,
+								jumpPower = JumpPower
+							}
+                        end
+                    end
+                elseif HumanoidRootPart and t8.value80[Character5] and (HumanoidRootPart.Position - t8.value11.Position).Magnitude > 200 then
+                    local v523 = t8.value80[Character5]
+
+                    if v523.blur then
+                        v523.blur:Destroy()
+                    end
+
+                    if v523.colorCorrection then
+                        v523.colorCorrection:Destroy()
+                    end
+
+                    if v523.highlight then
+                        v523.highlight:Destroy()
+                    end
+
+                    t8.value80[Character5] = nil
+                end
+            end
+        end
+        for _, descendant in ipairs(t8.value5:GetDescendants()) do
+            local v526 = descendant:IsA("BasePart")
+
+            if v526 then
+                v526 = not descendant.Anchored
+
+                if v526 then
+                    v526 = descendant.Velocity.Magnitude > 5
+                end
+            end
+
+            if v526 then
+                if not t8.value80[descendant] then
+                    if (descendant.Position - t8.value11.Position).Magnitude < 50 then
+                        t8.value80[descendant] = t8.value123(descendant)
+                    end
+                elseif t8.value80[descendant] then
+                    local v527 = (descendant.Position - t8.value11.Position).Magnitude > 75
+
+                    if not v527 then
+                        v527 = descendant.Velocity.Magnitude < 2
+                    end
+
+                    if v527 then
+                        local v528 = t8.value80[descendant]
+
+                        if v528.blur then
+                            v528.blur:Destroy()
+                        end
+
+                        if v528.colorCorrection then
+                            v528.colorCorrection:Destroy()
+                        end
+
+                        if v528.highlight then
+                            v528.highlight:Destroy()
+                        end
+
+                        t8.value80[descendant] = nil
+                    end
+                end
+            end
+        end
+    end
+
+    local function v270()
+
+        for v531, v532 in pairs(t8.value81) do
+
+            local v533 = v531
+            local v534 = v532
+
+            pcall(function()
+                if v533:IsA("AnimationTrack") then
+                    v533:AdjustSpeed(v534)
+                end
+            end)
+        end
+        for _, v in pairs(t8.value80) do
+            if v.blur then
+                v.blur:Destroy()
+            end
+
+            if v.colorCorrection then
+                v.colorCorrection:Destroy()
+            end
+
+            if v.highlight then
+                v.highlight:Destroy()
+            end
+        end
+    end
+
+    function t8.value1.toggleSlowTime()
+        t8.value78 = not t8.value78
+
+        if t8.value78 then
+            if not t8.value13:FindFirstChild("SlowTimeCameraBlur") then
+                local BlurEffect = Instance.new("BlurEffect", t8.value13)
+
+                BlurEffect.Name = "SlowTimeCameraBlur"
+                BlurEffect.Size = 3
+                t8.value82.cameraBlur = BlurEffect
+            end
+
+            if not t8.value7:FindFirstChild("SlowTimeGlobalColor") then
+                local ColorCorrectionEffect = Instance.new("ColorCorrectionEffect", t8.value7)
+
+                ColorCorrectionEffect.Name = "SlowTimeGlobalColor"
+                ColorCorrectionEffect.TintColor = Color3.fromRGB(0, 51, 160)
+                ColorCorrectionEffect.Brightness = 0.05
+                ColorCorrectionEffect.Contrast = 0.1
+                ColorCorrectionEffect.Saturation = -0.1
+                t8.value82.globalColor = ColorCorrectionEffect
+            end
+
+            t8.value79 = t8.value4.RenderStepped:Connect(function()
+                t8.value124()
+            end)
+        else
+            if t8.value82.cameraBlur then
+                t8.value82.cameraBlur:Destroy()
+                t8.value82.cameraBlur = nil
+            end
+
+            if t8.value82.globalColor then
+                t8.value82.globalColor:Destroy()
+                t8.value82.globalColor = nil
+            end
+
+            v270()
+
+            if t8.value79 then
+                t8.value79:Disconnect()
+                t8.value79 = nil
+            end
+        end
+
+        if updateSpeedLabels then
+            updateSpeedLabels()
+        end
+    end
+    function t8.value1.toggleInvulnerabilidad()
+        t8.value83 = not t8.value83
+
+        if t8.value83 then
+            t8.value84 = t8.value4.Heartbeat:Connect(function()
+                if t8.value10.Health < t8.value10.MaxHealth then
+                    t8.value10.Health = t8.value10.MaxHealth
+                end
+
+                if t8.value11 then
+                    local AssemblyLinearVelocity = t8.value11.AssemblyLinearVelocity
+
+                    if AssemblyLinearVelocity.Y < -50 then
+                        t8.value11.AssemblyLinearVelocity = Vector3.new(AssemblyLinearVelocity.X, -10, AssemblyLinearVelocity.Z)
+                    end
+                end
+            end)
+
+            local connection = t8.value10.HealthChanged:Connect(function(p59)
+                if p59 < t8.value10.MaxHealth then
+                    t8.value10.Health = t8.value10.MaxHealth
+                end
+            end)
+
+            table.insert(t8.value15, connection)
+            t8.value120("INVULNERABILIDAD", "Activada - No recibes daño", "rbxassetid://1381009")
+
+            return
+        end
+
+        if t8.value84 then
+            t8.value84:Disconnect()
+            t8.value84 = nil
+        end
+
+        t8.value120("INVULNERABILIDAD", "Desactivada", "rbxassetid://1381009")
+    end
+
+    local function v271(p60)
+        if not p60 then
+            return false
+        end
+
+        if t8.value91[p60] ~= nil then
+            return t8.value91[p60]
+        end
+
+        local v541 = p60.Name:lower()
+        local v542, v543, v544 = ipairs({
+			"wall",
+			"floor",
+			"ceiling",
+			"roof",
+			"ground",
+			"platform",
+			"block",
+			"brick",
+			"stone",
+			"concrete",
+			"metal",
+			"wood",
+			"glass",
+			"barrier",
+			"fence",
+			"gate",
+			"door",
+			"window",
+			"pillar",
+			"column",
+			"beam"
+		})
+
+        repeat
+            local v545
+
+            v544, v545 = v542(v543, v544)
+
+            if not v544 then
+                if p60.Transparency > 0.3 then
+                    t8.value91[p60] = false
+
+                    return false
+                end
+
+                if p60:IsA("Part") and p60.Anchored then
+                    t8.value91[p60] = true
+
+                    return true
+                end
+
+                t8.value91[p60] = false
+
+                return false
+            end
+        until v541:find(v545)
+
+        t8.value91[p60] = true
+
+        return true
+    end
+    local function v272(p61)
+        if not p61 or not p61:IsA("BasePart") then
+            return
+        end
+
+        if t8.value94[p61] then
+            return
+        end
+
+        if not t8.value88[p61] then
+            t8.value88[p61] = p61.Transparency
+        end
+
+        if v271(p61) then
+            p61.Transparency = t8.value90
+        else
+            p61.Transparency = t8.value89
+        end
+
+        if p61:IsA("Part") then
+            p61.CastShadow = false
+
+            if not t8.value87[p61] then
+                local SelectionBox = Instance.new("SelectionBox", p61)
+
+                SelectionBox.Name = "XRayOutline"
+                SelectionBox.Adornee = p61
+                SelectionBox.Color3 = Color3.fromRGB(255, 255, 0)
+                SelectionBox.Transparency = 0.7
+                SelectionBox.LineThickness = 0.05
+                t8.value87[p61] = SelectionBox
+            end
+        end
+
+        t8.value94[p61] = true
+    end
+    local function v273(p62)
+        if not p62 then
+            return
+        end
+
+        if not t8.value94[p62] then
+            return
+        end
+
+        if t8.value88[p62] then
+            p62.Transparency = t8.value88[p62]
+            t8.value88[p62] = nil
+        end
+
+        if p62:IsA("Part") then
+            p62.CastShadow = true
+        end
+
+        if t8.value87[p62] then
+            t8.value87[p62]:Destroy()
+            t8.value87[p62] = nil
+        end
+
+        t8.value94[p62] = nil
+    end
+
+    function t8.value125()
+        if not t8.value85 then
+            return
+        end
+
+        if tick() - t8.value93 < t8.value92 then
+            return
+        end
+
+        local CFramePosition = t8.value13.CFrame.Position
+        local n2 = 50
+
+        for k, _ in pairs(t8.value94) do
+            local v553 = k
+
+            if v553 and v553.Parent then
+                if n2 < (v553.Position - CFramePosition).Magnitude then
+                    v273(v553)
+                end
+            else
+                t8.value94[v553] = nil
+
+                if t8.value88[v553] then
+                    t8.value88[v553] = nil
+                end
+            end
+        end
+
+        local vector3 = Vector3.new(n2 * 2, n2 * 2, n2 * 2)
+        local region3 = Region3.new(CFramePosition - vector3 / 2, CFramePosition + vector3 / 2)
+        local PartsInRegion3 = t8.value5:FindPartsInRegion3(region3, nil, 1e999)
+
+        for _, v in ipairs(PartsInRegion3) do
+            if v:IsA("BasePart") then
+                local Magnitude = (v.Position - CFramePosition).Magnitude
+
+                if Magnitude < n2 then
+                    local raycastResult = t8.value5:Raycast(CFramePosition, (v.Position - CFramePosition).Unit * Magnitude)
+
+                    if raycastResult and v == raycastResult.Instance then
+                        v272(v)
+                    elseif Magnitude > n2 / 2 and v271(v) then
+                        v272(v)
+                    end
+                end
+            end
+        end
+    end
+    function t8.value1.toggleXRay()
+        t8.value85 = not t8.value85
+
+        if t8.value85 then
+            local ColorCorrectionEffect = Instance.new("ColorCorrectionEffect", t8.value13)
+
+            ColorCorrectionEffect.Name = "XRayColorCorrection"
+            ColorCorrectionEffect.TintColor = Color3.fromRGB(0, 100, 255)
+            ColorCorrectionEffect.Brightness = 0.1
+            ColorCorrectionEffect.Contrast = 0.2
+            ColorCorrectionEffect.Saturation = -0.3
+            t8.value87.cameraEffect = ColorCorrectionEffect
+            t8.value86 = t8.value4.Heartbeat:Connect(function()
+                t8.value125()
+            end)
+        else
+            if t8.value87.cameraEffect then
+                t8.value87.cameraEffect:Destroy()
+                t8.value87.cameraEffect = nil
+            end
+
+            for k, _ in pairs(t8.value88) do
+                local v564 = k
+
+                if v564 and v564.Parent then
+                    v273(v564)
+                end
+            end
+
+            for k, v in pairs(t8.value87) do
+                if k ~= "cameraEffect" and v then
+                    v:Destroy()
+                end
+            end
+
+            if t8.value86 then
+                t8.value86:Disconnect()
+                t8.value86 = nil
+            end
+        end
+
+        if updateSpeedLabels then
+            updateSpeedLabels()
+        end
+    end
+    function t8.value1.toggleESP()
+        t8.value102 = not t8.value102
+
+        if t8.value102 then
+            for _, descendant in pairs(t8.value5:GetDescendants()) do
+                if descendant:IsA("Humanoid") and descendant.Parent ~= t8.value9 then
+                    local Highlight = Instance.new("Highlight", t8.value6)
+
+                    Highlight.Adornee = descendant.Parent
+                    Highlight.FillColor = t8.value101
+                    Highlight.FillTransparency = 0.5
+                    Highlight.OutlineColor = Color3.fromRGB(200, 0, 0)
+                    table.insert(t8.value103, Highlight)
+                end
+            end
+
+            return
+        end
+
+        for _, v in pairs(t8.value103) do
+            v:Destroy()
+        end
+
+        t8.value103 = {}
+    end
+    function t8.value1.toggleAntiSit()
+        t8.value104 = not t8.value104
+
+        if t8.value104 then
+            for _, descendant in ipairs(t8.value5:GetDescendants()) do
+                if descendant:IsA("Seat") or descendant:IsA("VehicleSeat") then
+                    descendant.Disabled = true
+                    descendant.CanTouch = false
+                    t8.value106[descendant] = true
+                end
+            end
+
+            t8.value105.DescendantAdded = t8.value121(t8.value5.DescendantAdded, function(p63)
+                if p63:IsA("Seat") or p63:IsA("VehicleSeat") and not t8.value106[p63] then
+                    task.wait(0.05)
+                    p63.Disabled = true
+                    p63.CanTouch = false
+                    t8.value106[p63] = true
+                end
+            end)
+
+            return
+        end
+
+        for _, v in pairs(t8.value105) do
+            if v and v.Connected then
+                v:Disconnect()
+            end
+        end
+
+        t8.value105 = {}
+
+        for k, _ in pairs(t8.value106) do
+            local v578 = k
+
+            if v578 and v578.Parent then
+                v578.Disabled = false
+                v578.CanTouch = true
+            end
+        end
+    end
+    function t8.value1.toggleNpcSpy()
+        t8.value107 = not t8.value107
+
+        if t8.value107 then
+            if not t8.value109 then
+                t8.value109 = Instance.new("Highlight", t8.value6)
+                t8.value109.FillColor = Color3.fromRGB(200, 0, 0)
+                t8.value109.OutlineColor = Color3.fromRGB(255, 255, 0)
+                t8.value109.FillTransparency = 0.6
+                t8.value109.OutlineTransparency = 0
+                t8.value109.Enabled = false
+            end
+
+            t8.value13.CameraSubject = t8.value10
+            t8.value108 = t8.value4.RenderStepped:Connect(function()
+                if tick() - t8.value110 < t8.value111 then
+                    return
+                end
+                if not t8.value107 then
+                    return
+                end
+                local v753
+                local huge = math.huge
+                for v757, v758 in pairs(t8.value5:GetDescendants()) do
+
+                    if v758:IsA("Humanoid") and v758.Parent ~= t8.value9 then
+                        local Parent = v758.Parent
+
+                        if not t8.value2:GetPlayerFromCharacter(Parent) then
+                            local HumanoidRootPart = Parent:FindFirstChild("HumanoidRootPart")
+
+                            if HumanoidRootPart then
+                                local Magnitude = (HumanoidRootPart.Position - t8.value11.Position).Magnitude
+
+                                if Magnitude < huge and Magnitude < 500 then
+                                    v753 = Parent
+                                    huge = Magnitude
+                                end
+                            end
+                        end
+                    end
+                end
+                if v753 then
+                    t8.value109.Adornee = v753
+                    t8.value109.Enabled = true
+
+                    return
+                end
+                t8.value109.Enabled = false
+            end)
+
+            return
+        end
+
+        if t8.value108 then
+            t8.value108:Disconnect()
+        end
+
+        if t8.value109 then
+            t8.value109:Destroy()
+            t8.value109 = nil
+        end
+
+        t8.value13.CameraSubject = t8.value10
+    end
+    function t8.value1.deleteScript()
+        if t8.value26 then
+            if t8.value26 and t8.value27 then
+                t8.value27:Stop(0.1)
+                t8.value26 = false
+            end
+
+            local Animate = t8.value9:FindFirstChild("Animate")
+
+            if Animate then
+                Animate.Disabled = false
+            end
+        end
+        for v582, v583 in ipairs(t8.value15) do
+
+            if v583 and v583.Connected then
+                v583:Disconnect()
+            end
+        end
+        if t8.value52 then
+            t8.value52:Disconnect()
+        end
+        if t8.value54 then
+            t8.value54:Disconnect()
+        end
+        if t8.value59 then
+            t8.value59:Disconnect()
+        end
+        if t8.value79 then
+            t8.value79:Disconnect()
+        end
+        if t8.value108 then
+            t8.value108:Disconnect()
+        end
+        if t8.value84 then
+            t8.value84:Disconnect()
+        end
+        if t8.value86 then
+            t8.value86:Disconnect()
+        end
+        for _, v in pairs(t8.value100) do
+            if v and v.Connected then
+                v:Disconnect()
+            end
+        end
+        for v588, v589 in pairs(t8.value105) do
+
+            if v589 and v589.Connected then
+                v589:Disconnect()
+            end
+        end
+        if t8.value112 then
+            t8.value13.CameraType = Enum.CameraType.Custom
+            t8.value13.CameraSubject = t8.value10
+        end
+        if t8.value78 then
+            v270()
+
+            if t8.value82.cameraBlur then
+                t8.value82.cameraBlur:Destroy()
+            end
+
+            if t8.value82.globalColor then
+                t8.value82.globalColor:Destroy()
+            end
+        end
+        if t8.value85 then
+            t8.value1.toggleXRay()
+        end
+        t8.value5.Gravity = t8.value14
+        if t8.value62 then
+            t8.value1.stopFlying()
+        end
+        if t8.value95 then
+            t8.value13.FieldOfView = t8.value96
+        end
+        if t8.value102 then
+            for _, v in pairs(t8.value103) do
+                v:Destroy()
+            end
+        end
+        for _, v in pairs(t8.value33) do
+            local part = v.part
+
+            if part then
+                part = v.part.Parent
+            end
+
+            if part then
+                local v595 = v.part.AssemblyRootPart or v.part
+
+                if v.humanoid then
+                    v.humanoid.PlatformStand = false
+                end
+
+                if not v595.Anchored then
+                    v595.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    v595.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                end
+            end
+        end
+        for _, v in pairs(t8.value37) do
+            local part = v.part
+
+            if part then
+                part = v.part.Parent
+            end
+
+            if part then
+                local v599 = v.part.AssemblyRootPart or v.part
+
+                if v.humanoid then
+                    v.humanoid.PlatformStand = false
+                end
+
+                if not v599.Anchored then
+                    v599.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    v599.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                end
+            end
+        end
+        t8.value33 = {}
+        t8.value37 = {}
+        if t8.value116 then
+            t8.value116:Destroy()
+        end
+        if t8.value109 then
+            t8.value109:Destroy()
+        end
+        t8.value13.CameraType = Enum.CameraType.Custom
+        t8.value13.CameraSubject = t8.value10
+    end
+    function t8.value1.activatePower()
+        if not t8.value21 then
+            return
+        end
+
+        local value21 = t8.value21
+
+        if value21 == "flight" then
+            if t8.value62 then
+                t8.value1.stopFlying()
+
+                return
+            end
+
+            t8.value1.startFlying()
+
+            return
+        end
+
+        if value21 == "grab" then
+            t8.value1.directGrab()
+
+            return
+        end
+
+        if value21 == "telekinesis" then
+            t8.value1.directTelekinesis()
+
+            return
+        end
+
+        if value21 == "slowtime" then
+            t8.value1.toggleSlowTime()
+
+            return
+        end
+
+        if value21 == "superjump" then
+            t8.value1.toggleSuperJump()
+
+            return
+        end
+
+        if value21 == "walkspeed" then
+            t8.value1.toggleWalkSpeedLoop()
+
+            return
+        end
+
+        if value21 == "microscopica" then
+            t8.value1.toggleMicroscopica()
+
+            return
+        end
+
+        if value21 == "superfuerza" then
+            t8.value1.toggleSuperFuerza()
+
+            return
+        end
+
+        if value21 == "invulnerabilidad" then
+            t8.value1.toggleInvulnerabilidad()
+
+            return
+        end
+
+        if value21 == "xray" then
+            t8.value1.toggleXRay()
+        end
+    end
+    function t8.value1.activateOption()
+        if not t8.value119 then
+            return
+        end
+
+        local value119 = t8.value119
+
+        if value119 == "esp" then
+            t8.value1.toggleESP()
+
+            return
+        end
+
+        if value119 == "antisit" then
+            t8.value1.toggleAntiSit()
+
+            return
+        end
+
+        if value119 == "npcspy" then
+            t8.value1.toggleNpcSpy()
+
+            return
+        end
+
+        if value119 == "camera" then
+            if t8.value112 then
+                t8.value112 = false
+                t8.value13.CameraType = Enum.CameraType.Custom
+                t8.value13.CameraSubject = t8.value10
+                t8.value120("SUPER GIRL V2", "Sistema de Cámara DESACTIVADO", "rbxassetid://1381009")
+
+                return
+            end
+
+            t8.value112 = true
+            t8.value13.CameraType = Enum.CameraType.Scriptable
+            t8.value120("SUPER GIRL V2", "Sistema de Cámara ACTIVADO", "rbxassetid://1381009")
+
+            return
+        end
+
+        if value119 == "respawn" then
+            t8.value1.respawnCharacter()
+
+            return
+        end
+
+        if value119 == "deletescript" then
+            t8.value1.deleteScript()
+
+            return
+        end
+    end
+
+    t8.value126 = nil
+
+    function updateSpeedLabels()
+        if t8.value118.flight then
+            local v602 = not t8.value64 and "NORMAL" or "RÁPIDO"
+
+            t8.value118.flight.Text = "🛸 " .. math.floor(t8.value63) .. " (" .. v602 .. ")"
+        end
+
+        if t8.value118.superjump then
+            t8.value118.superjump.Text = "⬆\239\184\143 " .. t8.value47
+        end
+
+        if t8.value118.walkspeed then
+            t8.value118.walkspeed.Text = "💨 " .. math.floor(t8.value55)
+        end
+
+        if t8.value118.grab then
+            t8.value118.grab.Text = "✋ " .. t8.value24[t8.value25].name
+        end
+
+        if t8.value118.telekinesis then
+            if t8.value32 then
+                t8.value118.telekinesis.Text = "📡 " .. #t8.value37 .. "/" .. t8.value42 .. " | R: " .. t8.value43
+            else
+                t8.value118.telekinesis.Text = "📡 " .. t8.value38
+            end
+        end
+
+        if t8.value118.microscopica then
+            t8.value118.microscopica.Text = "🔬 ACTIVO"
+        end
+
+        if t8.value118.superfuerza then
+            t8.value118.superfuerza.Text = "💪 " .. t8.value99 .. "x"
+        end
+
+        if t8.value118.invulnerabilidad then
+            t8.value118.invulnerabilidad.Text = "🛡\239\184\143 ACTIVO"
+        end
+
+        if t8.value118.slowtime then
+            t8.value118.slowtime.Text = "⏱\239\184\143 ACTIVO"
+        end
+
+        if t8.value118.xray then
+            t8.value118.xray.Text = "👁\239\184\143 ACTIVO"
+        end
+    end
+    function t8.value126()
+        if t8.value116 then
+            t8.value116:Destroy()
+        end
+
+        t8.value116 = Instance.new("ScreenGui", t8.value6)
+        t8.value116.Name = "SuperGirlMenu_V2"
+        t8.value117 = {}
+        t8.value118 = {}
+
+        local AbsoluteSize = t8.value116.AbsoluteSize
+        local v604 = AbsoluteSize.Y * 0.8
+        local v605 = t8.value22 and t8.value115 or t8.value114
+        local v606 = #v605
+        local v607 = v606 * 110 + (v606 - 1) * 10
+        local v608 = (AbsoluteSize.X - v607) / 2
+        local Frame = Instance.new("Frame", t8.value116)
+
+        Frame.Size = UDim2.new(0, v607 + 40, 0, 150)
+        Frame.Position = UDim2.new(0.5, -(v607 + 40) / 2, 0, v604 - 70)
+        Frame.BackgroundColor3 = Color3.fromRGB(0, 51, 160)
+        Frame.BackgroundTransparency = 0.2
+        Frame.BorderSizePixel = 0
+        Instance.new("UICorner", Frame).CornerRadius = UDim.new(0, 10)
+
+        local UIStroke = Instance.new("UIStroke", Frame)
+
+        UIStroke.Color = Color3.fromRGB(200, 0, 0)
+        UIStroke.Thickness = 3
+
+        for i, v in ipairs(v605) do
+            local v613 = v
+            local v614 = v608 + (i - 1) * 120
+            local TextButton = Instance.new("TextButton", t8.value116)
+
+            TextButton.Size = UDim2.new(0, 110, 0, 110)
+            TextButton.Position = UDim2.new(0, v614, 0, v604 - 60)
+            TextButton.Font = Enum.Font.GothamBold
+            TextButton.AutoButtonColor = false
+            TextButton.TextSize = 9
+            TextButton.TextColor3 = Color3.fromRGB(255, 255, 0)
+            TextButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+            TextButton.BorderSizePixel = 0
+            Instance.new("UICorner", TextButton).CornerRadius = UDim.new(0, 15)
+
+            local UIStroke2 = Instance.new("UIStroke", TextButton)
+
+            UIStroke2.Color = Color3.fromRGB(255, 255, 0)
+            UIStroke2.Thickness = 2
+
+            local Frame2 = Instance.new("Frame", TextButton)
+
+            Frame2.Size = UDim2.new(1, 0, 1, 0)
+            Frame2.Position = UDim2.new(0, 0, 0, 0)
+            Frame2.BackgroundTransparency = 1
+            Frame2.ZIndex = 1
+
+            local TextLabel = Instance.new("TextLabel", Frame2)
+
+            TextLabel.Size = UDim2.new(1, 0, 0.7, 0)
+            TextLabel.Position = UDim2.new(0, 0, 0, 0)
+            TextLabel.BackgroundTransparency = 1
+            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+            TextLabel.Font = Enum.Font.GothamBold
+            TextLabel.TextSize = 11
+            TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+            TextLabel.TextStrokeTransparency = 0.3
+            TextLabel.Text = v613.icon .. "\n" .. v613.name
+
+            local v619 = t8.value22 and "OPCIÓN"
+
+            if not v619 then
+                local v620 = v261
+                local value23 = t8.value23
+                local ability = v613.ability
+
+                if not ability then
+                    ability = v613.option
+                end
+
+                v619 = v620(value23[ability])
+            end
+
+            local TextLabel2 = Instance.new("TextLabel", Frame2)
+
+            TextLabel2.Size = UDim2.new(1, 0, 0.3, 0)
+            TextLabel2.Position = UDim2.new(0, 0, 0.7, 0)
+            TextLabel2.BackgroundTransparency = 1
+            TextLabel2.TextColor3 = Color3.fromRGB(255, 255, 200)
+            TextLabel2.Font = Enum.Font.Gotham
+            TextLabel2.TextSize = 9
+            TextLabel2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+            TextLabel2.TextStrokeTransparency = 0.3
+            TextLabel2.Text = "[" .. v619 .. "]"
+
+            if not t8.value22 then
+                local TextLabel3 = Instance.new("TextLabel")
+
+                TextLabel3.Name = "SpeedLabel"
+                TextLabel3.Size = UDim2.new(1, 0, 0.3, 0)
+                TextLabel3.Position = UDim2.new(0, 0, 0.7, 0)
+                TextLabel3.BackgroundColor3 = Color3.fromRGB(0, 51, 160)
+                TextLabel3.BackgroundTransparency = 0.3
+                TextLabel3.TextColor3 = Color3.fromRGB(255, 255, 0)
+                TextLabel3.TextSize = 9
+                TextLabel3.Font = Enum.Font.GothamBold
+                TextLabel3.BorderSizePixel = 0
+                TextLabel3.ZIndex = 2
+                TextLabel3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                TextLabel3.TextStrokeTransparency = 0.2
+                TextLabel3.Parent = TextButton
+
+                local UIStroke3 = Instance.new("UIStroke", TextLabel3)
+
+                UIStroke3.Color = Color3.fromRGB(255, 255, 0)
+                UIStroke3.Thickness = 1
+
+                if v613.ability == "flight" then
+                    local v626 = not t8.value64 and "NORMAL" or "RÁPIDO"
+
+                    TextLabel3.Text = "🛸 " .. math.floor(t8.value63) .. " (" .. v626 .. ")"
+                    t8.value118.flight = TextLabel3
+                elseif v613.ability == "superjump" then
+                    TextLabel3.Text = "⬆\239\184\143 " .. t8.value47
+                    t8.value118.superjump = TextLabel3
+                elseif v613.ability == "walkspeed" then
+                    TextLabel3.Text = "💨 " .. math.floor(t8.value55)
+                    t8.value118.walkspeed = TextLabel3
+                elseif v613.ability == "grab" then
+                    TextLabel3.Text = "✋ " .. t8.value24[t8.value25].name
+                    t8.value118.grab = TextLabel3
+                elseif v613.ability == "telekinesis" then
+                    if t8.value32 then
+                        TextLabel3.Text = "📡 " .. #t8.value37 .. "/" .. t8.value42 .. " | R: " .. t8.value43
+                    else
+                        TextLabel3.Text = "📡 " .. t8.value38
+                    end
+
+                    t8.value118.telekinesis = TextLabel3
+                elseif v613.ability == "microscopica" then
+                    TextLabel3.Text = "🔬 ACTIVO"
+                    t8.value118.microscopica = TextLabel3
+                elseif v613.ability == "superfuerza" then
+                    TextLabel3.Text = "💪 " .. t8.value99 .. "x"
+                    t8.value118.superfuerza = TextLabel3
+                elseif v613.ability == "invulnerabilidad" then
+                    TextLabel3.Text = "🛡\239\184\143 ACTIVO"
+                    t8.value118.invulnerabilidad = TextLabel3
+                elseif v613.ability == "slowtime" then
+                    TextLabel3.Text = "⏱\239\184\143 ACTIVO"
+                    t8.value118.slowtime = TextLabel3
+                elseif v613.ability == "xray" then
+                    TextLabel3.Text = "👁\239\184\143 ACTIVO"
+                    t8.value118.xray = TextLabel3
+                else
+                    TextLabel3.Visible = false
+                end
+            end
+
+            TextButton.MouseButton1Click:Connect(function()
+                if t8.value28 then
+                    t8.value28 = false
+                    t8.value29 = nil
+                elseif t8.value22 then
+                    t8.value119 = v613.option
+                    t8.value1.activateOption()
+                else
+                    t8.value21 = v613.ability
+                    t8.value1.activatePower()
+                end
+
+                refreshMenuVisuals()
+            end)
+            TextButton.MouseButton2Click:Connect(function()
+                if t8.value22 then
+                    return
+                end
+
+                local timestamp = tick()
+
+                if timestamp - (t8.value30[v613.ability] or 0) < 0.5 then
+                    t8.value23[v613.ability] = nil
+                    t8.value28 = false
+                    t8.value29 = nil
+                    t8.value126()
+                    refreshMenuVisuals()
+                else
+                    t8.value28 = true
+                    t8.value29 = v613.ability
+                    refreshMenuVisuals()
+                end
+
+                t8.value30[v613.ability] = timestamp
+            end)
+
+            local value117 = t8.value117
+            local ability = v613.ability
+
+            if not ability then
+                ability = v613.option
+            end
+
+            value117[ability] = TextButton
+        end
+
+        local TextLabel = Instance.new("TextLabel", t8.value116)
+
+        TextLabel.Size = UDim2.new(0, 300, 0, 30)
+        TextLabel.Position = UDim2.new(0.5, -150, 0, v604 - 100)
+        TextLabel.BackgroundTransparency = 1
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+        TextLabel.Font = Enum.Font.GothamBold
+        TextLabel.TextSize = 14
+        TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.TextStrokeTransparency = 0.5
+
+        if t8.value22 then
+            TextLabel.Text = "OPCIONES - [SUPR] para cambiar a poderes | [ENTER] para activar"
+        else
+            TextLabel.Text = "PODERES SUPER GIRL V2 - [SUPR] para cambiar a opciones | [ENTER] para activar"
+        end
+
+        refreshMenuVisuals()
+    end
+    function t8.value127()
+        for k, v in pairs(t8.value117) do
+            local v632 = k
+            local UIStroke = v:FindFirstChild("UIStroke")
+            local SpeedLabel = v:FindFirstChild("SpeedLabel")
+            local TextLabel = v:FindFirstChild("TextLabel")
+            local TextLabel4 = v:FindFirstChild("TextLabel")
+
+            if TextLabel4 then
+                TextLabel4 = v.TextLabel:FindFirstChild("TextLabel")
+            end
+
+            local value28 = t8.value28
+            local v638 = TextLabel4 or nil
+
+            if value28 and v632 == t8.value29 then
+                v.BackgroundColor3 = Color3.fromRGB(255, 140, 0)
+
+                if UIStroke then
+                    UIStroke.Color = Color3.fromRGB(255, 255, 0)
+                    UIStroke.Thickness = 3
+                end
+
+                if TextLabel then
+                    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                    TextLabel.TextStrokeTransparency = 0.1
+                end
+
+                if v638 then
+                    v638.TextColor3 = Color3.fromRGB(255, 255, 200)
+                    v638.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                    v638.TextStrokeTransparency = 0.1
+                end
+
+                if SpeedLabel then
+                    SpeedLabel.Visible = false
+                end
+            else
+                local v639 = not t8.value22 and v632 == t8.value21
+
+                if not v639 then
+                    v639 = t8.value22 and v632 == t8.value119
+                end
+
+                if v639 then
+                    v.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+
+                    if UIStroke then
+                        UIStroke.Color = Color3.fromRGB(255, 255, 0)
+                        UIStroke.Thickness = 3
+                    end
+
+                    if TextLabel then
+                        TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+                        TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.TextStrokeTransparency = 0.2
+                    end
+
+                    if v638 then
+                        v638.TextColor3 = Color3.fromRGB(0, 0, 0)
+                        v638.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        v638.TextStrokeTransparency = 0.2
+                    end
+
+                    if SpeedLabel then
+                        SpeedLabel.Visible = true
+                        SpeedLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+                        SpeedLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        SpeedLabel.TextStrokeTransparency = 0.2
+                    end
+                else
+                    v.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+
+                    if UIStroke then
+                        UIStroke.Color = Color3.fromRGB(255, 255, 0)
+                        UIStroke.Thickness = 2
+                    end
+
+                    if TextLabel then
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                        TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                        TextLabel.TextStrokeTransparency = 0.3
+                    end
+
+                    if v638 then
+                        v638.TextColor3 = Color3.fromRGB(255, 255, 200)
+                        v638.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                        v638.TextStrokeTransparency = 0.3
+                    end
+
+                    if SpeedLabel then
+                        SpeedLabel.Visible = true
+                        SpeedLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                        SpeedLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                        SpeedLabel.TextStrokeTransparency = 0.2
+                    end
+                end
+            end
+        end
+    end
+
+    local function v274(p64)
+        if not t8.value20 then
+            return
+        end
+
+        local v641 = t8.value22 and t8.value115 or t8.value114
+
+        if t8.value22 then
+            local n3 = 1
+
+            for i, v in ipairs(v641) do
+                if v.option == t8.value119 then
+                    n3 = i
+
+                    break
+                end
+            end
+
+            local v645 = n3 + p64
+
+            if v645 > #v641 then
+                v645 = 1
+            end
+
+            if v645 < 1 then
+                v645 = #v641
+            end
+
+            local _ = v641[v645].option
+        else
+            local n4 = 1
+
+            for i, v in ipairs(v641) do
+                if v.ability == t8.value21 then
+                    n4 = i
+
+                    break
+                end
+            end
+
+            local v650 = n4 + p64
+
+            if v650 > #v641 then
+                v650 = 1
+            end
+
+            if v650 < 1 then
+                v650 = #v641
+            end
+
+            local _ = v641[v650].ability
+        end
+
+        t8.value127()
+    end
+
+    t8.value121(t8.value3.InputBegan, function(p65, p66)
+        if p65.UserInputType ~= Enum.UserInputType.Keyboard then
+            return
+        end
+
+        local KeyCode = p65.KeyCode
+
+        if p66 then
+            return
+        end
+
+        local v655 = KeyCode == Enum.KeyCode.KeypadPlus
+
+        if not v655 then
+            v655 = KeyCode == Enum.KeyCode.Equals
+        end
+
+        if v655 then
+            if t8.value32 and #t8.value37 > 0 then
+                t8.value43 = math.min(t8.value45, t8.value43 + t8.value46)
+                t8.value120("MULTI-TELEKINESIS", "Radio aumentado a " .. t8.value43, "rbxassetid://1381009")
+                updateSpeedLabels()
+
+                return
+            end
+
+            if t8.value62 then
+                if t8.value63 < 100 then
+                    t8.value63 = math.min(100, t8.value63 + t8.value67)
+
+                    if t8.value63 >= 100 then
+                        if #t8.value33 == 0 then
+                            t8.value1.playFlightFastAnimation()
+                        end
+
+                        t8.value120("VUELO RÁPIDO", "Velocidad aumentada a 100 (Modo RÁPIDO)", "rbxassetid://1381009")
+                    else
+                        t8.value120("VUELO", "Velocidad aumentada a " .. t8.value63, "rbxassetid://1381009")
+                    end
+                elseif t8.value63 >= 100 and t8.value63 < t8.value66 then
+                    t8.value63 = math.min(t8.value66, t8.value63 + t8.value68)
+                    t8.value120("VUELO RÁPIDO", "Velocidad aumentada a " .. t8.value63, "rbxassetid://1381009")
+                else
+                    t8.value120("VUELO", "Velocidad máxima alcanzada (500)", "rbxassetid://1381009")
+                end
+
+                updateSpeedLabels()
+
+                return
+            end
+
+            if #t8.value37 > 0 and t8.value31 then
+                local min = math.min
+                local v657 = t8.value38 + t8.value41
+
+                t8.value38 = min(t8.value40, v657)
+                updateSpeedLabels()
+
+                return
+            end
+
+            if t8.value51 then
+                local min = math.min
+                local v659 = t8.value47 + t8.value50
+
+                t8.value47 = min(t8.value49, v659)
+                updateSpeedLabels()
+
+                return
+            end
+
+            if t8.value53 then
+                t8.value1.adjustWalkSpeed(t8.value58)
+
+                return
+            end
+
+            if t8.value98 then
+                t8.value1.adjustSuperFuerza(1)
+                updateSpeedLabels()
+
+                return
+            end
+        else
+            local v660 = KeyCode == Enum.KeyCode.KeypadMinus
+
+            if not v660 then
+                v660 = KeyCode == Enum.KeyCode.Minus
+            end
+
+            if v660 then
+                if t8.value32 and #t8.value37 > 0 then
+                    t8.value43 = math.max(t8.value44, t8.value43 - t8.value46)
+                    t8.value120("MULTI-TELEKINESIS", "Radio disminuido a " .. t8.value43, "rbxassetid://1381009")
+                    updateSpeedLabels()
+
+                    return
+                end
+
+                if t8.value62 then
+                    if t8.value63 > 100 then
+                        t8.value63 = math.max(100, t8.value63 - t8.value68)
+                        t8.value120("VUELO", "Velocidad disminuida a " .. t8.value63, "rbxassetid://1381009")
+                    elseif t8.value63 == 100 then
+                        t8.value1.stopFlightFastAnimation()
+                        t8.value120("VUELO", "Velocidad disminuida a 30 (Modo NORMAL)", "rbxassetid://1381009")
+                    else
+                        t8.value120("VUELO", "Velocidad mínima (30)", "rbxassetid://1381009")
+                    end
+
+                    updateSpeedLabels()
+
+                    return
+                end
+
+                if #t8.value37 > 0 and t8.value31 then
+                    local max = math.max
+                    local v662 = t8.value38 - t8.value41
+
+                    max(t8.value39, v662)
+                    updateSpeedLabels()
+
+                    return
+                end
+
+                if t8.value51 then
+                    local max = math.max
+                    local v664 = t8.value47 - t8.value50
+
+                    t8.value47 = max(t8.value48, v664)
+                    updateSpeedLabels()
+
+                    return
+                end
+
+                if t8.value53 then
+                    t8.value1.adjustWalkSpeed(-t8.value58)
+
+                    return
+                end
+
+                if t8.value98 then
+                    t8.value1.adjustSuperFuerza(-1)
+                    updateSpeedLabels()
+
+                    return
+                end
+            end
+        end
+
+        if KeyCode == t8.value19 and t8.value20 then
+            t8.value22 = not t8.value22
+
+            if t8.value22 then
+                local _ = t8.value115[1].option
+            else
+                local _ = t8.value114[1].ability
+            end
+
+            t8.value126()
+
+            return
+        end
+
+        if KeyCode == Enum.KeyCode.F1 then
+            if #t8.value33 > 0 then
+                if #t8.value33 > 0 then
+                    t8.value1.throwPartGrab(t8.value33[1])
+                    table.remove(t8.value33, 1)
+
+                    if #t8.value33 == 0 then
+                        if t8.value26 and t8.value27 then
+                            t8.value27:Stop(0.1)
+                            t8.value26 = false
+                        end
+
+                        local Animate = t8.value9:FindFirstChild("Animate")
+
+                        if Animate then
+                            Animate.Disabled = false
+
+                            return
+                        end
+                    end
+                end
+            elseif #t8.value37 > 0 then
+                if t8.value32 then
+                    t8.value1.throwAllPartsTele()
+
+                    return
+                end
+
+                if #t8.value37 > 0 then
+                    t8.value1.throwPartTele(t8.value37[1])
+                    table.remove(t8.value37, 1)
+
+                    if #t8.value37 ~= 0 then
+                    end
+                end
+            end
+
+            return
+        end
+
+        if KeyCode == Enum.KeyCode.F2 then
+            if #t8.value37 > 0 then
+                t8.value1.toggleMultiTelekinesis()
+            end
+
+            return
+        end
+
+        if KeyCode == Enum.KeyCode.F3 then
+            if #t8.value33 > 0 then
+                t8.value25 = t8.value25 + 1
+
+                if t8.value25 > #t8.value24 then
+                    t8.value25 = 1
+                end
+
+                if #t8.value33 > 0 then
+                    v264()
+                end
+
+                if updateSpeedLabels then
+                    updateSpeedLabels()
+                end
+            end
+
+            return
+        end
+
+        if KeyCode == Enum.KeyCode.F4 then
+            if #t8.value37 > 0 then
+                t8.value1.toggleMultiTelekinesis()
+            end
+
+            return
+        end
+
+        if t8.value28 and t8.value29 then
+            t8.value23[t8.value29] = KeyCode
+            t8.value126()
+            t8.value127()
+
+            return
+        end
+
+        if KeyCode == t8.value16 then
+            t8.value20 = not t8.value20
+
+            if t8.value20 then
+                t8.value126()
+
+                return
+            end
+
+            if t8.value116 then
+                t8.value116:Destroy()
+            end
+
+            return
+        end
+
+        if t8.value20 then
+            if KeyCode == t8.value17 then
+                v274(1)
+
+                return
+            end
+
+            if KeyCode == t8.value18 then
+                v274(-1)
+
+                return
+            end
+
+            local v668 = KeyCode == Enum.KeyCode.Return
+
+            if not v668 then
+                v668 = KeyCode == Enum.KeyCode.KeypadEnter
+            end
+
+            if v668 then
+                if t8.value22 then
+                    t8.value1.activateOption()
+
+                    return
+                end
+
+                t8.value1.activatePower()
+
+                return
+            end
+        end
+
+        local v669, v670, v671 = pairs(t8.value23)
+
+        repeat
+            local v672
+
+            v671, v672 = v669(v670, v671)
+
+            if not v671 then
+                if not t8.value113 then
+                    if KeyCode == Enum.KeyCode.W then
+                        t8.value69.forward = 1
+                    end
+
+                    if KeyCode == Enum.KeyCode.S then
+                        t8.value69.backward = 1
+                    end
+
+                    if KeyCode == Enum.KeyCode.A then
+                        t8.value69.left = 1
+                    end
+
+                    if KeyCode == Enum.KeyCode.D then
+                        t8.value69.right = 1
+                    end
+
+                    if KeyCode == Enum.KeyCode.Space then
+                        t8.value69.up = 1
+                    end
+
+                    if KeyCode == Enum.KeyCode.LeftControl then
+                        t8.value69.down = 1
+                    end
+                end
+
+                return
+            end
+        until v672 and v672 == KeyCode
+
+        t8.value1.activatePower()
+    end)
+    t8.value121(t8.value3.InputEnded, function(p67)
+        local KeyCode = p67.KeyCode
+
+        if not t8.value113 then
+            if KeyCode == Enum.KeyCode.W then
+                t8.value69.forward = 0
+            end
+
+            if KeyCode == Enum.KeyCode.S then
+                t8.value69.backward = 0
+            end
+
+            if KeyCode == Enum.KeyCode.A then
+                t8.value69.left = 0
+            end
+
+            if KeyCode == Enum.KeyCode.D then
+                t8.value69.right = 0
+            end
+
+            if KeyCode == Enum.KeyCode.Space then
+                t8.value69.up = 0
+            end
+
+            if KeyCode == Enum.KeyCode.LeftControl then
+                t8.value69.down = 0
+            end
+        end
+    end)
+    t8.value128 = {
+		Idle = 133214699132640,
+		Walk = 16738340646,
+		Run = 82598234841035,
+		Jump = 10921242013,
+		Fall = 10921241244,
+		Climb = 16738332169,
+		Swim = 16738339158,
+		SwimIdle = 16738339817
+	}
+
+    local function v275(p68, p69)
+        local v680 = p69 or 1
+        local timestamp = tick()
+
+        while v680 > tick() - timestamp do
+            local Animate = p68:FindFirstChild("Animate")
+            local v683 = Animate
+
+            if Animate then
+                v683 = Animate:FindFirstChild("run")
+
+                if v683 then
+                    v683 = Animate:FindFirstChild("idle")
+                end
+            end
+
+            if v683 then
+                return Animate
+            end
+
+            task.wait(0.1)
+        end
+
+        return nil
+    end
+
+    function t8.value129(p70, p71, p72)
+        if not p72 or not p71 then
+            return false
+        end
+
+        return (pcall(function()
+            local v763 = "rbxassetid://" .. tostring(p71)
+
+            if p70 == "Idle" then
+                local Animation1 = p72.idle:FindFirstChild("Animation1")
+                local Animation2 = p72.idle:FindFirstChild("Animation2")
+
+                if Animation1 then
+                    Animation1.AnimationId = v763
+                end
+
+                if Animation2 then
+                    Animation2.AnimationId = v763
+
+                    return
+                end
+            elseif p70 == "Walk" then
+                local WalkAnim = p72.walk:FindFirstChild("WalkAnim")
+
+                if WalkAnim then
+                    WalkAnim.AnimationId = v763
+
+                    return
+                end
+            elseif p70 == "Run" then
+                local RunAnim = p72.run:FindFirstChild("RunAnim")
+
+                if RunAnim then
+                    RunAnim.AnimationId = v763
+
+                    return
+                end
+            elseif p70 == "Jump" then
+                local JumpAnim = p72.jump:FindFirstChild("JumpAnim")
+
+                if JumpAnim then
+                    JumpAnim.AnimationId = v763
+
+                    return
+                end
+            elseif p70 == "Fall" then
+                local FallAnim = p72.fall:FindFirstChild("FallAnim")
+
+                if FallAnim then
+                    FallAnim.AnimationId = v763
+
+                    return
+                end
+            elseif p70 == "Climb" then
+                local ClimbAnim = p72.climb:FindFirstChild("ClimbAnim")
+
+                if ClimbAnim then
+                    ClimbAnim.AnimationId = v763
+
+                    return
+                end
+            else
+                local v771 = p70 == "Swim"
+
+                if v771 then
+                    v771 = p72:FindFirstChild("swim")
+                end
+
+                if v771 then
+                    local Swim = p72.swim:FindFirstChild("Swim")
+
+                    if Swim then
+                        Swim.AnimationId = v763
+
+                        return
+                    end
+                else
+                    local v773 = p70 == "SwimIdle"
+
+                    if v773 then
+                        v773 = p72:FindFirstChild("swimidle")
+                    end
+
+                    if v773 then
+                        local SwimIdle = p72.swimidle:FindFirstChild("SwimIdle")
+
+                        if SwimIdle then
+                            SwimIdle.AnimationId = v763
+                        end
+                    end
+                end
+            end
+        end))
+    end
+
+    local function v276()
+        local LocalPlayer3 = t8.value2.LocalPlayer
+        local v688 = LocalPlayer3.Character or LocalPlayer3.CharacterAdded:Wait()
+        local Humanoid = v688:WaitForChild("Humanoid", 10)
+
+        if not Humanoid then
+            v688 = nil
+            Humanoid = nil
+        end
+
+        if not v688 or not Humanoid then
+            return false
+        end
+
+        Humanoid.WalkSpeed = 16
+
+        local v690 = v275(v688)
+
+        if not v690 then
+            return false
+        end
+
+        t8.value122(Humanoid)
+        task.wait(0.1)
+
+        local n5 = 0
+
+        for _, v in ipairs({
+			"Idle",
+			"Walk",
+			"Run",
+			"Jump",
+			"Fall",
+			"Climb",
+			"Swim",
+			"SwimIdle"
+		}) do
+            if t8.value128[v] and t8.value129(v, t8.value128[v], v690) then
+                n5 += 1
+            end
+        end
+
+        v690.Enabled = false
+        task.wait(0.1)
+        v690.Enabled = true
+        Humanoid:ChangeState(Enum.HumanoidStateType.Landed)
+        task.wait(0.05)
+        Humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
+
+        return n5 > 0
+    end
+
+    t8.value8.CharacterAdded:Connect(function(character)
+        t8.value9 = character
+        t8.value10 = character:WaitForChild("Humanoid")
+        character:WaitForChild("HumanoidRootPart")
+        t8.value10.UseJumpPower = true
+        t8.value10.JumpPower = t8.value47
+        t8.value5.Gravity = t8.value14
+        task.wait(0.5)
+        v262()
+
+        if t8.value53 then
+            task.wait(0.5)
+            t8.value1.startWalkSpeedLoop()
+        end
+
+        if t8.value98 then
+            task.wait(0.5)
+            t8.value1.toggleSuperFuerza()
+        end
+
+        if t8.value78 then
+            task.wait(0.5)
+            t8.value1.toggleSlowTime()
+        end
+
+        if t8.value83 then
+            task.wait(0.5)
+            t8.value1.toggleInvulnerabilidad()
+        end
+
+        if t8.value85 then
+            task.wait(0.5)
+            t8.value1.toggleXRay()
+        end
+
+        if t8.value112 then
+            task.wait(0.5)
+            t8.value13.CameraType = Enum.CameraType.Custom
+            t8.value13.CameraSubject = t8.value10
+        end
+
+        task.wait(1)
+        v276()
+
+        local connection = t8.value4.Heartbeat:Connect(function()
+            if not t8.value9 or not t8.value10 then
+                return
+            end
+
+            local State = t8.value10:GetState()
+            local value61 = t8.value61
+
+            t8.value61 = State == Enum.HumanoidStateType.Swimming
+
+            if t8.value61 and not value61 then
+                local _ = t8.value10.WalkSpeed
+
+                t8.value10.WalkSpeed = 20
+
+                return
+            end
+
+            if not t8.value61 and value61 then
+                t8.value10.WalkSpeed = 8
+            end
+        end)
+
+        table.insert(t8.value15, connection)
+    end);
+    (function()
+        local VirtualUser = game:GetService("VirtualUser")
+
+        game:GetService("Players").LocalPlayer.Idled:Connect(function()
+            VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            task.wait(1)
+            VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        end)
+    end)()
+    t8.value120("SUPER GIRL V2", "Script cargado exitosamente. Tecla FIN para abrir menú. SUPR para cambiar entre poderes/opciones.", "rbxassetid://1381009")
+    task.wait(1)
+    t8.value120("CONTROLES VUELO", "Velocidad base: 30. + para aumentar, - para disminuir. Auto-reset a 30 tras 0.5s detenido.", "rbxassetid://1381009")
+    task.wait(1)
+    t8.value120("CONTROLES AGARRE/TELEKINESIS", "F1: Lanzar | F2: Multi-Telekinesis | F3: Cambiar Animación Agarre", "rbxassetid://1381009")
+    task.wait(1)
+    t8.value120("DESANCLAJE", "Ahora puedes agarrar y usar telekinesis en cualquier pieza u objeto anclado", "rbxassetid://1381009")
+    task.wait(1)
+    t8.value120("AGARRE + VUELO", "Al agarrar un objeto y volar, se mantiene la animación de agarre incluso al moverte", "rbxassetid://1381009")
+    v262()
+
+    local connection = t8.value4.Heartbeat:Connect(function()
+        if not t8.value9 or not t8.value10 then
+            return
+        end
+
+        local State = t8.value10:GetState()
+        local value61 = t8.value61
+
+        t8.value61 = State == Enum.HumanoidStateType.Swimming
+
+        if t8.value61 and not value61 then
+            local _ = t8.value10.WalkSpeed
+
+            t8.value10.WalkSpeed = 20
+
+            return
+        end
+
+        if not t8.value61 and value61 then
+            t8.value10.WalkSpeed = 8
+        end
+    end)
+
+    table.insert(t8.value15, connection)
+    task.wait(1)
+    v276()
+
+    return deleteScript
+end
+t1.value2.Button(t1.value2, {
+	Title = "Super Girl Mode",
+	Desc = "Click to transform into Super Girl",
+	Callback = function()
+    if t2.value52 then
+        t2.value52()
+    end
+
+    t2.value53()
+end
+})
+t1.value2 = v55:Tab({
+	Title = "SCP-Roleplay",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2:Button({
+	Title = "Load SCP-Roleplay Script",
+	Desc = "SCP-Roleplay",
+	Callback = function()
+    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/0248a78eac8827ad6a471798a15a5d81bcdee7b1182d676b1af1d57879eef8ec/download"))()
+end
+})
+t1.value2:Space()
+t2.value54 = 5041144419
+local v68 = "Game ID: " .. t2.value54
+t1.value2:Paragraph({
+	Title = "SCP-Roleplay",
+	Desc = v68,
+	Image = "https://tr.rbxcdn.com/180DAY-1117c66e9250baf84ecf8debcf3a3836/256/256/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+t1.value2.Button(t1.value2, {
+	Title = "Join SCP-Roleplay",
+	Desc = "Join Game ID 5041144419",
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value54, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer4 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer4)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Naramo-Nuclear-Plant-V2",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load Naramo Script",
+	Desc = "Naramo-Nuclear-Plant-V2",
+	Callback = function()
+    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/a89d8d77ab716ec33210d715acb22f4c6f7850a8b4a0768232445f227f7ec48c/download"))()
+end
+})
+t1.value2:Space()
+t2.value55 = 98626216952426
+local v69 = "Game ID: " .. t2.value55
+t1.value2:Paragraph({
+	Title = "Naramo-Nuclear-Plant-V2",
+	Desc = v69,
+	Image = "https://tr.rbxcdn.com/180DAY-95d61d5cb5af6bbe1504358fec51ac90/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local v70 = "Join Game ID " .. t2.value55
+t1.value2:Button({
+	Title = "Join Naramo",
+	Desc = v70,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value55, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer5 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer5)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "BloxStrike",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load BloxStrike Script",
+	Desc = "BloxStrike",
+	Callback = function()
+    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/604034a335c161140a71b2aba35d61e3df97b9f3721c2a7e01e99d015222f069/download"))()
+end
+})
+t1.value2:Space()
+t2.value56 = 114234929420007
+local v71 = "Game ID: " .. t2.value56
+t1.value2:Paragraph({
+	Title = "BloxStrike",
+	Desc = v71,
+	Image = "https://tr.rbxcdn.com/180DAY-5de034057184c82666b530ef54e2898e/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button = t1.value2.Button
+local v73 = "Join Game ID " .. t2.value56
+Button(t1.value2, {
+	Title = "Join BloxStrike",
+	Desc = v73,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value56, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer6 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer6)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "RIVALS",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load RIVALS Script",
+	Desc = "RIVALS",
+	Callback = function()
+    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/25aad582e68d189c8a86f3504340214a651588c14ac6d3d8ee23807008e0a7ec/download"))()
+end
+})
+t1.value2:Space()
+t2.value57 = 17625359962
+local v74 = "Game ID: " .. t2.value57
+t1.value2:Paragraph({
+	Title = "RIVALS",
+	Desc = v74,
+	Image = "https://tr.rbxcdn.com/180DAY-99ae7910dac324d824e934988d8200d4/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local v75 = "Join Game ID " .. t2.value57
+t1.value2.Button(t1.value2, {
+	Title = "Join RIVALS",
+	Desc = v75,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value57, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer7 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer7)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Loot-Up",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load Loot-Up Script",
+	Desc = "Loot-Up",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Lootup_LW.lua"))()
+end
+})
+t1.value2.Space(t1.value2)
+t2.value58 = 83622406313819
+local Paragraph = t1.value2.Paragraph
+local v77 = "Game ID: " .. t2.value58
+Paragraph(t1.value2, {
+	Title = "Loot-Up",
+	Desc = v77,
+	Image = "https://tr.rbxcdn.com/180DAY-7adb47088e563e474becba500b094f57/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button2 = t1.value2.Button
+local v79 = "Join Game ID " .. t2.value58
+Button2(t1.value2, {
+	Title = "Join Loot-Up",
+	Desc = v79,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value58, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer8 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer8)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "War-Tycoon",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load War-Tycoon Script",
+	Desc = "War-Tycoon",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/War-Tycoon-LW-KEY.lua"))()
+end
+})
+t1.value2:Space()
+t2.value59 = 4639625707
+local v80 = "Game ID: " .. t2.value59
+t1.value2:Paragraph({
+	Title = "War-Tycoon",
+	Desc = v80,
+	Image = "https://tr.rbxcdn.com/180DAY-a848e9d3336f59075c6062d832f77515/512/512/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button3 = t1.value2.Button
+local v82 = "Join Game ID " .. t2.value59
+Button3(t1.value2, {
+	Title = "Join War-Tycoon",
+	Desc = v82,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value59, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2:Button({
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer9 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer9)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Arsenal",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load Arsenal Script",
+	Desc = "Arsenal",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Arsnal-LW-Key.lua"))()
+end
+})
+t1.value2:Space()
+t2.value60 = 286090429
+local v83 = "Game ID: " .. t2.value60
+t1.value2:Paragraph({
+	Title = "Arsenal",
+	Desc = v83,
+	Image = "https://tr.rbxcdn.com/180DAY-409cfd2e6dcb5afa3fe41b545752733a/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local v84 = "Join Game ID " .. t2.value60
+t1.value2.Button(t1.value2, {
+	Title = "Join Arsenal",
+	Desc = v84,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value60, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer10 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer10)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Blind-Shot",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2:Button({
+	Title = "Load Blind-Shot Script",
+	Desc = "Blind-Shot",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Blind-Shot-LW-Key.lua"))()
+end
+})
+t1.value2.Space(t1.value2)
+t2.value61 = 118614517739520
+local Paragraph2 = t1.value2.Paragraph
+local v86 = "Game ID: " .. t2.value61
+Paragraph2(t1.value2, {
+	Title = "Blind-Shot",
+	Desc = v86,
+	Image = "https://tr.rbxcdn.com/180DAY-fa9425031be3d43f8c393da309b61c90/512/512/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local v87 = "Join Game ID " .. t2.value61
+t1.value2.Button(t1.value2, {
+	Title = "Join Blind-Shot",
+	Desc = v87,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value61, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer11 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer11)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Wanted",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load Wanted Script",
+	Desc = "Wanted",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Wanted-LW-Key.lua"))()
+end
+})
+t1.value2:Space()
+t2.value62 = 14438406081
+local v88 = "Game ID: " .. t2.value62
+t1.value2:Paragraph({
+	Title = "Wanted",
+	Desc = v88,
+	Image = "https://tr.rbxcdn.com/180DAY-8335787a1f9ce91f9ca0aaf9be3eae19/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button4 = t1.value2.Button
+local v90 = "Join Game ID " .. t2.value62
+Button4(t1.value2, {
+	Title = "Join Wanted",
+	Desc = v90,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value62, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer12 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer12)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "The-Forge",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2.Button(t1.value2, {
+	Title = "Load The-Forge Script",
+	Desc = "The-Forge",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Forge-LW-Key.lua"))()
+end
+})
+t1.value2:Space()
+t2.value63 = 76558904092080
+local v91 = "Game ID: " .. t2.value63
+t1.value2:Paragraph({
+	Title = "The-Forge",
+	Desc = v91,
+	Image = "https://tr.rbxcdn.com/180DAY-e6ba7011fa99665f1d1dbb9e675d8466/512/512/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button5 = t1.value2.Button
+local v93 = "Join Game ID " .. t2.value63
+Button5(t1.value2, {
+	Title = "Join The-Forge",
+	Desc = v93,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value63, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2:Button({
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer13 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer13)
+end
+})
+t1.value2 = v55:Tab({
+	Title = "Fisch",
+	Icon = "solar:file-text-bold",
+	IconColor = color3_33,
+	IconShape = nil
+})
+t1.value2:Button({
+	Title = "Load Fisch Script",
+	Desc = "Fisch",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CatKing2331/Script/refs/heads/main/Fisch-LW-Key.lua"))()
+end
+})
+t1.value2:Space()
+t2.value64 = 16732694052
+local Paragraph3 = t1.value2.Paragraph
+local v95 = "Game ID: " .. t2.value64
+Paragraph3(t1.value2, {
+	Title = "Fisch",
+	Desc = v95,
+	Image = "https://tr.rbxcdn.com/180DAY-17ce753c4b1f087c5eda362c24457e25/768/432/Image/Webp/noFilter",
+	ImageSize = 60
+})
+t1.value2:Space()
+local Button6 = t1.value2.Button
+local v97 = "Join Game ID " .. t2.value64
+Button6(t1.value2, {
+	Title = "Join Fisch",
+	Desc = v97,
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(t2.value64, game:GetService("Players").LocalPlayer)
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Rejoin Server",
+	Desc = "Rejoin current server",
+	Callback = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer14 = game:GetService("Players").LocalPlayer
+
+    TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer14)
+end
+})
+t1.value2 = v56:Tab({
+	Title = "Config Usage",
+	Icon = "solar:folder-with-files-bold",
+	IconColor = color3_30,
+	IconShape = nil
+})
+t2.value65 = t2.value2.ConfigManager
+t2.value66 = "default"
+t2.value67 = t1.value2.Input(t1.value2, {
+	Title = "Config Name",
+	Icon = "file-cog",
+	Callback = function(p73)
+    t2.value66 = p73
+end
+})
+t1.value2:Space()
+local v98 = t2.value65:AllConfigs()
+local v99 = table.find(v98, t2.value66) and t2.value66 or nil
+t2.value68 = t1.value2.Dropdown(t1.value2, {
+	Title = "All Configs",
+	Desc = "Select existing configs",
+	Values = v98,
+	Value = v99,
+	Callback = function(p74)
+    t2.value66 = p74
+    t2.value67:Set(p74)
+end
+})
+t1.value2:Space()
+t1.value2.Button(t1.value2, {
+	Title = "Save Config",
+	Icon = "",
+	Justify = "Center",
+	Callback = function()
+    t2.value2.CurrentConfig = t2.value65:Config(t2.value66)
+
+    if t2.value2.CurrentConfig:Save() then
+        local value1_2 = t2.value1
+        local value66 = t2.value66
+        local Notify = value1_2.Notify
+        local v305 = "Config '" .. value66 .. "' saved"
+
+        Notify(value1_2, {
+				Title = "Config Saved",
+				Desc = v305,
+				Icon = "check"
+			})
+    end
+
+    t2.value68:Refresh(t2.value65:AllConfigs())
+end
+})
+t1.value2:Space()
+t1.value2.Button(t1.value2, {
+	Title = "Load Config",
+	Icon = "",
+	Justify = "Center",
+	Callback = function()
+    t2.value2.CurrentConfig = t2.value65:CreateConfig(t2.value66)
+
+    if t2.value2.CurrentConfig:Load() then
+        local value1_3 = t2.value1
+        local v307 = "Config '" .. t2.value66 .. "' loaded"
+
+        value1_3:Notify({
+				Title = "Config Loaded",
+				Desc = v307,
+				Icon = "refresh-cw"
+			})
+    end
+end
+})
+t2.value69 = "vYTxSSRmTS"
+t1.value2 = "https://discord.com/api/v10/invites/" .. t2.value69 .. "?with_counts=true&with_expiration=true"
+local data = t2.value1.cloneref(game:GetService("HttpService")):JSONDecode(t2.value1.Creator.Request({
+	Url = t1.value2,
+	Method = "GET",
+	Headers = {
+		["User-Agent"] = "WindUI/Example",
+		Accept = "application/json"
+	}
+}).Body)
+local v101 = v56:Tab({
+	Title = "Discord",
+	Icon = "solar:chat-round-bold",
+	IconColor = color3_33
+})
+if data and data.guild then
+    v101:Section({
+		Title = "Join our Discord server!",
+		TextSize = 20
+	})
+
+    local str = tostring(data.guild.name)
+    local str2 = tostring(data.guild.description)
+    local Paragraph4 = v101.Paragraph
+    local v105 = "https://cdn.discordapp.com/icons/" .. data.guild.id .. "/" .. data.guild.icon .. ".png?size=1024"
+    local t12 = {
+		Title = "Copy link",
+		Icon = "link",
+		Callback = function()
+        setclipboard("https://discord.gg/" .. t2.value69)
+    end
+	}
+
+    Paragraph4(v101, {
+		Title = str,
+		Desc = str2,
+		Image = v105,
+		Thumbnail = "https://cdn.discordapp.com/banners/1300692552005189632/35981388401406a4b7dffd6f447a64c4.png?size=512",
+		ImageSize = 48,
+		Buttons = { t12 }
+	})
+end
+t1.value2 = v56:Tab({
+	Title = "Donate",
+	Icon = "solar:heart-bold",
+	IconColor = color3_34
+})
+t1.value2:Paragraph({
+	Title = "Hi !",
+	Desc = "If you'd like to support me, you can choose to make a donation. Thank you so much for your support."
+})
+t1.value2:Button({
+	Title = "Donate",
+	Desc = "Support us by donating!",
+	Callback = function()
+    setclipboard("https://catking.mysellauth.com/product/donate")
+    t2.value1:Notify({
+			Title = "Link Copied",
+			Desc = "Donate link copied to clipboard.",
+			Icon = "check"
+		})
+end
+})
+t1.value2 = v57:Tab({
+	Title = "Music",
+	Icon = "solar:music-note-bold",
+	IconColor = color3_31,
+	IconShape = nil
+})
+t2.value70 = ""
+t2.value71 = nil
+t2.value72 = 1
+t2.value73 = nil
+local t13 = {
+	Url = "https://raw.githubusercontent.com/NakanoNino455/roblox/main/Music%20Folder/Phone%20Kisses.mp3",
+	FileName = "Phone_Kisses.mp3"
+}
+local t14 = {
+	Url = "https://raw.githubusercontent.com/NakanoNino455/roblox/main/Music%20Folder/%E9%B3%A5%E3%81%AE%E8%A9%A9.mp3",
+	FileName = "Tori_no_Uta.mp3"
+}
+local t15 = {
+	Url = "https://raw.githubusercontent.com/NakanoNino455/roblox/main/Music%20Folder/Flower%20Dance.mp3",
+	FileName = "Flower_Dance.mp3"
+}
+t2.value74 = {
+	["Phone Kisses"] = t13,
+	["鳥の詩(Tori no Uta)"] = t14,
+	["Flower Dance"] = t15,
+	["Baby don’t Cry"] = {
+		Url = "https://raw.githubusercontent.com/NakanoNino455/roblox/main/Music%20Folder/Baby%20don%E2%80%99t%20Cry.mp3",
+		FileName = "Baby_dont_Cry.mp3"
+	}
+}
+t1.value2.Button(t1.value2, {
+	Title = "Play Music",
+	Icon = "play",
+	Callback = function()
+    if t2.value71 then
+        t2.value71:Destroy()
+    end
+
+    t2.value71 = Instance.new("Sound", workspace)
+
+    if t2.value73 and t2.value74[t2.value73] then
+        (function(p75, p76)
+            local v702 = "WindUI/Music" .. "/" .. p76
+
+            if not isfolder("WindUI") then
+                makefolder("WindUI")
+            end
+
+            if not isfolder("WindUI/Music") then
+                makefolder("WindUI/Music")
+            end
+
+            if not isfile(v702) then
+                local v703 = game:HttpGet(p75)
+
+                writefile(v702, v703)
+            end
+
+            t2.value71.SoundId = getcustomasset(v702)
+            t2.value71.Volume = t2.value72
+            t2.value71.Looped = true
+            t2.value71:Play()
+        end)(t2.value74[t2.value73].Url, t2.value74[t2.value73].FileName)
+
+        return
+    end
+
+    if t2.value70 ~= "" then
+        t2.value71.SoundId = "rbxassetid://" .. t2.value70
+        t2.value71.Volume = t2.value72
+        t2.value71.Looped = true
+        t2.value71:Play()
+
+        return
+    end
+
+    t2.value1:Notify({
+			Title = "No Song Selected",
+			Desc = "Please select a song from the dropdown.",
+			Icon = "alert-circle"
+		})
+end
+})
+t1.value2.Button(t1.value2, {
+	Title = "Stop Music",
+	Icon = "stop",
+	Callback = function()
+    if t2.value71 then
+        t2.value71:Stop()
+        t2.value71:Destroy()
+        t2.value71 = nil
+    end
+end
+})
+local t16 = {
+	Min = 0,
+	Max = 10,
+	Default = 1
+}
+t1.value2.Slider(t1.value2, {
+	Title = "Volume",
+	Icon = "volume-2",
+	Step = 0.5,
+	Value = t16,
+	Callback = function(p77)
+    if t2.value71 then
+        t2.value71.Volume = p77
+    end
+end
+})
+local Slider3 = t1.value2.Slider
+local t17 = {
+	Min = 0,
+	Max = 100,
+	Default = 0
+}
+t2.value75 = Slider3(t1.value2, {
+	Title = "Progress",
+	Icon = "fast-forward",
+	Step = 1,
+	Value = t17,
+	Callback = function(p78)
+    local value71 = t2.value71
+
+    if value71 then
+        value71 = t2.value71.TimeLength > 0
+    end
+
+    if value71 then
+        local v311 = p78 / 100 * t2.value71.TimeLength
+
+        if math.abs(t2.value71.TimePosition - v311) > 2 then
+            t2.value71.TimePosition = v311
+        end
+    end
+end
+})
+t1.value2.Toggle(t1.value2, {
+	Title = "Rainbow Visualizer",
+	Desc = "Show music rhythm bar",
+	Callback = function(p79)
+    if p79 then
+        local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+
+        ScreenGui.Name = "MusicVisualizer"
+
+        local Frame = Instance.new("Frame", ScreenGui)
+
+        Frame.Name = "BarContainer"
+        Frame.Size = UDim2.new(0, 300, 0, 40)
+        Frame.Position = UDim2.new(0.5, 0, 0.9, 0)
+        Frame.AnchorPoint = Vector2.new(0.5, 1)
+        Frame.BackgroundTransparency = 1
+        Frame.BorderSizePixel = 0
+
+        local t18 = {}
+
+        for i = 1, 50 do
+            local Frame3 = Instance.new("Frame", Frame)
+
+            Frame3.Size = UDim2.new(0.02, -1, 0, 10)
+            Frame3.Position = UDim2.new((i - 1) / 50, 0, 1, 0)
+            Frame3.AnchorPoint = Vector2.new(0, 1)
+            Frame3.BackgroundColor3 = Color3.new(1, 1, 1)
+            Frame3.BorderSizePixel = 0
+            table.insert(t18, Frame3)
+        end
+
+        task.spawn(function()
+            local RunService = game:GetService("RunService")
+
+            while true do
+                local v705 = ScreenGui
+
+                if v705 then
+                    v705 = ScreenGui.Parent
+                end
+
+                if not v705 then
+                    break
+                end
+
+                local value71 = t2.value71
+
+                if value71 then
+                    value71 = t2.value71.IsPlaying
+                end
+
+                if value71 then
+                    value71 = t2.value71.PlaybackLoudness
+                end
+
+                local _os = os
+                local v708 = value71 or 0
+                local v709 = _os.clock() * 0.2
+
+                for i, v in ipairs(t18) do
+                    local v712 = math.noise(os.clock() * 2, i * 0.1) + 0.5
+                    local v713 = math.max(2, math.clamp(v708 / 300 * v712, 0, 1) * 100)
+
+                    v.Size = UDim2.new(0.02, -1, 0, v713)
+                    v.BackgroundColor3 = Color3.fromHSV((i / 50 + v709) % 1, 0.8, 1)
+                end
+
+                RunService.RenderStepped:Wait()
+            end
+        end)
+
+        return
+    end
+
+    local MusicVisualizer = game.CoreGui:FindFirstChild("MusicVisualizer")
+
+    if MusicVisualizer then
+        MusicVisualizer:Destroy()
+    end
+end
+})
+t1.value2:Space()
+t1.value2.Dropdown(t1.value2, {
+	Title = "Select Song",
+	Desc = "Choose a song to play",
+	Values = {
+		"Phone Kisses",
+		"鳥の詩(Tori no Uta)",
+		"Flower Dance",
+		"Baby don’t Cry"
+	},
+	Callback = function(p80)
+    t2.value73 = p80
+end
+})
+t1.value2:Space()
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+
+        local value71 = t2.value71
+
+        if value71 then
+            value71 = t2.value71.IsPlaying
+
+            if value71 then
+                value71 = t2.value71.TimeLength > 0
+            end
+        end
+
+        if value71 then
+            local v321 = math.floor(t2.value71.TimePosition / t2.value71.TimeLength * 100)
+
+            t2.value75:Set(v321)
+        end
+    end
+end)
+t1.value2 = task.spawn
+t1.value2(function()
+    local LocalPlayer15 = game:GetService("Players").LocalPlayer
+    local UserIconParent
+    local DisplayName
+    local UserName
+    while not UserIconParent do
+        task.wait(0.5)
+
+        local value2 = t2.value2
+
+        if value2 then
+            value2 = t2.value2.UIElements
+
+            if value2 then
+                value2 = t2.value2.UIElements.Main
+            end
+        end
+
+        if value2 then
+            local UserIcon = t2.value2.UIElements.Main:FindFirstChild("UserIcon", true)
+
+            if UserIcon then
+                UserIconParent = UserIcon.Parent
+
+                if UserIconParent then
+                    local GetChildren = UserIconParent.GetChildren
+
+                    for _, v in pairs(GetChildren(UserIconParent)) do
+                        local v331 = v:IsA("Frame")
+
+                        if v331 then
+                            v331 = v.Name ~= "UserIcon"
+
+                            if v331 then
+                                v331 = v.Name ~= "Outline"
+                            end
+                        end
+
+                        if v331 then
+                            DisplayName = v:FindFirstChild("DisplayName")
+                            UserName = v:FindFirstChild("UserName")
+
+                            if not UserName then
+                                local GetChildren2 = v.GetChildren
+
+                                for _, v2 in pairs(GetChildren2(v)) do
+                                    local v335 = v2:IsA("TextLabel")
+
+                                    if v335 then
+                                        v335 = v2.Name ~= "DisplayName"
+                                    end
+
+                                    if v335 then
+                                        UserName = v2
+
+                                        break
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    while true do
+        local num = tonumber(os.date("%H"))
+        local v337 = num < 12 and "Good Morning"
+
+        if not v337 then
+            v337 = not (num < 18) and "Good Evening" or "Good Afternoon"
+        end
+
+        local v338 = (function(p81)
+            local s2 = ""
+            local v716 = os.clock() * 0.75
+
+            for i = 1, #p81 do
+                s2 ..= "<font color=\"#" .. Color3.fromHSV((i / #p81 + v716) % 1, 1, 1):ToHex() .. "\">" .. string.sub(p81, i, i) .. "</font>"
+            end
+
+            return s2
+        end)(v337)
+        local v339 = os.date("%X")
+
+        if DisplayName then
+            DisplayName.Text = v338 .. ", " .. LocalPlayer15.DisplayName
+        end
+
+        if UserName then
+            UserName.Text = "@" .. LocalPlayer15.Name .. "  |  " .. v339
+        end
+
+        task.wait(0.1)
+    end
+end)
