@@ -1,6 +1,3 @@
--- This File Was Deobfuscated In Null
--- discord.gg/M9Tm9RT7ta
-
 if _G.OnyxV2Cleanup then
 	_G.__OnyxReloading = true
 	pcall(_G.OnyxV2Cleanup)
